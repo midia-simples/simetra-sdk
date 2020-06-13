@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+.env
+.idea
+.vscode
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+*.log

@@ -3340,6 +3340,29 @@ var Cliente = /** @class */ (function (_super) {
     return Cliente;
 }(Resource));
 
+/**
+ * Exemplo uso da SDK
+ *
+ * ```typescript
+ * (async () => {
+ *    try {
+ *      const simetraLib = new SimetraSdk({
+ *        usuario: 'SIMETRA_USUARIO',
+ *        senha: 'SIMETRA_SENHA',
+ *        baseURI: 'SIMETRA_BASE_URL',
+ *      });
+ *      const response = await simetraLib.Cliente.consulta({
+ *       CNPJ_CPF_CLIE: '',
+ *      });
+ *      response.FAT_CLIENTE.COD_CLIE;
+ *      response.FAT_CLIENTE.DAT_NASC;
+ *      response.FAT_CLIENTE.DAT_NASC;
+ *    } catch (e) {
+ *      console.log('err', e);
+ *   }
+ * })();
+ * ```
+ */
 var SimetraSdk = /** @class */ (function () {
     function SimetraSdk(config) {
         this.config = config;

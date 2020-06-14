@@ -15,7 +15,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c",
+    "build": "rollup -c && yarn typedoc --out docs --target es6 --theme minimal --mode file src",
     "predev": "rimraf dist",
     "dev": "rollup -c -w",
     "lint": "eslint src/ --ext .ts",
@@ -48,6 +48,7 @@
     "ts-jest": "^26.1.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "tslib": "^2.0.0",
+    "typedoc": "^0.17.7",
     "typescript": "^3.9.5"
   },
   "dependencies": {

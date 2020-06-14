@@ -15,14 +15,16 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c && yarn typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build": "rollup -c",
+    "docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "docs:gh-pages-script": "node scripts/gh-pages-nojekyll-add.js",
     "predev": "rimraf dist",
     "dev": "rollup -c -w",
     "lint": "eslint src/ --ext .ts",
     "lint:fix": "eslint src/ --ext .ts --fix",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
-    "precommit": "yarn lint:fix && yarn build"
+    "precommit": "yarn lint:fix && yarn build && yarn docs && yarn docs:gh-pages-script"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
@@ -44,6 +46,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.6.2",
     "rollup-plugin-typescript2": "^0.27.1",
+    "shelljs": "^0.8.4",
     "source-map-support": "^0.5.19",
     "ts-jest": "^26.1.0",
     "ts-node-dev": "^1.0.0-pre.44",

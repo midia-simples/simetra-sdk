@@ -5,6 +5,8 @@ import IConfig from './resources/interface/IConfig';
  * Exemplo uso da SDK
  *
  * ```typescript
+ * const SimetraSdk = require('@midia-simples/simetra-sdk');
+ *
  * (async () => {
  *    try {
  *      const simetraLib = new SimetraSdk({
@@ -12,7 +14,7 @@ import IConfig from './resources/interface/IConfig';
  *        senha: 'SIMETRA_SENHA',
  *        baseURI: 'SIMETRA_BASE_URL',
  *      });
- *      const response = await simetraLib.Cliente.consulta({
+ *      const response = await SimetraSdk.Cliente.consulta({
  *       CNPJ_CPF_CLIE: '',
  *      });
  *      response.FAT_CLIENTE.COD_CLIE;

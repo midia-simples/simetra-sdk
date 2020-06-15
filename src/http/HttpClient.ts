@@ -1,5 +1,5 @@
 import IHttpConfig from './interface/IHttpConfig';
-import Axios, { AxiosInstance, AxiosRequestConfig } from 'Axios';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import IApiResponse from './interface/IApiResponse';
 import ApiError from './ApiError';
 import IRequest from './interface/IRequest';
@@ -8,7 +8,7 @@ class HttpClient {
   private readonly client: AxiosInstance;
 
   constructor(config: IHttpConfig) {
-    this.client = Axios.create({
+    this.client = axios.create({
       baseURL: config.baseURI,
       timeout: 30000,
     });

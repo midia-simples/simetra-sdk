@@ -64,3 +64,101 @@ export interface IClientConsultaResponse {
   FAT_CLIENTE: IFaturaCliente | any;
   FAT_CONTRATO: IFaturaContrato[] | any;
 }
+
+interface IRequisicaoClientAtualizarResponse {
+  CNPJ_CPF_CLIE?: string;
+  COD_CLIE?: string;
+}
+
+export interface IClientAtualizarResponse {
+  requisicao: IRequisicaoClientAtualizarResponse | any;
+  retorno: IRetorno | any;
+}
+
+interface IAtendimentoRequisicaoCadastrarResponse {
+  COD_CNTR?: number;
+  COD_CNTR_ITEM?: number;
+  COD_CHAMADO_FLUXO?: number;
+}
+
+interface IAtendimentoS2ChamadoCadastrarResponse {
+  NUM_PROTOCOLO_ATENDIMENTO?: string;
+  SEQ_CHAMADO?: number;
+}
+
+export interface IAtendimentoCadastrarResponse {
+  requisicao: IAtendimentoRequisicaoCadastrarResponse | any;
+  retorno: IRetorno | any;
+  S2_CHAMADO: IAtendimentoS2ChamadoCadastrarResponse | any;
+}
+
+interface IAtendimentoRequisicaoDelegarResponse {
+  SEQ_CHAMADO?: string;
+  COD_FLUXO_PARA?: string;
+}
+
+export interface IAtendimentoDelegarResponse {
+  requisicao: IAtendimentoRequisicaoDelegarResponse | any;
+  retorno: IRetorno | any;
+}
+
+interface IIncidenteRedeRequisicaoConsultaResponse {
+  POP_IP?: string;
+  ENDER_CDE_NOM?: string;
+  ENDER_BAIR_NOM?: string;
+  ENDER_UF?: string;
+}
+
+export interface IIncidenteRedeS2chamadoConsultaResponse {
+  SEQ_CHAMADO?: number;
+  NUM_PROTOCOLO_ATENDIMENTO?: string;
+  DES_CHAMADO_FLUXO?: string;
+  POP_IP?: string;
+  POP_NOME?: string;
+  ENDER_BAIR_NOM?: string;
+  ENDER_CDE_NOM?: string;
+  ENDER_UF?: string;
+  ENLACE_DETALHE?: string;
+  DAT_SOLICITACAO?: Date;
+  DES_CHAMADO_STATUS?: string;
+  AUDIT_DAT_ALTER?: Date;
+  NRO_CIRCUITOS_VINCULADOS?: number;
+}
+
+export interface IIncidenteRedeConsultaResponse {
+  requisicao: IIncidenteRedeRequisicaoConsultaResponse | any;
+  retorno: IRetorno | any;
+  S2_CHAMADO: IIncidenteRedeS2chamadoConsultaResponse[] | any;
+}
+
+interface ITituloRequisicaoConsultaResponse {
+  COD_CNTR?: string;
+  COD_CLIE?: string;
+  COD_STAT_TITL?: string;
+  DAT_VENC_INICIAL?: string;
+  DAT_VENC_FINAL?: string;
+  DAT_RECEB_INICIAL?: string;
+  DAT_RECEB_FINAL?: string;
+}
+
+interface ITituloFatContratoConsultaResponse {
+  COD_CNTR_TITL?: number;
+  NUM_PARCL?: number;
+  ANO_REF?: number;
+  MES_REF?: number;
+  DAT_VENC?: string;
+  VLR_TOTAL?: number;
+  DAT_RECEB?: any;
+  VLR_RECEB?: number;
+  COD_STAT_TITL?: number;
+  DESCR_STAT_TITL?: string;
+  COD_CNTR?: number;
+  COD_CLIE?: number;
+  COD_ARQ_DOC?: number;
+}
+
+export interface ITituloConsultaResponse {
+  requisicao: ITituloRequisicaoConsultaResponse;
+  retorno: IRetorno;
+  FAT_CONTRATO_TITULO: ITituloFatContratoConsultaResponse[];
+}

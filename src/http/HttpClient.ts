@@ -10,7 +10,7 @@ class HttpClient {
   constructor(config: IHttpConfig) {
     this.client = axios.create({
       baseURL: config.baseURI,
-      timeout: 30000,
+      timeout: 50000,
     });
   }
 

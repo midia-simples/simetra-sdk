@@ -9,4 +9,3 @@ node_modules
 !.yarn/plugins
 *.log
 dist
-docs

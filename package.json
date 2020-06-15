@@ -16,6 +16,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c && yarn typedoc --out docs --target es6 --theme minimal --mode file src",
+    "postbuild": "node scripts/git-add-post-build.js",
     "predev": "rimraf dist",
     "dev": "rollup -c -w",
     "lint": "eslint src/ --ext .ts",
@@ -44,6 +45,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.6.2",
     "rollup-plugin-typescript2": "^0.27.1",
+    "shelljs": "^0.8.4",
     "source-map-support": "^0.5.19",
     "ts-jest": "^26.1.0",
     "ts-node-dev": "^1.0.0-pre.44",

@@ -12,11 +12,19 @@ dotenv.config({
       senha: process.env.SIMETRA_SENHA || '',
       baseURI: process.env.SIMETRA_BASE_URL || '',
     });
-    const r = await simetraLib.Cliente.consulta({
-      CNPJ_CPF_CLIE: '',
+    const r = await simetraLib.Titulo.consulta({
+      COD_CNTR: '',
+      COD_CLIE: '',
+      COD_STAT_TITL: '',
+      DAT_VENC_INICIAL: '',
+      DAT_VENC_FINAL: '',
+      DAT_RECEB_INICIAL: '',
+      DAT_RECEB_FINAL: '',
     });
+    // eslint-disable-next-line no-console
     console.log(r);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log('err', e);
   }
 })();

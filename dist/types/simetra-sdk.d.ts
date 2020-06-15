@@ -1,5 +1,8 @@
 import Cliente from './resources/Cliente';
 import IConfig from './resources/interface/IConfig';
+import Atendimento from './resources/Atendimento';
+import IncidenteRede from './resources/IncidenteRede';
+import Titulo from './resources/Titulo';
 /**
  * Exemplo uso da SDK
  *
@@ -27,4 +30,7 @@ export default class SimetraSdk {
     private readonly config;
     constructor(config: IConfig);
     get Cliente(): Cliente;
+    get Atendimento(): Atendimento;
+    get IncidenteRede(): IncidenteRede;
+    get Titulo(): Titulo;
 }

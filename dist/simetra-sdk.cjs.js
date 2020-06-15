@@ -3198,7 +3198,7 @@ var HttpClient = /** @class */ (function () {
     function HttpClient(config) {
         this.client = axios$1.create({
             baseURL: config.baseURI,
-            timeout: 30000,
+            timeout: 50000,
         });
     }
     HttpClient.prototype.request = function (_a) {
@@ -3341,7 +3341,169 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.atualizar = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, COD_CLIE = _a.COD_CLIE, EMAIL = _a.EMAIL, TELEFONE1 = _a.TELEFONE1, TELEFONE2 = _a.TELEFONE2, TELEFONE3 = _a.TELEFONE3, TELEFONE4 = _a.TELEFONE4;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CLIENTE_ATUALIZAR' },
+                            data: {
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                COD_CLIE: COD_CLIE,
+                                EMAIL: EMAIL,
+                                TELEFONE1: TELEFONE1,
+                                TELEFONE2: TELEFONE2,
+                                TELEFONE3: TELEFONE3,
+                                TELEFONE4: TELEFONE4,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
+}(Resource));
+
+var Atendimento = /** @class */ (function (_super) {
+    __extends(Atendimento, _super);
+    function Atendimento(config) {
+        return _super.call(this, config) || this;
+    }
+    Atendimento.prototype.cadastrar = function (_a) {
+        var COD_CNTR = _a.COD_CNTR, COD_CNTR_ITEM = _a.COD_CNTR_ITEM, COD_CHAMADO_FLUXO = _a.COD_CHAMADO_FLUXO, TELEFONE1 = _a.TELEFONE1, TELEFONE2 = _a.TELEFONE2, DES_SOLICITANTE_EMAIL = _a.DES_SOLICITANTE_EMAIL, DES_SOLICITACAO = _a.DES_SOLICITACAO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CHAMADO_CADASTRAR' },
+                            data: {
+                                COD_CNTR: COD_CNTR,
+                                COD_CNTR_ITEM: COD_CNTR_ITEM,
+                                COD_CHAMADO_FLUXO: COD_CHAMADO_FLUXO,
+                                TELEFONE1: TELEFONE1,
+                                TELEFONE2: TELEFONE2,
+                                DES_SOLICITANTE_EMAIL: DES_SOLICITANTE_EMAIL,
+                                DES_SOLICITACAO: DES_SOLICITACAO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Atendimento.prototype.delegar = function (_a) {
+        var SEQ_CHAMADO = _a.SEQ_CHAMADO, COD_FLUXO_PARA = _a.COD_FLUXO_PARA, DES_DETALHE = _a.DES_DETALHE;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CHAMADO_DELEGAR' },
+                            data: {
+                                SEQ_CHAMADO: SEQ_CHAMADO,
+                                COD_FLUXO_PARA: COD_FLUXO_PARA,
+                                DES_DETALHE: DES_DETALHE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    return Atendimento;
+}(Resource));
+
+var IncidenteRede = /** @class */ (function (_super) {
+    __extends(IncidenteRede, _super);
+    function IncidenteRede(config) {
+        return _super.call(this, config) || this;
+    }
+    IncidenteRede.prototype.consulta = function (_a) {
+        var POP_IP = _a.POP_IP, ENDER_CDE_NOM = _a.ENDER_CDE_NOM, ENDER_BAIR_NOM = _a.ENDER_BAIR_NOM, ENDER_UF = _a.ENDER_UF;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR_INCIDENTE_DE_REDE' },
+                            data: {
+                                POP_IP: POP_IP,
+                                ENDER_CDE_NOM: ENDER_CDE_NOM,
+                                ENDER_BAIR_NOM: ENDER_BAIR_NOM,
+                                ENDER_UF: ENDER_UF,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    return IncidenteRede;
+}(Resource));
+
+var Titulo = /** @class */ (function (_super) {
+    __extends(Titulo, _super);
+    function Titulo(config) {
+        return _super.call(this, config) || this;
+    }
+    Titulo.prototype.consulta = function (_a) {
+        var COD_CNTR = _a.COD_CNTR, COD_CLIE = _a.COD_CLIE, COD_STAT_TITL = _a.COD_STAT_TITL, DAT_VENC_INICIAL = _a.DAT_VENC_INICIAL, DAT_VENC_FINAL = _a.DAT_VENC_FINAL, DAT_RECEB_INICIAL = _a.DAT_RECEB_INICIAL, DAT_RECEB_FINAL = _a.DAT_RECEB_FINAL;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONTRATO_CONSULTAR_TITULO' },
+                            data: {
+                                COD_CNTR: COD_CNTR,
+                                COD_CLIE: COD_CLIE,
+                                COD_STAT_TITL: COD_STAT_TITL,
+                                DAT_VENC_INICIAL: DAT_VENC_INICIAL,
+                                DAT_VENC_FINAL: DAT_VENC_FINAL,
+                                DAT_RECEB_INICIAL: DAT_RECEB_INICIAL,
+                                DAT_RECEB_FINAL: DAT_RECEB_FINAL,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    return Titulo;
 }(Resource));
 
 /**
@@ -3374,6 +3536,27 @@ var SimetraSdk = /** @class */ (function () {
     Object.defineProperty(SimetraSdk.prototype, "Cliente", {
         get: function () {
             return new Cliente(this.config);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(SimetraSdk.prototype, "Atendimento", {
+        get: function () {
+            return new Atendimento(this.config);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(SimetraSdk.prototype, "IncidenteRede", {
+        get: function () {
+            return new IncidenteRede(this.config);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(SimetraSdk.prototype, "Titulo", {
+        get: function () {
+            return new Titulo(this.config);
         },
         enumerable: false,
         configurable: true

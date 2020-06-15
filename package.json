@@ -15,8 +15,11 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c && yarn typedoc --out docs --target es6 --theme minimal --mode file src",
-    "postbuild": "node scripts/git-add-post-build.js",
+    "build": "rollup -c",
+    "prepare": "rollup -c",
+    "docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "postdocs": "yarn docs:gh-pages-script",
+    "docs:gh-pages-script": "node scripts/gh-pages-nojekyll-add.js",
     "predev": "rimraf dist",
     "dev": "rollup -c -w",
     "lint": "eslint src/ --ext .ts",

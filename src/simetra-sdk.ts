@@ -1,13 +1,12 @@
 import Cliente from './resources/Cliente';
 import IConfig from './resources/interface/IConfig';
-import Atendimento from './resources/Atendimento';
-import IncidenteRede from './resources/IncidenteRede';
-import Titulo from './resources/Titulo';
 
 /**
  * Exemplo uso da SDK
  *
  * ```typescript
+ * const SimetraSdk = require('@midia-simples/simetra-sdk');
+ *
  * (async () => {
  *    try {
  *      const simetraLib = new SimetraSdk({
@@ -15,7 +14,7 @@ import Titulo from './resources/Titulo';
  *        senha: 'SIMETRA_SENHA',
  *        baseURI: 'SIMETRA_BASE_URL',
  *      });
- *      const response = await simetraLib.Cliente.consulta({
+ *      const response = await SimetraSdk.Cliente.consulta({
  *       CNPJ_CPF_CLIE: '',
  *      });
  *      response.FAT_CLIENTE.COD_CLIE;
@@ -36,17 +35,5 @@ export default class SimetraSdk {
 
   get Cliente(): Cliente {
     return new Cliente(this.config);
-  }
-
-  get Atendimento(): Atendimento {
-    return new Atendimento(this.config);
-  }
-
-  get IncidenteRede(): IncidenteRede {
-    return new IncidenteRede(this.config);
-  }
-
-  get Titulo(): Titulo {
-    return new Titulo(this.config);
   }
 }

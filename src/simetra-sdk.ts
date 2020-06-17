@@ -4,6 +4,7 @@ import Atendimento from './resources/Atendimento';
 import IncidenteRede from './resources/IncidenteRede';
 import Titulo from './resources/Titulo';
 import Vencimentos from './resources/Vencimentos';
+import Produto from './resources/Produto';
 
 /**
  * Exemplo uso da SDK
@@ -55,5 +56,9 @@ export default class SimetraSdk {
 
   get Vencimentos(): Vencimentos {
     return new Vencimentos(this.config);
+  }
+
+  get Produto(): Produto {
+    return new Produto(this.config);
   }
 }

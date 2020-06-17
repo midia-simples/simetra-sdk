@@ -57,3 +57,8 @@ export interface ITituloCadastrarRequest {
   DAT_VENC: string;
   VLR_TOTAL: string;
 }
+
+export interface ITituloDownloadRequest {
+  COD_CNTR_TITL: string;
+  COD_ARQ_DOC: string;
+}

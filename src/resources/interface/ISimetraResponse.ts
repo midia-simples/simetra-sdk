@@ -1,4 +1,8 @@
-import { IClientConsultaRequest } from './ISimetraRequest';
+import {
+  IClientConsultaRequest,
+  ITituloCadastrarRequest,
+  ITituloQuitarRequest,
+} from './ISimetraRequest';
 
 export interface IRetorno {
   codigo?: string;
@@ -166,4 +170,22 @@ export interface ITituloConsultaResponse {
 export interface IVencimentosConsultResponse {
   retorno: IRetorno;
   parametro: string;
+}
+
+export interface IRetornoTituloCadastrar extends IRetorno {
+  COD_CNTR_TITL: number;
+  COD_ARQ_DOC: number;
+}
+export interface ITituloCadastrarResponse {
+  retorno: IRetornoTituloCadastrar;
+  requisicao: ITituloCadastrarRequest;
+}
+
+export interface ITituloQuitarResponse {
+  requisicao: ITituloQuitarRequest;
+  retorno: IRetorno;
+  FAT_CONTRATO_TITULO: {
+    COD_CNTR_TITL: string;
+    OBSERVACAO: string;
+  };
 }

@@ -189,3 +189,8 @@ export interface ITituloConsultaResponse {
   retorno: IRetorno;
   FAT_CONTRATO_TITULO: ITituloFatContratoConsultaResponse[];
 }
+
+export interface IVencimentosConsultResponse {
+  retorno: IRetorno;
+  parametro: string;
+}

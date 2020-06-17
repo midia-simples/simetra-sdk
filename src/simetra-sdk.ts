@@ -3,6 +3,7 @@ import IConfig from './resources/interface/IConfig';
 import Atendimento from './resources/Atendimento';
 import IncidenteRede from './resources/IncidenteRede';
 import Titulo from './resources/Titulo';
+import Vencimentos from './resources/Vencimentos';
 
 /**
  * Exemplo uso da SDK
@@ -50,5 +51,9 @@ export default class SimetraSdk {
 
   get Titulo(): Titulo {
     return new Titulo(this.config);
+  }
+
+  get Vencimentos(): Vencimentos {
+    return new Vencimentos(this.config);
   }
 }

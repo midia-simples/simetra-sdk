@@ -1,12 +1,40 @@
 import Resource from './Resource';
-import { ITituloConsultaResponse } from './interface/ISimetraResponse';
+import {
+  ITituloConsultaResponse,
+  ITituloQuitarResponse,
+  ITituloCadastrarResponse,
+  ITituloDownloadResponse,
+} from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
-import { ITituloConsultaRequest } from './interface/ISimetraRequest';
+import {
+  ITituloConsultaRequest,
+  ITituloCadastrarRequest,
+  ITituloQuitarRequest,
+  ITituloDownloadRequest,
+} from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
 export default class Titulo extends Resource {
   constructor(config: IConfig) {
     super(config);
+  }
+
+  public async cadastrar({
+    COD_CNTR,
+    DAT_VENC,
+    VLR_TOTAL,
+  }: ITituloCadastrarRequest): Promise<ITituloCadastrarResponse | any> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_TITULO' },
+      data: { COD_CNTR, DAT_VENC, VLR_TOTAL },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
   }
 
   public async consulta({
@@ -29,6 +57,50 @@ export default class Titulo extends Resource {
         DAT_VENC_FINAL,
         DAT_RECEB_INICIAL,
         DAT_RECEB_FINAL,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async quitar({
+    COD_CNTR,
+    COD_CNTR_TITL,
+    DAT_RECEB,
+    VLR_RECEB,
+  }: ITituloQuitarRequest): Promise<ITituloQuitarResponse | any> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONTRATO_QUITAR_TITULO' },
+      data: {
+        COD_CNTR,
+        COD_CNTR_TITL,
+        DAT_RECEB,
+        VLR_RECEB,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async download({
+    COD_CNTR_TITL,
+    COD_ARQ_DOC,
+  }: ITituloDownloadRequest): Promise<ITituloDownloadResponse | any> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONTRATO_DOWNLOAD_TITULO' },
+      data: {
+        COD_CNTR_TITL,
+        COD_ARQ_DOC,
       },
     });
 

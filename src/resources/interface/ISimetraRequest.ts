@@ -44,3 +44,12 @@ export interface ITituloConsultaRequest {
   DAT_RECEB_INICIAL: string;
   DAT_RECEB_FINAL: string;
 }
+
+export interface IValidarViabilidadeKmlRequest {
+  pCEP: string;
+  pNUMERO: string;
+  pENDERECO: string;
+  pBAIRRO: string;
+  pCIDADE: string;
+  pUF: string;
+}

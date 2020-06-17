@@ -167,3 +167,22 @@ export interface IVencimentosConsultResponse {
   retorno: IRetorno;
   parametro: string;
 }
+
+export interface IValidarViabilidadeKmlResponse {
+  endereco_Formatado: string;
+  Code: number;
+  Message: string;
+  PossuiViabilidade: boolean;
+  PossuiViabilidadeMPE: boolean;
+  ViabilidadeNaCidade: boolean;
+  CepComMaisDeUmLogradouro: boolean;
+  End_Logradouro: string;
+  End_Numero: number;
+  End_Bairro: string;
+  End_Cidade: string;
+  End_Estado: string;
+  End_Cep: string;
+  Latitude: number;
+  Longitude: number;
+  PossuiBloqueioDeVenda: string;
+}

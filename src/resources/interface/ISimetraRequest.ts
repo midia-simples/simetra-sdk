@@ -2,6 +2,54 @@ export interface IClientConsultaRequest {
   CNPJ_CPF_CLIE: string;
 }
 
+export interface IClientLoginRequest {
+  CNPJ_CPF_CLIE: string;
+  ASSINANTE_SENHA: string;
+}
+
+export interface IClientCadastrarContratoRequest {
+  Cpf: string;
+  Nome: string;
+  Rg: string;
+  NomePai: string;
+  NomeMae: string;
+  DataNascimento: string;
+  Cep: string;
+  Logradouro: string;
+  Numero: string;
+  Complemento: string;
+  Bairro: string;
+  Cidade: string;
+  Uf: string;
+  DddTelefone: string;
+  NumeroTelefone: string;
+  DddCelular: string;
+  NumeroCelular: string;
+  Email: string;
+  Cod_prod: string;
+  Parc_instalacao: string;
+  Dia_Vencimento: string;
+  FormaPagto: string;
+  COD_BANCO: string;
+  TIPOCONTA: string;
+  AGENCIA: string;
+  Conta: string;
+  dvConta: string;
+  DataInstalacao: string;
+  PeriodoInstalacao: string;
+  fixo: string[];
+  movel: string[];
+}
+
+export interface IClientCadastrarVindiRequest {
+  CNPJ_CPF_CLIE: string;
+  nomeCartao: string;
+  dataValidadeCartao: string;
+  numeroCartao: string;
+  cvvCartao: string;
+  bandeiraCartao: string;
+}
+
 export interface IClientAtualizarRequest {
   CNPJ_CPF_CLIE: string;
   COD_CLIE: string;

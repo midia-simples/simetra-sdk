@@ -1,4 +1,8 @@
-import { IClientConsultaRequest } from './ISimetraRequest';
+import {
+  IClientConsultaRequest,
+  IClientLoginRequest,
+  IClientCadastrarVindiRequest,
+} from './ISimetraRequest';
 
 export interface IRetorno {
   codigo?: string;
@@ -11,6 +15,7 @@ export interface IFaturaCliente {
   DAT_NASC?: string;
   STATUS?: string;
   TELEFONE1?: string;
+  LOGIN_VALIDO?: string;
 }
 
 export interface IFaturaContrato {
@@ -63,6 +68,28 @@ export interface IClientConsultaResponse {
   retorno: IRetorno | any;
   FAT_CLIENTE: IFaturaCliente | any;
   FAT_CONTRATO: IFaturaContrato[] | any;
+}
+
+export interface IClientLoginResponse {
+  requisicao: IClientLoginRequest | any;
+  retorno: IRetorno | any;
+  FAT_CLIENTE: IFaturaCliente | any;
+}
+
+export interface IClientCadastrarContratoResponse {
+  CODIGO_CONTRATO?: number;
+  retorno?: string;
+  InstalacaoAgendados?: string;
+  InstalacaoPeriodo?: string;
+  Observacao?: string;
+}
+
+export interface IClientCadastrarVindiResponse {
+  requisicao: IClientCadastrarVindiRequest | any;
+  retorno: IRetorno | any;
+  COD_CLIE?: number;
+  ID_CLIENTE_VINDI?: string;
+  ID_CARTAO_VINDI?: number;
 }
 
 interface IRequisicaoClientAtualizarResponse {

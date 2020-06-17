@@ -2,10 +2,12 @@ import Resource from './Resource';
 import {
   ITituloConsultaResponse,
   ITituloQuitarResponse,
+  ITituloCadastrarResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
   ITituloConsultaRequest,
+  ITituloCadastrarRequest,
   ITituloQuitarRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
@@ -13,6 +15,24 @@ import SimetraError from './SimetraError';
 export default class Titulo extends Resource {
   constructor(config: IConfig) {
     super(config);
+  }
+
+  public async cadastrar({
+    COD_CNTR,
+    DAT_VENC,
+    VLR_TOTAL,
+  }: ITituloCadastrarRequest): Promise<ITituloCadastrarResponse | any> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_TITULO' },
+      data: { COD_CNTR, DAT_VENC, VLR_TOTAL },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
   }
 
   public async consulta({

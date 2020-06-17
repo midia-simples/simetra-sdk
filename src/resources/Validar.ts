@@ -1,7 +1,13 @@
 import Resource from './Resource';
 import IConfig from './interface/IConfig';
-import { IValidarViabilidadeKmlResponse } from './interface/ISimetraResponse';
-import { IValidarViabilidadeKmlRequest } from './interface/ISimetraRequest';
+import {
+  IValidarViabilidadeKmlResponse,
+  IValidarEmailResponse,
+} from './interface/ISimetraResponse';
+import {
+  IValidarViabilidadeKmlRequest,
+  IValidarEmailRequest,
+} from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
 export default class Validar extends Resource {
@@ -29,6 +35,22 @@ export default class Validar extends Resource {
         pBAIRRO,
         pCIDADE,
         pUF,
+      },
+    });
+
+    return data;
+  }
+
+  public async email({
+    pEMAIL,
+    pAUDIT_IP_INCL,
+  }: IValidarEmailRequest): Promise<IValidarEmailResponse | any> {
+    const { data } = await this.callApi({
+      method: 'get',
+      params: {
+        sNomeProc: 'FITTELECOM_VALIDAR_EMAIL',
+        pEMAIL,
+        pAUDIT_IP_INCL,
       },
     });
 

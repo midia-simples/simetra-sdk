@@ -53,3 +53,8 @@ export interface IValidarViabilidadeKmlRequest {
   pCIDADE: string;
   pUF: string;
 }
+
+export interface IValidarEmailRequest {
+  pEMAIL: string;
+  pAUDIT_IP_INCL: string;
+}

@@ -169,20 +169,29 @@ export interface IVencimentosConsultResponse {
 }
 
 export interface IValidarViabilidadeKmlResponse {
-  endereco_Formatado: string;
-  Code: number;
-  Message: string;
-  PossuiViabilidade: boolean;
-  PossuiViabilidadeMPE: boolean;
-  ViabilidadeNaCidade: boolean;
-  CepComMaisDeUmLogradouro: boolean;
-  End_Logradouro: string;
-  End_Numero: number;
-  End_Bairro: string;
-  End_Cidade: string;
-  End_Estado: string;
-  End_Cep: string;
-  Latitude: number;
-  Longitude: number;
-  PossuiBloqueioDeVenda: string;
+  endereco_Formatado?: string;
+  Code?: number;
+  Message?: string;
+  PossuiViabilidade?: boolean;
+  PossuiViabilidadeMPE?: boolean;
+  ViabilidadeNaCidade?: boolean;
+  CepComMaisDeUmLogradouro?: boolean;
+  End_Logradouro?: string;
+  End_Numero?: number;
+  End_Bairro?: string;
+  End_Cidade?: string;
+  End_Estado?: string;
+  End_Cep?: string;
+  Latitude?: number;
+  Longitude?: number;
+  PossuiBloqueioDeVenda?: string;
+}
+
+export interface IValidarEmailResponse {
+  pEMAIL?: string;
+  sEMAIL_SCORE?: number;
+  sFLAG_FORMAT_VALID?: boolean;
+  sFLAG_MX_FOUND?: boolean;
+  sFLAG_SMTP_CHECK?: boolean;
+  s_email_valido: string;
 }

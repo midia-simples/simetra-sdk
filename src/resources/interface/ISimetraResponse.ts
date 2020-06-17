@@ -193,5 +193,21 @@ export interface IValidarEmailResponse {
   sFLAG_FORMAT_VALID?: boolean;
   sFLAG_MX_FOUND?: boolean;
   sFLAG_SMTP_CHECK?: boolean;
-  s_email_valido: string;
+  s_email_valido?: string;
+}
+
+export interface IValidarTelefoneResponse {
+  TELEFONE?: string;
+  ObjetoWebService_NOM_USUR?: string;
+  ObjetoWebService_COD_USUR?: number;
+  ObjetoWebService_IP?: string;
+  s_code?: string;
+  s_message?: string;
+  s_formato_valido?: string;
+  s_base_portabilidade?: string;
+  s_base_cadup?: string;
+  s_operadora_nome?: string;
+  s_telefone_cnl?: string;
+  s_telefone_cidade?: string;
+  s_telefone_valido?: string;
 }

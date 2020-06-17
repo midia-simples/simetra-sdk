@@ -58,3 +58,8 @@ export interface IValidarEmailRequest {
   pEMAIL: string;
   pAUDIT_IP_INCL: string;
 }
+
+export interface IValidarTelefoneRequest {
+  pTELEFONE: string;
+  pAUDIT_IP_INCL: string;
+}

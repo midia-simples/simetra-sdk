@@ -62,7 +62,7 @@ export default class SimetraSdk {
   get Produto(): Produto {
     return new Produto(this.config);
   }
-  
+
   get Validar(): Validar {
     return new Validar(this.config);
   }

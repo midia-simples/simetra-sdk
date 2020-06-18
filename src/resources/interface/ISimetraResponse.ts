@@ -1,5 +1,6 @@
 import {
   IClientConsultaRequest,
+  IProdutoConsultaRequest,
   IClientLoginRequest,
   IClientCadastrarVindiRequest,
   ITituloCadastrarRequest,
@@ -64,6 +65,26 @@ export interface IFaturaContrato {
   NUM_PON?: string;
   USUR_PPPOE?: string;
   SEN_PPPOE?: string;
+}
+
+export interface IProdutoResponse {
+  COD_PROD: number;
+  NOM_PROD: string;
+  VLR_PROD: number;
+  VLR_INSTL: number;
+  DESCR_PROD: string;
+  COD_POLICY: string;
+  QTD_MIN_LINH: number;
+  QTD_MIN_LINH_MOVEL: number;
+  IND_PJ: boolean;
+  IND_PF: boolean;
+  QTD_MAX_PARCL_INSTL: string;
+}
+
+export interface IProdutoConsultaResponse {
+  requisicao: IProdutoConsultaRequest | any;
+  retorno: IRetorno | any;
+  S2_PRODUTO: IProdutoResponse[] | any;
 }
 
 export interface IClientConsultaResponse {

@@ -5,6 +5,7 @@ import IncidenteRede from './resources/IncidenteRede';
 import Titulo from './resources/Titulo';
 import Vencimentos from './resources/Vencimentos';
 import Produto from './resources/Produto';
+import Validar from './resources/Validar';
 
 /**
  * Exemplo uso da SDK
@@ -60,5 +61,9 @@ export default class SimetraSdk {
 
   get Produto(): Produto {
     return new Produto(this.config);
+  }
+  
+  get Validar(): Validar {
+    return new Validar(this.config);
   }
 }

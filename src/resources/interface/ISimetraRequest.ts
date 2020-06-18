@@ -48,3 +48,21 @@ export interface ITituloConsultaRequest {
   DAT_RECEB_INICIAL: string;
   DAT_RECEB_FINAL: string;
 }
+
+export interface ITituloQuitarRequest {
+  COD_CNTR: string;
+  COD_CNTR_TITL: string;
+  DAT_RECEB: string;
+  VLR_RECEB: string;
+}
+
+export interface ITituloCadastrarRequest {
+  COD_CNTR: string;
+  DAT_VENC: string;
+  VLR_TOTAL: string;
+}
+
+export interface ITituloDownloadRequest {
+  COD_CNTR_TITL: string;
+  COD_ARQ_DOC: string;
+}

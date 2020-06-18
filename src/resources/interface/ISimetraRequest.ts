@@ -89,6 +89,7 @@ export interface IIncidenteRedeConsultaRequest {
 
 export interface ITituloConsultaRequest {
   COD_CNTR: string;
+  COD_CNTR_TITL: string;
   COD_CLIE: string;
   COD_STAT_TITL: string;
   DAT_VENC_INICIAL: string;

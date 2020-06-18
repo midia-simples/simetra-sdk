@@ -133,3 +133,10 @@ export interface ITituloDownloadRequest {
   COD_CNTR_TITL: string;
   COD_ARQ_DOC: string;
 }
+
+export interface IContratoCadastrarAnexoRequest {
+  COD_CNTR: string;
+  SEQ_CONTRATO_ANEXO_TIPO: string;
+  ANEXO_BUFFER: string;
+  ANEXO_NOME: string;
+}

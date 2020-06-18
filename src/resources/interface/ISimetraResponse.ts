@@ -323,3 +323,12 @@ export interface ITituloDownloadResponse {
     DADOS_ARQ_DOC: string;
   };
 }
+
+export interface IContratoCadastrarAnexoResponse {
+  requisicao: {
+    COD_CNTR: string;
+    SEQ_CONTRATO_ANEXO_TIPO: string;
+    ANEXO_NOME: string;
+  };
+  retorno: IRetorno;
+}

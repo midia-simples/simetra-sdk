@@ -45,6 +45,25 @@ export interface ITituloConsultaRequest {
   DAT_RECEB_FINAL: string;
 }
 
+export interface IValidarViabilidadeKmlRequest {
+  pCEP: string;
+  pNUMERO: string;
+  pENDERECO: string;
+  pBAIRRO: string;
+  pCIDADE: string;
+  pUF: string;
+}
+
+export interface IValidarEmailRequest {
+  pEMAIL: string;
+  pAUDIT_IP_INCL: string;
+}
+
+export interface IValidarTelefoneRequest {
+  pTELEFONE: string;
+  pAUDIT_IP_INCL: string;
+}
+
 export interface ITituloQuitarRequest {
   COD_CNTR: string;
   COD_CNTR_TITL: string;

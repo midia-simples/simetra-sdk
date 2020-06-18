@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IAtendimentoCadastrarResponse | @midia-simples/simetra-sdk</title>
+	<title>ITituloQuitarResponse | @midia-simples/simetra-sdk</title>
 	<meta name="description" content="Documentation for @midia-simples/simetra-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2723,16 +2723,16 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface">
-			<a href="iatendimentocadastrarresponse.html" class="tsd-kind-icon">IAtendimento<wbr>Cadastrar<wbr>Response</a>
+			<a href="itituloquitarresponse.html" class="tsd-kind-icon">ITitulo<wbr>Quitar<wbr>Response</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iatendimentocadastrarresponse.html#s2_chamado" class="tsd-kind-icon">S2_<wbr>CHAMADO</a>
+					<a href="itituloquitarresponse.html#fat_contrato_titulo" class="tsd-kind-icon">FAT_<wbr>CONTRATO_<wbr>TITULO</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iatendimentocadastrarresponse.html#requisicao" class="tsd-kind-icon">requisicao</a>
+					<a href="itituloquitarresponse.html#requisicao" class="tsd-kind-icon">requisicao</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iatendimentocadastrarresponse.html#retorno" class="tsd-kind-icon">retorno</a>
+					<a href="itituloquitarresponse.html#retorno" class="tsd-kind-icon">retorno</a>
 				</li>
 			</ul>
 		</li>
@@ -2744,7 +2744,7 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">IAtendimentoCadastrarResponse</span>
+					<span class="target">ITituloQuitarResponse</span>
 				</li>
 			</ul>
 		</section>
@@ -2755,9 +2755,9 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iatendimentocadastrarresponse.html#s2_chamado" class="tsd-kind-icon">S2_<wbr>CHAMADO</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iatendimentocadastrarresponse.html#requisicao" class="tsd-kind-icon">requisicao</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iatendimentocadastrarresponse.html#retorno" class="tsd-kind-icon">retorno</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="itituloquitarresponse.html#fat_contrato_titulo" class="tsd-kind-icon">FAT_<wbr>CONTRATO_<wbr>TITULO</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="itituloquitarresponse.html#requisicao" class="tsd-kind-icon">requisicao</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="itituloquitarresponse.html#retorno" class="tsd-kind-icon">retorno</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2766,32 +2766,43 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="s2_chamado" class="tsd-anchor"></a>
-				<h3>S2_<wbr>CHAMADO</h3>
-				<div class="tsd-signature tsd-kind-icon">S2_<wbr>CHAMADO<span class="tsd-signature-symbol">:</span> <a href="iatendimentos2chamadocadastrarresponse.html" class="tsd-signature-type">IAtendimentoS2ChamadoCadastrarResponse</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+				<a name="fat_contrato_titulo" class="tsd-anchor"></a>
+				<h3>FAT_<wbr>CONTRATO_<wbr>TITULO</h3>
+				<div class="tsd-signature tsd-kind-icon">FAT_<wbr>CONTRATO_<wbr>TITULO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>COD_CNTR_TITL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>OBSERVACAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a728e3e/src/resources/interface/ISimetraResponse.ts#L97">src/resources/interface/ISimetraResponse.ts:97</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a728e3e/src/resources/interface/ISimetraResponse.ts#L188">src/resources/interface/ISimetraResponse.ts:188</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter">
+							<h5>COD_<wbr>CNTR_<wbr>TITL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>OBSERVACAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+					</ul>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 				<a name="requisicao" class="tsd-anchor"></a>
 				<h3>requisicao</h3>
-				<div class="tsd-signature tsd-kind-icon">requisicao<span class="tsd-signature-symbol">:</span> <a href="iatendimentorequisicaocadastrarresponse.html" class="tsd-signature-type">IAtendimentoRequisicaoCadastrarResponse</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+				<div class="tsd-signature tsd-kind-icon">requisicao<span class="tsd-signature-symbol">:</span> <a href="itituloquitarrequest.html" class="tsd-signature-type">ITituloQuitarRequest</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a728e3e/src/resources/interface/ISimetraResponse.ts#L95">src/resources/interface/ISimetraResponse.ts:95</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a728e3e/src/resources/interface/ISimetraResponse.ts#L186">src/resources/interface/ISimetraResponse.ts:186</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 				<a name="retorno" class="tsd-anchor"></a>
 				<h3>retorno</h3>
-				<div class="tsd-signature tsd-kind-icon">retorno<span class="tsd-signature-symbol">:</span> <a href="iretorno.html" class="tsd-signature-type">IRetorno</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+				<div class="tsd-signature tsd-kind-icon">retorno<span class="tsd-signature-symbol">:</span> <a href="iretorno.html" class="tsd-signature-type">IRetorno</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a728e3e/src/resources/interface/ISimetraResponse.ts#L96">src/resources/interface/ISimetraResponse.ts:96</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a728e3e/src/resources/interface/ISimetraResponse.ts#L187">src/resources/interface/ISimetraResponse.ts:187</a></li>
 					</ul>
 				</aside>
 			</section>

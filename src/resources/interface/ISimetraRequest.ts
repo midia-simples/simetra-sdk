@@ -62,7 +62,8 @@ export interface IValidarEmailRequest {
 export interface IValidarTelefoneRequest {
   pTELEFONE: string;
   pAUDIT_IP_INCL: string;
-  
+}
+
 export interface ITituloQuitarRequest {
   COD_CNTR: string;
   COD_CNTR_TITL: string;

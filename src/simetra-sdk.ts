@@ -57,7 +57,7 @@ export default class SimetraSdk {
   get Vencimentos(): Vencimentos {
     return new Vencimentos(this.config);
   }
-  
+
   get Validar(): Validar {
     return new Validar(this.config);
   }

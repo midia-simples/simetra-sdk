@@ -64,7 +64,7 @@ export interface IFaturaContrato {
   SEN_PPPOE?: string;
 }
 
-export interface IProduto {
+export interface IProdutoResponse {
   COD_PROD: number;
   NOM_PROD: string;
   VLR_PROD: number;
@@ -81,7 +81,7 @@ export interface IProduto {
 export interface IProdutoConsultaResponse {
   requisicao: IProdutoConsultaRequest | any;
   retorno: IRetorno | any;
-  S2_PRODUTO: IProduto[] | any;
+  S2_PRODUTO: IProdutoResponse[] | any;
 }
 
 export interface IClientConsultaResponse {

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ITituloCadastrarRequest | @midia-simples/simetra-sdk</title>
+	<title>SimetraSdk | @midia-simples/simetra-sdk</title>
 	<meta name="description" content="Documentation for @midia-simples/simetra-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2722,17 +2722,35 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class="current tsd-kind-interface">
-			<a href="ititulocadastrarrequest.html" class="tsd-kind-icon">ITitulo<wbr>Cadastrar<wbr>Request</a>
+		<li class="current tsd-kind-class">
+			<a href="simetrasdk.html" class="tsd-kind-icon">Simetra<wbr>Sdk</a>
 			<ul>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="ititulocadastrarrequest.html#cod_cntr" class="tsd-kind-icon">COD_<wbr>CNTR</a>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+					<a href="simetrasdk.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="ititulocadastrarrequest.html#dat_venc" class="tsd-kind-icon">DAT_<wbr>VENC</a>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="simetrasdk.html#config" class="tsd-kind-icon">config</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="ititulocadastrarrequest.html#vlr_total" class="tsd-kind-icon">VLR_<wbr>TOTAL</a>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#atendimento" class="tsd-kind-icon">Atendimento</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#cliente" class="tsd-kind-icon">Cliente</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#incidenterede" class="tsd-kind-icon">Incidente<wbr>Rede</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#produto" class="tsd-kind-icon">Produto</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#titulo" class="tsd-kind-icon">Titulo</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#validar" class="tsd-kind-icon">Validar</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#vencimentos" class="tsd-kind-icon">Vencimentos</a>
 				</li>
 			</ul>
 		</li>
@@ -2740,11 +2758,37 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>Exemplo uso da SDK</p>
+				</div>
+				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> SimetraSdk = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@midia-simples/simetra-sdk&#x27;</span>);
+
+(<span class="hljs-keyword">async</span> () =&gt; {
+   <span class="hljs-keyword">try</span> {
+     <span class="hljs-keyword">const</span> simetraLib = <span class="hljs-keyword">new</span> SimetraSdk({
+       usuario: <span class="hljs-string">&#x27;SIMETRA_USUARIO&#x27;</span>,
+       senha: <span class="hljs-string">&#x27;SIMETRA_SENHA&#x27;</span>,
+       baseURI: <span class="hljs-string">&#x27;SIMETRA_BASE_URL&#x27;</span>,
+     });
+     <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> SimetraSdk.Cliente.consulta({
+      CNPJ_CPF_CLIE: <span class="hljs-string">&#x27;&#x27;</span>,
+     });
+     response.FAT_CLIENTE.COD_CLIE;
+     response.FAT_CLIENTE.DAT_NASC;
+     response.FAT_CLIENTE.DAT_NASC;
+   } <span class="hljs-keyword">catch</span> (e) {
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;err&#x27;</span>, e);
+  }
+})();</code></pre>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">ITituloCadastrarRequest</span>
+					<span class="target">SimetraSdk</span>
 				</li>
 			</ul>
 		</section>
@@ -2753,47 +2797,191 @@ img {
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
+						<h3>Constructors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="simetrasdk.html#constructor" class="tsd-kind-icon">constructor</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ititulocadastrarrequest.html#cod_cntr" class="tsd-kind-icon">COD_<wbr>CNTR</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ititulocadastrarrequest.html#dat_venc" class="tsd-kind-icon">DAT_<wbr>VENC</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ititulocadastrarrequest.html#vlr_total" class="tsd-kind-icon">VLR_<wbr>TOTAL</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="simetrasdk.html#config" class="tsd-kind-icon">config</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Accessors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#atendimento" class="tsd-kind-icon">Atendimento</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#cliente" class="tsd-kind-icon">Cliente</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#incidenterede" class="tsd-kind-icon">Incidente<wbr>Rede</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#produto" class="tsd-kind-icon">Produto</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#titulo" class="tsd-kind-icon">Titulo</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#validar" class="tsd-kind-icon">Validar</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#vencimentos" class="tsd-kind-icon">Vencimentos</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Simetra<wbr>Sdk<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="simetrasdk.html" class="tsd-signature-type">SimetraSdk</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L36">src/simetra-sdk.ts:36</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>config: <span class="tsd-signature-type">IConfig</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="simetrasdk.html" class="tsd-signature-type">SimetraSdk</a></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 			<h2>Properties</h2>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="cod_cntr" class="tsd-anchor"></a>
-				<h3>COD_<wbr>CNTR</h3>
-				<div class="tsd-signature tsd-kind-icon">COD_<wbr>CNTR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="config" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> config</h3>
+				<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IConfig</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraRequest.ts#L127">src/resources/interface/ISimetraRequest.ts:127</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L36">src/simetra-sdk.ts:36</a></li>
 					</ul>
 				</aside>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="dat_venc" class="tsd-anchor"></a>
-				<h3>DAT_<wbr>VENC</h3>
-				<div class="tsd-signature tsd-kind-icon">DAT_<wbr>VENC<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraRequest.ts#L128">src/resources/interface/ISimetraRequest.ts:128</a></li>
-					</ul>
-				</aside>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Accessors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="atendimento" class="tsd-anchor"></a>
+				<h3>Atendimento</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Atendimento<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="atendimento.html" class="tsd-signature-type">Atendimento</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L42">src/simetra-sdk.ts:42</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="atendimento.html" class="tsd-signature-type">Atendimento</a></h4>
+					</li>
+				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="vlr_total" class="tsd-anchor"></a>
-				<h3>VLR_<wbr>TOTAL</h3>
-				<div class="tsd-signature tsd-kind-icon">VLR_<wbr>TOTAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraRequest.ts#L129">src/resources/interface/ISimetraRequest.ts:129</a></li>
-					</ul>
-				</aside>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="cliente" class="tsd-anchor"></a>
+				<h3>Cliente</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Cliente<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cliente.html" class="tsd-signature-type">Cliente</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L46">src/simetra-sdk.ts:46</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="cliente.html" class="tsd-signature-type">Cliente</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="incidenterede" class="tsd-anchor"></a>
+				<h3>Incidente<wbr>Rede</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> IncidenteRede<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="incidenterede.html" class="tsd-signature-type">IncidenteRede</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L50">src/simetra-sdk.ts:50</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="incidenterede.html" class="tsd-signature-type">IncidenteRede</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="produto" class="tsd-anchor"></a>
+				<h3>Produto</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Produto<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="produto.html" class="tsd-signature-type">Produto</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L62">src/simetra-sdk.ts:62</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="produto.html" class="tsd-signature-type">Produto</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="titulo" class="tsd-anchor"></a>
+				<h3>Titulo</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Titulo<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="titulo.html" class="tsd-signature-type">Titulo</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L54">src/simetra-sdk.ts:54</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="titulo.html" class="tsd-signature-type">Titulo</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="validar" class="tsd-anchor"></a>
+				<h3>Validar</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Validar<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="validar.html" class="tsd-signature-type">Validar</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L66">src/simetra-sdk.ts:66</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="validar.html" class="tsd-signature-type">Validar</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="vencimentos" class="tsd-anchor"></a>
+				<h3>Vencimentos</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Vencimentos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="vencimentos.html" class="tsd-signature-type">Vencimentos</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/simetra-sdk.ts#L58">src/simetra-sdk.ts:58</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="vencimentos.html" class="tsd-signature-type">Vencimentos</a></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">

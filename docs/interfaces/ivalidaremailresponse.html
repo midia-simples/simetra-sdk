@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ITituloCadastrarRequest | @midia-simples/simetra-sdk</title>
+	<title>IValidarEmailResponse | @midia-simples/simetra-sdk</title>
 	<meta name="description" content="Documentation for @midia-simples/simetra-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2723,16 +2723,25 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface">
-			<a href="ititulocadastrarrequest.html" class="tsd-kind-icon">ITitulo<wbr>Cadastrar<wbr>Request</a>
+			<a href="ivalidaremailresponse.html" class="tsd-kind-icon">IValidar<wbr>Email<wbr>Response</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="ititulocadastrarrequest.html#cod_cntr" class="tsd-kind-icon">COD_<wbr>CNTR</a>
+					<a href="ivalidaremailresponse.html#pemail" class="tsd-kind-icon">pEMAIL</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="ititulocadastrarrequest.html#dat_venc" class="tsd-kind-icon">DAT_<wbr>VENC</a>
+					<a href="ivalidaremailresponse.html#semail_score" class="tsd-kind-icon">sEMAIL_<wbr>SCORE</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="ititulocadastrarrequest.html#vlr_total" class="tsd-kind-icon">VLR_<wbr>TOTAL</a>
+					<a href="ivalidaremailresponse.html#sflag_format_valid" class="tsd-kind-icon">sFLAG_<wbr>FORMAT_<wbr>VALID</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ivalidaremailresponse.html#sflag_mx_found" class="tsd-kind-icon">sFLAG_<wbr>MX_<wbr>FOUND</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ivalidaremailresponse.html#sflag_smtp_check" class="tsd-kind-icon">sFLAG_<wbr>SMTP_<wbr>CHECK</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ivalidaremailresponse.html#s_email_valido" class="tsd-kind-icon">s_<wbr>email_<wbr>valido</a>
 				</li>
 			</ul>
 		</li>
@@ -2744,7 +2753,7 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">ITituloCadastrarRequest</span>
+					<span class="target">IValidarEmailResponse</span>
 				</li>
 			</ul>
 		</section>
@@ -2755,9 +2764,12 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ititulocadastrarrequest.html#cod_cntr" class="tsd-kind-icon">COD_<wbr>CNTR</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ititulocadastrarrequest.html#dat_venc" class="tsd-kind-icon">DAT_<wbr>VENC</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ititulocadastrarrequest.html#vlr_total" class="tsd-kind-icon">VLR_<wbr>TOTAL</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ivalidaremailresponse.html#pemail" class="tsd-kind-icon">pEMAIL</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ivalidaremailresponse.html#semail_score" class="tsd-kind-icon">sEMAIL_<wbr>SCORE</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ivalidaremailresponse.html#sflag_format_valid" class="tsd-kind-icon">sFLAG_<wbr>FORMAT_<wbr>VALID</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ivalidaremailresponse.html#sflag_mx_found" class="tsd-kind-icon">sFLAG_<wbr>MX_<wbr>FOUND</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ivalidaremailresponse.html#sflag_smtp_check" class="tsd-kind-icon">sFLAG_<wbr>SMTP_<wbr>CHECK</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ivalidaremailresponse.html#s_email_valido" class="tsd-kind-icon">s_<wbr>email_<wbr>valido</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2766,32 +2778,62 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="cod_cntr" class="tsd-anchor"></a>
-				<h3>COD_<wbr>CNTR</h3>
-				<div class="tsd-signature tsd-kind-icon">COD_<wbr>CNTR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="pemail" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> pEMAIL</h3>
+				<div class="tsd-signature tsd-kind-icon">pEMAIL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraRequest.ts#L127">src/resources/interface/ISimetraRequest.ts:127</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraResponse.ts#L242">src/resources/interface/ISimetraResponse.ts:242</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="dat_venc" class="tsd-anchor"></a>
-				<h3>DAT_<wbr>VENC</h3>
-				<div class="tsd-signature tsd-kind-icon">DAT_<wbr>VENC<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="semail_score" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> sEMAIL_<wbr>SCORE</h3>
+				<div class="tsd-signature tsd-kind-icon">sEMAIL_<wbr>SCORE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraRequest.ts#L128">src/resources/interface/ISimetraRequest.ts:128</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraResponse.ts#L243">src/resources/interface/ISimetraResponse.ts:243</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="vlr_total" class="tsd-anchor"></a>
-				<h3>VLR_<wbr>TOTAL</h3>
-				<div class="tsd-signature tsd-kind-icon">VLR_<wbr>TOTAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<a name="sflag_format_valid" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> sFLAG_<wbr>FORMAT_<wbr>VALID</h3>
+				<div class="tsd-signature tsd-kind-icon">sFLAG_<wbr>FORMAT_<wbr>VALID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraRequest.ts#L129">src/resources/interface/ISimetraRequest.ts:129</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraResponse.ts#L244">src/resources/interface/ISimetraResponse.ts:244</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="sflag_mx_found" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> sFLAG_<wbr>MX_<wbr>FOUND</h3>
+				<div class="tsd-signature tsd-kind-icon">sFLAG_<wbr>MX_<wbr>FOUND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraResponse.ts#L245">src/resources/interface/ISimetraResponse.ts:245</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="sflag_smtp_check" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> sFLAG_<wbr>SMTP_<wbr>CHECK</h3>
+				<div class="tsd-signature tsd-kind-icon">sFLAG_<wbr>SMTP_<wbr>CHECK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraResponse.ts#L246">src/resources/interface/ISimetraResponse.ts:246</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="s_email_valido" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> s_<wbr>email_<wbr>valido</h3>
+				<div class="tsd-signature tsd-kind-icon">s_<wbr>email_<wbr>valido<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8251d37/src/resources/interface/ISimetraResponse.ts#L247">src/resources/interface/ISimetraResponse.ts:247</a></li>
 					</ul>
 				</aside>
 			</section>

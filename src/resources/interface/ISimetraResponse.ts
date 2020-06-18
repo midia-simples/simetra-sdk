@@ -1,5 +1,8 @@
 import {
   IClientConsultaRequest,
+  IProdutoConsultaRequest,
+  IClientLoginRequest,
+  IClientCadastrarVindiRequest,
   ITituloCadastrarRequest,
   ITituloQuitarRequest,
   ITituloDownloadRequest,
@@ -16,6 +19,7 @@ export interface IFaturaCliente {
   DAT_NASC?: string;
   STATUS?: string;
   TELEFONE1?: string;
+  LOGIN_VALIDO?: string;
 }
 
 export interface IFaturaContrato {
@@ -63,11 +67,53 @@ export interface IFaturaContrato {
   SEN_PPPOE?: string;
 }
 
+export interface IProdutoResponse {
+  COD_PROD: number;
+  NOM_PROD: string;
+  VLR_PROD: number;
+  VLR_INSTL: number;
+  DESCR_PROD: string;
+  COD_POLICY: string;
+  QTD_MIN_LINH: number;
+  QTD_MIN_LINH_MOVEL: number;
+  IND_PJ: boolean;
+  IND_PF: boolean;
+  QTD_MAX_PARCL_INSTL: string;
+}
+
+export interface IProdutoConsultaResponse {
+  requisicao: IProdutoConsultaRequest | any;
+  retorno: IRetorno | any;
+  S2_PRODUTO: IProdutoResponse[] | any;
+}
+
 export interface IClientConsultaResponse {
   requisicao: IClientConsultaRequest | any;
   retorno: IRetorno | any;
   FAT_CLIENTE: IFaturaCliente | any;
   FAT_CONTRATO: IFaturaContrato[] | any;
+}
+
+export interface IClientLoginResponse {
+  requisicao: IClientLoginRequest | any;
+  retorno: IRetorno | any;
+  FAT_CLIENTE: IFaturaCliente | any;
+}
+
+export interface IClientCadastrarContratoResponse {
+  CODIGO_CONTRATO?: number;
+  retorno?: string;
+  InstalacaoAgendados?: string;
+  InstalacaoPeriodo?: string;
+  Observacao?: string;
+}
+
+export interface IClientCadastrarVindiResponse {
+  requisicao: IClientCadastrarVindiRequest | any;
+  retorno: IRetorno | any;
+  COD_CLIE?: number;
+  ID_CLIENTE_VINDI?: string;
+  ID_CARTAO_VINDI?: number;
 }
 
 interface IRequisicaoClientAtualizarResponse {
@@ -171,6 +217,50 @@ export interface ITituloConsultaResponse {
 export interface IVencimentosConsultResponse {
   retorno: IRetorno;
   parametro: string;
+}
+
+export interface IValidarViabilidadeKmlResponse {
+  endereco_Formatado?: string;
+  Code?: number;
+  Message?: string;
+  PossuiViabilidade?: boolean;
+  PossuiViabilidadeMPE?: boolean;
+  ViabilidadeNaCidade?: boolean;
+  CepComMaisDeUmLogradouro?: boolean;
+  End_Logradouro?: string;
+  End_Numero?: number;
+  End_Bairro?: string;
+  End_Cidade?: string;
+  End_Estado?: string;
+  End_Cep?: string;
+  Latitude?: number;
+  Longitude?: number;
+  PossuiBloqueioDeVenda?: string;
+}
+
+export interface IValidarEmailResponse {
+  pEMAIL?: string;
+  sEMAIL_SCORE?: number;
+  sFLAG_FORMAT_VALID?: boolean;
+  sFLAG_MX_FOUND?: boolean;
+  sFLAG_SMTP_CHECK?: boolean;
+  s_email_valido?: string;
+}
+
+export interface IValidarTelefoneResponse {
+  TELEFONE?: string;
+  ObjetoWebService_NOM_USUR?: string;
+  ObjetoWebService_COD_USUR?: number;
+  ObjetoWebService_IP?: string;
+  s_code?: string;
+  s_message?: string;
+  s_formato_valido?: string;
+  s_base_portabilidade?: string;
+  s_base_cadup?: string;
+  s_operadora_nome?: string;
+  s_telefone_cnl?: string;
+  s_telefone_cidade?: string;
+  s_telefone_valido?: string;
 }
 
 export interface IRetornoTituloCadastrar extends IRetorno {

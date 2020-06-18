@@ -39,6 +39,7 @@ export default class Titulo extends Resource {
 
   public async consulta({
     COD_CNTR,
+    COD_CNTR_TITL,
     COD_CLIE,
     COD_STAT_TITL,
     DAT_VENC_INICIAL,
@@ -51,6 +52,7 @@ export default class Titulo extends Resource {
       params: { sNomeProc: 'FITTELECOM_CONTRATO_CONSULTAR_TITULO' },
       data: {
         COD_CNTR,
+        COD_CNTR_TITL,
         COD_CLIE,
         COD_STAT_TITL,
         DAT_VENC_INICIAL,

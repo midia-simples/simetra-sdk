@@ -2,11 +2,17 @@ import Resource from './Resource';
 import {
   IClientAtualizarResponse,
   IClientConsultaResponse,
+  IClientCadastrarContratoResponse,
+  IClientLoginResponse,
+  IClientCadastrarVindiResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
   IClientAtualizarRequest,
   IClientConsultaRequest,
+  IClientCadastrarContratoRequest,
+  IClientLoginRequest,
+  IClientCadastrarVindiRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -23,6 +29,132 @@ export default class Cliente extends Resource {
       params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR' },
       data: {
         CNPJ_CPF_CLIE,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async login({
+    CNPJ_CPF_CLIE,
+    ASSINANTE_SENHA,
+  }: IClientLoginRequest): Promise<IClientLoginResponse | any> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CLIENTE_LOGIN' },
+      data: {
+        CNPJ_CPF_CLIE,
+        ASSINANTE_SENHA,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async cadastrarContrato({
+    Cpf,
+    Nome,
+    Rg,
+    NomePai,
+    NomeMae,
+    DataNascimento,
+    Cep,
+    Logradouro,
+    Numero,
+    Complemento,
+    Bairro,
+    Cidade,
+    Uf,
+    DddTelefone,
+    NumeroTelefone,
+    DddCelular,
+    NumeroCelular,
+    Email,
+    Cod_prod,
+    Parc_instalacao,
+    Dia_Vencimento,
+    FormaPagto,
+    COD_BANCO,
+    TIPOCONTA,
+    AGENCIA,
+    Conta,
+    dvConta,
+    DataInstalacao,
+    PeriodoInstalacao,
+    fixo,
+    movel,
+  }: IClientCadastrarContratoRequest): Promise<
+    IClientCadastrarContratoResponse | any
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CLIENTE_CADASTRAR_CONTRATO' },
+      data: {
+        Cpf,
+        Nome,
+        Rg,
+        NomePai,
+        NomeMae,
+        DataNascimento,
+        Cep,
+        Logradouro,
+        Numero,
+        Complemento,
+        Bairro,
+        Cidade,
+        Uf,
+        DddTelefone,
+        NumeroTelefone,
+        DddCelular,
+        NumeroCelular,
+        Email,
+        Cod_prod,
+        Parc_instalacao,
+        Dia_Vencimento,
+        FormaPagto,
+        COD_BANCO,
+        TIPOCONTA,
+        AGENCIA,
+        Conta,
+        dvConta,
+        DataInstalacao,
+        PeriodoInstalacao,
+        fixo,
+        movel,
+      },
+    });
+
+    return data;
+  }
+
+  public async cadastrarVindi({
+    CNPJ_CPF_CLIE,
+    nomeCartao,
+    dataValidadeCartao,
+    numeroCartao,
+    cvvCartao,
+    bandeiraCartao,
+  }: IClientCadastrarVindiRequest): Promise<
+    IClientCadastrarVindiResponse | any
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_VINDI_CARTAO_CADASTRAR' },
+      data: {
+        CNPJ_CPF_CLIE,
+        nomeCartao,
+        dataValidadeCartao,
+        numeroCartao,
+        cvvCartao,
+        bandeiraCartao,
       },
     });
 

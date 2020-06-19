@@ -128,6 +128,8 @@ export interface ITituloCadastrarRequest {
   COD_CNTR: string;
   DAT_VENC: string;
   VLR_TOTAL: string;
+  TIPO_DE_COBRANCA: 'ONU' | 'INSTALACAO';
+  FORMA_DE_PAGAMENTO: 'BOLETO' | 'CARTAO';
 }
 
 export interface ITituloDownloadRequest {

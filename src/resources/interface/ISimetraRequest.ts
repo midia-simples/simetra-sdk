@@ -128,6 +128,8 @@ export interface ITituloCadastrarRequest {
   COD_CNTR: string;
   DAT_VENC: string;
   VLR_TOTAL: string;
+  TIPO_DE_COBRANCA: string;
+  FORMA_DE_PAGAMENTO: string;
 }
 
 export interface ITituloDownloadRequest {

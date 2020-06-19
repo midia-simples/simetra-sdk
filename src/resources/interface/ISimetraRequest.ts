@@ -128,9 +128,18 @@ export interface ITituloCadastrarRequest {
   COD_CNTR: string;
   DAT_VENC: string;
   VLR_TOTAL: string;
+  TIPO_DE_COBRANCA: string;
+  FORMA_DE_PAGAMENTO: string;
 }
 
 export interface ITituloDownloadRequest {
   COD_CNTR_TITL: string;
   COD_ARQ_DOC: string;
+}
+
+export interface IContratoCadastrarAnexoRequest {
+  COD_CNTR: string;
+  SEQ_CONTRATO_ANEXO_TIPO: string;
+  ANEXO_BUFFER: string;
+  ANEXO_NOME: string;
 }

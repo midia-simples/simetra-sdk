@@ -21,13 +21,21 @@ export default class Titulo extends Resource {
 
   public async cadastrar({
     COD_CNTR,
+    TIPO_DE_COBRANCA,
+    FORMA_DE_PAGAMENTO,
     DAT_VENC,
     VLR_TOTAL,
   }: ITituloCadastrarRequest): Promise<ITituloCadastrarResponse | any> {
     const { data } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_TITULO' },
-      data: { COD_CNTR, DAT_VENC, VLR_TOTAL },
+      data: {
+        COD_CNTR,
+        TIPO_DE_COBRANCA,
+        FORMA_DE_PAGAMENTO,
+        DAT_VENC,
+        VLR_TOTAL,
+      },
     });
 
     if (!(data.retorno.codigo === '0')) {

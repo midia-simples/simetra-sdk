@@ -6,6 +6,7 @@ import Titulo from './resources/Titulo';
 import Vencimentos from './resources/Vencimentos';
 import Produto from './resources/Produto';
 import Validar from './resources/Validar';
+import Contrato from './resources/Contrato';
 
 /**
  * Exemplo uso da SDK
@@ -65,5 +66,9 @@ export default class SimetraSdk {
 
   get Validar(): Validar {
     return new Validar(this.config);
+  }
+
+  get Contrato(): Contrato {
+    return new Contrato(this.config);
   }
 }

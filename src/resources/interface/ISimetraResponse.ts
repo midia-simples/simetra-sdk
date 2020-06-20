@@ -332,3 +332,15 @@ export interface IContratoCadastrarAnexoResponse {
   };
   retorno: IRetorno;
 }
+
+export interface IContratoDesbloquearResponse {
+  requisicao: {
+    COD_CNTR: string;
+    MOTIVO_DESBLOQUEIO: string;
+  };
+
+  retorno: {
+    codigo: string;
+    mensagem: string;
+  };
+}

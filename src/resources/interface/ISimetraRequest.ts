@@ -143,3 +143,7 @@ export interface IContratoCadastrarAnexoRequest {
   ANEXO_BUFFER: string;
   ANEXO_NOME: string;
 }
+
+export interface IContratoDesbloquearRequest {
+  COD_CNTR: number;
+}

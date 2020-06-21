@@ -23,10 +23,12 @@ jobs:
         uses: bahmutov/npm-install@v1
       - name: Build docs
         run: yarn run docs
+      - name: Build
+        run: yarn run build
       - name: Stage changes
         run: git add -A
       - name: Commit changes
-        run: git commit -m "Updated docs"
+        run: git commit -m "Updated docs and build"
       - name: Push
         run: git push
 

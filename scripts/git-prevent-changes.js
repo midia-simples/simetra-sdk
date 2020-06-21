@@ -3,3 +3,6 @@ const { exec } = require("shelljs")
 
 exec("git add src/simetra-sdk-DEV.ts")
 exec("git checkout HEAD -- src/simetra-sdk-DEV.ts")
+
+exec("git add dist")
+exec("git checkout HEAD -- dist")

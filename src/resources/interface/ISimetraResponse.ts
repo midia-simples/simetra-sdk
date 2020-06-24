@@ -6,6 +6,7 @@ import {
   ITituloCadastrarRequest,
   ITituloQuitarRequest,
   ITituloDownloadRequest,
+  IClientConsultaCadastroVindiRequest,
 } from './ISimetraRequest';
 
 export interface IRetorno {
@@ -114,6 +115,18 @@ export interface IClientCadastrarVindiResponse {
   COD_CLIE?: number;
   ID_CLIENTE_VINDI?: string;
   ID_CARTAO_VINDI?: number;
+}
+
+export interface IClientConsultaCadastroVindiResponse {
+  requisicao: IClientConsultaCadastroVindiRequest | any;
+  retorno: IRetorno | any;
+  COD_CLIE?: number;
+  ID_CLIENTE_VINDI?: string;
+  ID_CARTAO_VINDI?: number;
+  CARTAO_NOME?: string;
+  CARTAO_NRO?: string;
+  CARTAO_BANDEIRA?: string;
+  CARTAO_DATA_VALIDADE?: string;
 }
 
 interface IRequisicaoClientAtualizarResponse {

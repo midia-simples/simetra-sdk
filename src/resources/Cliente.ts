@@ -5,6 +5,7 @@ import {
   IClientCadastrarContratoResponse,
   IClientLoginResponse,
   IClientCadastrarVindiResponse,
+  IClientConsultaCadastroVindiResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -13,6 +14,7 @@ import {
   IClientCadastrarContratoRequest,
   IClientLoginRequest,
   IClientCadastrarVindiRequest,
+  IClientConsultaCadastroVindiRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -155,6 +157,26 @@ export default class Cliente extends Resource {
         numeroCartao,
         cvvCartao,
         bandeiraCartao,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async consultaCadastroVindi({
+    CNPJ_CPF_CLIE,
+  }: IClientConsultaCadastroVindiRequest): Promise<
+    IClientConsultaCadastroVindiResponse | any
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_VINDI_CONSULTAR_CADASTRO' },
+      data: {
+        CNPJ_CPF_CLIE,
       },
     });
 

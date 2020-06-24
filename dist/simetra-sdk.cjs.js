@@ -3443,6 +3443,29 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.consultaCadastroVindi = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_VINDI_CONSULTAR_CADASTRO' },
+                            data: {
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     Cliente.prototype.atualizar = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, COD_CLIE = _a.COD_CLIE, EMAIL = _a.EMAIL, TELEFONE1 = _a.TELEFONE1, TELEFONE2 = _a.TELEFONE2, TELEFONE3 = _a.TELEFONE3, TELEFONE4 = _a.TELEFONE4;
         return __awaiter(this, void 0, void 0, function () {

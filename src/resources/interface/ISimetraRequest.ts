@@ -58,10 +58,6 @@ export interface IClientConsultaCadastroVindiRequest {
   CNPJ_CPF_CLIE: string;
 }
 
-export interface IClientConsultaCadastroVindiRequest {
-  CNPJ_CPF_CLIE: string;
-}
-
 export interface IClientAtualizarRequest {
   CNPJ_CPF_CLIE: string;
   COD_CLIE: string;

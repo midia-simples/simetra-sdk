@@ -151,3 +151,7 @@ export interface IContratoCadastrarAnexoRequest {
 export interface IContratoDesbloquearRequest {
   COD_CNTR: number;
 }
+
+export interface IAtendimentoConsultaRequest {
+  PROTOCOLO: string;
+}

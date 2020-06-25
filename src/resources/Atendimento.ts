@@ -2,17 +2,37 @@ import Resource from './Resource';
 import {
   IAtendimentoCadastrarResponse,
   IAtendimentoDelegarResponse,
+  IAteendimentoConsultaResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
   IAtendimentoCadastrarRequest,
   IAtendimentoDelegarRequest,
+  IAtendimentoConsultaRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
 export default class Atendimento extends Resource {
   constructor(config: IConfig) {
     super(config);
+  }
+
+  public async consulta({
+    PROTOCOLO,
+  }: IAtendimentoConsultaRequest): Promise<
+    IAteendimentoConsultaResponse | any
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },
+      data: { PROTOCOLO },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
   }
 
   public async cadastrar({

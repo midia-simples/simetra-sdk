@@ -357,3 +357,26 @@ export interface IContratoDesbloquearResponse {
     mensagem: string;
   };
 }
+
+export interface IAtendimentoS2ChamadoConsultaResponse {
+  SEQ_CHAMADO: number;
+  NUM_PROTOCOLO_ATENDIMENTO: string;
+  DES_CHAMADO_FLUXO: string;
+  POP_IP: string;
+  POP_NOME: string;
+  ENDER_BAIR_NOM: string;
+  ENDER_CDE_NOM: string;
+  ENDER_UF: string;
+  ENLACE_DETALHE: string;
+  DAT_SOLICITACAO: string;
+  DES_CHAMADO_STATUS: string;
+  AUDIT_DAT_ALTER: string;
+  NRO_CIRCUITOS_VINCULADOS: number;
+}
+export interface IAtendimentoConsultaResponse {
+  requisicao: {
+    PROTOCOLO: string;
+  };
+  retorno: IRetorno;
+  S2_CHAMADO: IAtendimentoS2ChamadoConsultaResponse[];
+}

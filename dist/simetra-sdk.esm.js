@@ -3499,6 +3499,27 @@ var Atendimento = /** @class */ (function (_super) {
     function Atendimento(config) {
         return _super.call(this, config) || this;
     }
+    Atendimento.prototype.consulta = function (_a) {
+        var PROTOCOLO = _a.PROTOCOLO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },
+                            data: { PROTOCOLO: PROTOCOLO },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     Atendimento.prototype.cadastrar = function (_a) {
         var COD_CNTR = _a.COD_CNTR, COD_CNTR_ITEM = _a.COD_CNTR_ITEM, COD_CHAMADO_FLUXO = _a.COD_CHAMADO_FLUXO, TELEFONE1 = _a.TELEFONE1, TELEFONE2 = _a.TELEFONE2, DES_SOLICITANTE_EMAIL = _a.DES_SOLICITANTE_EMAIL, DES_SOLICITACAO = _a.DES_SOLICITACAO;
         return __awaiter(this, void 0, void 0, function () {

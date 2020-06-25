@@ -2,7 +2,7 @@ import Resource from './Resource';
 import {
   IAtendimentoCadastrarResponse,
   IAtendimentoDelegarResponse,
-  IAteendimentoConsultaResponse,
+  IAtendimentoConsultaResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -19,9 +19,7 @@ export default class Atendimento extends Resource {
 
   public async consulta({
     PROTOCOLO,
-  }: IAtendimentoConsultaRequest): Promise<
-    IAteendimentoConsultaResponse | any
-  > {
+  }: IAtendimentoConsultaRequest): Promise<IAtendimentoConsultaResponse | any> {
     const { data } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },

@@ -358,7 +358,7 @@ export interface IContratoDesbloquearResponse {
   };
 }
 
-export interface Is2Chamado {
+export interface IAtendimentoS2ChamadoConsultaResponse {
   SEQ_CHAMADO: number;
   NUM_PROTOCOLO_ATENDIMENTO: string;
   DES_CHAMADO_FLUXO: string;
@@ -373,10 +373,10 @@ export interface Is2Chamado {
   AUDIT_DAT_ALTER: string;
   NRO_CIRCUITOS_VINCULADOS: number;
 }
-export interface IAteendimentoConsultaResponse {
+export interface IAtendimentoConsultaResponse {
   requisicao: {
     PROTOCOLO: string;
   };
   retorno: IRetorno;
-  S2_CHAMADO: Is2Chamado[];
+  S2_CHAMADO: IAtendimentoS2ChamadoConsultaResponse[];
 }

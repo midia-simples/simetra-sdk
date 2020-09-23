@@ -3,7 +3,8 @@ export interface IProdutoConsultaRequest {
 }
 
 export interface IClientConsultaRequest {
-  CNPJ_CPF_CLIE: string;
+  CNPJ_CPF_CLIE?: string;
+  COD_CNTR?: string;
 }
 
 export interface IClientLoginRequest {

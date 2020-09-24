@@ -3319,20 +3319,21 @@ var Cliente = /** @class */ (function (_super) {
         return _super.call(this, config) || this;
     }
     Cliente.prototype.consulta = function (_a) {
-        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
+        var _b = _a.CNPJ_CPF_CLIE, CNPJ_CPF_CLIE = _b === void 0 ? undefined : _b, _c = _a.COD_CNTR, COD_CNTR = _c === void 0 ? undefined : _c;
         return __awaiter(this, void 0, void 0, function () {
             var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            return __generator(this, function (_d) {
+                switch (_d.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR' },
                             data: {
                                 CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                COD_CNTR: COD_CNTR,
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        data = (_d.sent()).data;
                         if (!(data.retorno.codigo === '0')) {
                             throw new SimetraError(data.retorno.mensagem);
                         }

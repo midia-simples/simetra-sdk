@@ -24,13 +24,15 @@ export default class Cliente extends Resource {
   }
 
   public async consulta({
-    CNPJ_CPF_CLIE,
+    CNPJ_CPF_CLIE = undefined,
+    COD_CNTR = undefined,
   }: IClientConsultaRequest): Promise<IClientConsultaResponse | any> {
     const { data } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR' },
       data: {
         CNPJ_CPF_CLIE,
+        COD_CNTR,
       },
     });
 

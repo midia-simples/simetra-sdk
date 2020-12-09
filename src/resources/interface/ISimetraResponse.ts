@@ -70,6 +70,9 @@ export interface IFaturaContrato {
   NUM_PON?: string;
   USUR_PPPOE?: string;
   SEN_PPPOE?: string;
+  DATA_LIMITE_DE_PAGAMENTO?: string;
+  RETORNO_CODIGO?: string;
+  RETORNO_MENSAGEM?: string;
 }
 
 export interface IProdutoResponse {

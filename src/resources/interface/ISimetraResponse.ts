@@ -1,4 +1,8 @@
 import {
+  IHabilitacaoProvisoriaDesbloquearRequest,
+  IHabilitacaoProvisoriaConsultaRequest,
+} from './ISimetraRequest';
+import {
   IClientConsultaRequest,
   IProdutoConsultaRequest,
   IClientLoginRequest,
@@ -382,13 +386,13 @@ export interface IAtendimentoConsultaResponse {
 }
 
 export interface IHabilitacaoProvisoriaConsultaResponse {
-  requisicao: IClientLoginRequest | any;
+  requisicao: IHabilitacaoProvisoriaConsultaRequest | any;
   retorno: IRetorno | any;
   FAT_CONTRATO: IFaturaContrato[] | any;
 }
 
 export interface IHabilitacaoProvisoriaDesbloquearResponse {
-  requisicao: IClientLoginRequest | any;
+  requisicao: IHabilitacaoProvisoriaDesbloquearRequest | any;
   retorno: IRetorno | any;
   FAT_CONTRATO: IFaturaContrato[] | any;
 }

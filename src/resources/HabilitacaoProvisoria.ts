@@ -1,8 +1,14 @@
 import Resource from './Resource';
 import IConfig from './interface/IConfig';
 import SimetraError from './SimetraError';
-import { IHabilitacaoProvisoriaConsultaRequest, IHabilitacaoProvisoriaDesbloquearRequest } from './interface/ISimetraRequest';
-import { IHabilitacaoProvisoriaConsultaResponse, IHabilitacaoProvisoriaDesbloquearResponse } from './interface/ISimetraResponse';
+import {
+  IHabilitacaoProvisoriaConsultaRequest,
+  IHabilitacaoProvisoriaDesbloquearRequest,
+} from './interface/ISimetraRequest';
+import {
+  IHabilitacaoProvisoriaConsultaResponse,
+  IHabilitacaoProvisoriaDesbloquearResponse,
+} from './interface/ISimetraResponse';
 
 export default class HabilitacaoProvisoria extends Resource {
   constructor(config: IConfig) {
@@ -11,7 +17,9 @@ export default class HabilitacaoProvisoria extends Resource {
 
   public async consulta({
     CLIENTE_CNPJ_CPF,
-  }: IHabilitacaoProvisoriaConsultaRequest): Promise<IHabilitacaoProvisoriaConsultaResponse | any> {
+  }: IHabilitacaoProvisoriaConsultaRequest): Promise<
+    IHabilitacaoProvisoriaConsultaResponse | any
+  > {
     const { data } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_CONSULTAR' },
@@ -30,7 +38,9 @@ export default class HabilitacaoProvisoria extends Resource {
   public async desbloquear({
     CLIENTE_CNPJ_CPF,
     COD_CNTR,
-  }: IHabilitacaoProvisoriaDesbloquearRequest): Promise<IHabilitacaoProvisoriaDesbloquearResponse | any> {
+  }: IHabilitacaoProvisoriaDesbloquearRequest): Promise<
+    IHabilitacaoProvisoriaDesbloquearResponse | any
+  > {
     const { data } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'NETWORK_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
@@ -46,5 +56,4 @@ export default class HabilitacaoProvisoria extends Resource {
 
     return data;
   }
-
 }

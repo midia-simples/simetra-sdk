@@ -70,9 +70,6 @@ export interface IFaturaContrato {
   NUM_PON?: string;
   USUR_PPPOE?: string;
   SEN_PPPOE?: string;
-  DATA_LIMITE_DE_PAGAMENTO?: string;
-  RETORNO_CODIGO?: string;
-  RETORNO_MENSAGEM?: string;
 }
 
 export interface IProdutoResponse {
@@ -388,14 +385,33 @@ export interface IAtendimentoConsultaResponse {
   S2_CHAMADO: IAtendimentoS2ChamadoConsultaResponse[];
 }
 
+export interface IFaturaContratoDesbloquearHabilitacao {
+  COD_CNTR?: number;
+  DATA_LIMITE_DE_PAGAMENTO?: string;
+  RETORNO_CODIGO?: string;
+  RETORNO_MENSAGEM?: string;
+}
+
+export interface IFaturaContratoConsultaHabilitacao {
+  COD_CNTR?: number;
+  DESCR_STAT_CNTR?: string;
+  QTDE_PARCELA_SALDO_DEVEDOR?: number;
+  VLR_SALDO_DEVEDOR?: number;
+  USUR_PPPOE?: string;
+  QTDE_MARCADAS_COM_PROMESSA_DE_PAGAMENTO?: number;
+  DATA_LIMITE_DE_PAGAMENTO?: string;
+  RETORNO_CODIGO?: string;
+  RETORNO_MENSAGEM?: string;
+}
+
 export interface IHabilitacaoProvisoriaConsultaResponse {
   requisicao: IHabilitacaoProvisoriaConsultaRequest | any;
   retorno: IRetorno | any;
-  FAT_CONTRATO: IFaturaContrato[] | any;
+  FAT_CONTRATO: IFaturaContratoConsultaHabilitacao[] | any;
 }
 
 export interface IHabilitacaoProvisoriaDesbloquearResponse {
   requisicao: IHabilitacaoProvisoriaDesbloquearRequest | any;
   retorno: IRetorno | any;
-  FAT_CONTRATO: IFaturaContrato[] | any;
+  FAT_CONTRATO: IFaturaContratoDesbloquearHabilitacao[] | any;
 }

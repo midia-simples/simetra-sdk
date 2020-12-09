@@ -1,4 +1,4 @@
-import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest } from './ISimetraRequest';
+import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
     mensagem?: string;
@@ -97,6 +97,17 @@ export interface IClientCadastrarVindiResponse {
     COD_CLIE?: number;
     ID_CLIENTE_VINDI?: string;
     ID_CARTAO_VINDI?: number;
+}
+export interface IClientConsultaCadastroVindiResponse {
+    requisicao: IClientConsultaCadastroVindiRequest | any;
+    retorno: IRetorno | any;
+    COD_CLIE?: number;
+    ID_CLIENTE_VINDI?: string;
+    ID_CARTAO_VINDI?: number;
+    CARTAO_NOME?: string;
+    CARTAO_NRO?: string;
+    CARTAO_BANDEIRA?: string;
+    CARTAO_DATA_VALIDADE?: string;
 }
 interface IRequisicaoClientAtualizarResponse {
     CNPJ_CPF_CLIE?: string;
@@ -303,5 +314,27 @@ export interface IContratoDesbloquearResponse {
         codigo: string;
         mensagem: string;
     };
+}
+export interface IAtendimentoS2ChamadoConsultaResponse {
+    SEQ_CHAMADO: number;
+    NUM_PROTOCOLO_ATENDIMENTO: string;
+    DES_CHAMADO_FLUXO: string;
+    POP_IP: string;
+    POP_NOME: string;
+    ENDER_BAIR_NOM: string;
+    ENDER_CDE_NOM: string;
+    ENDER_UF: string;
+    ENLACE_DETALHE: string;
+    DAT_SOLICITACAO: string;
+    DES_CHAMADO_STATUS: string;
+    AUDIT_DAT_ALTER: string;
+    NRO_CIRCUITOS_VINCULADOS: number;
+}
+export interface IAtendimentoConsultaResponse {
+    requisicao: {
+        PROTOCOLO: string;
+    };
+    retorno: IRetorno;
+    S2_CHAMADO: IAtendimentoS2ChamadoConsultaResponse[];
 }
 export {};

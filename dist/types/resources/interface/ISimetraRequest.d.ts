@@ -2,7 +2,8 @@ export interface IProdutoConsultaRequest {
     TIPO_PRODUTO: string;
 }
 export interface IClientConsultaRequest {
-    CNPJ_CPF_CLIE: string;
+    CNPJ_CPF_CLIE?: string;
+    COD_CNTR?: string;
 }
 export interface IClientLoginRequest {
     CNPJ_CPF_CLIE: string;
@@ -48,6 +49,9 @@ export interface IClientCadastrarVindiRequest {
     numeroCartao: string;
     cvvCartao: string;
     bandeiraCartao: string;
+}
+export interface IClientConsultaCadastroVindiRequest {
+    CNPJ_CPF_CLIE: string;
 }
 export interface IClientAtualizarRequest {
     CNPJ_CPF_CLIE: string;
@@ -129,4 +133,7 @@ export interface IContratoCadastrarAnexoRequest {
 }
 export interface IContratoDesbloquearRequest {
     COD_CNTR: number;
+}
+export interface IAtendimentoConsultaRequest {
+    PROTOCOLO: string;
 }

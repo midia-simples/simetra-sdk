@@ -10,7 +10,7 @@ export default class HabilitacaoProvisoria extends Resource {
   }
 
   public async consulta({
-    CLIENTE_CNPJ_CPF = undefined,
+    CLIENTE_CNPJ_CPF,
   }: IHabilitacaoProvisoriaConsultaRequest): Promise<IHabilitacaoProvisoriaConsultaResponse | any> {
     const { data } = await this.callApi({
       method: 'post',
@@ -28,8 +28,8 @@ export default class HabilitacaoProvisoria extends Resource {
   }
 
   public async desbloquear({
-    CLIENTE_CNPJ_CPF = undefined,
-    COD_CNTR = undefined,
+    CLIENTE_CNPJ_CPF,
+    COD_CNTR,
   }: IHabilitacaoProvisoriaDesbloquearRequest): Promise<IHabilitacaoProvisoriaDesbloquearResponse | any> {
     const { data } = await this.callApi({
       method: 'post',

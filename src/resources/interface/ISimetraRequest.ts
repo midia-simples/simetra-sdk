@@ -158,10 +158,10 @@ export interface IAtendimentoConsultaRequest {
 }
 
 export interface IHabilitacaoProvisoriaConsultaRequest {
-  CLIENTE_CNPJ_CPF?: string;
+  CLIENTE_CNPJ_CPF: string;
 }
 
 export interface IHabilitacaoProvisoriaDesbloquearRequest {
-  CLIENTE_CNPJ_CPF?: string;
-  COD_CNTR?: string;
+  CLIENTE_CNPJ_CPF: string;
+  COD_CNTR: string;
 }

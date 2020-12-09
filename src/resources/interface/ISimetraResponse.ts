@@ -380,3 +380,15 @@ export interface IAtendimentoConsultaResponse {
   retorno: IRetorno;
   S2_CHAMADO: IAtendimentoS2ChamadoConsultaResponse[];
 }
+
+export interface IHabilitacaoProvisoriaConsultaResponse {
+  requisicao: IClientLoginRequest | any;
+  retorno: IRetorno | any;
+  FAT_CONTRATO: IFaturaContrato[] | any;
+}
+
+export interface IHabilitacaoProvisoriaDesbloquearResponse {
+  requisicao: IClientLoginRequest | any;
+  retorno: IRetorno | any;
+  FAT_CONTRATO: IFaturaContrato[] | any;
+}

@@ -7,6 +7,7 @@ import Vencimentos from './resources/Vencimentos';
 import Produto from './resources/Produto';
 import Validar from './resources/Validar';
 import Contrato from './resources/Contrato';
+import HabilitacaoProvisoria from './resources/HabilitacaoProvisoria';
 
 /**
  * Exemplo uso da SDK
@@ -70,5 +71,9 @@ export default class SimetraSdk {
 
   get Contrato(): Contrato {
     return new Contrato(this.config);
+  }
+
+  get HabilitacaoProvisoria(): HabilitacaoProvisoria {
+    return new HabilitacaoProvisoria(this.config);
   }
 }

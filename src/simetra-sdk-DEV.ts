@@ -12,9 +12,11 @@ dotenv.config({
       senha: process.env.SIMETRA_SENHA || '',
       baseURI: process.env.SIMETRA_BASE_URL || '',
     });
-    const r = await simetraLib.Cliente.consulta({
-      CNPJ_CPF_CLIE: '',
+
+    const r = await simetraLib.HabilitacaoProvisoria.consulta({
+      CLIENTE_CNPJ_CPF: '51755451830',
     });
+
     // eslint-disable-next-line no-console
     console.log(r);
   } catch (e) {

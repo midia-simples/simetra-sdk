@@ -1,3 +1,4 @@
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -336,5 +337,32 @@ export interface IAtendimentoConsultaResponse {
     };
     retorno: IRetorno;
     S2_CHAMADO: IAtendimentoS2ChamadoConsultaResponse[];
+}
+export interface IFaturaContratoDesbloquearHabilitacao {
+    COD_CNTR?: number;
+    DATA_LIMITE_DE_PAGAMENTO?: string;
+    RETORNO_CODIGO?: string;
+    RETORNO_MENSAGEM?: string;
+}
+export interface IFaturaContratoConsultaHabilitacao {
+    COD_CNTR?: number;
+    DESCR_STAT_CNTR?: string;
+    QTDE_PARCELA_SALDO_DEVEDOR?: number;
+    VLR_SALDO_DEVEDOR?: number;
+    USUR_PPPOE?: string;
+    QTDE_MARCADAS_COM_PROMESSA_DE_PAGAMENTO?: number;
+    DATA_LIMITE_DE_PAGAMENTO?: string;
+    RETORNO_CODIGO?: string;
+    RETORNO_MENSAGEM?: string;
+}
+export interface IHabilitacaoProvisoriaConsultaResponse {
+    requisicao: IHabilitacaoProvisoriaConsultaRequest | any;
+    retorno: IRetorno | any;
+    FAT_CONTRATO: IFaturaContratoConsultaHabilitacao[] | any;
+}
+export interface IHabilitacaoProvisoriaDesbloquearResponse {
+    requisicao: IHabilitacaoProvisoriaDesbloquearRequest | any;
+    retorno: IRetorno | any;
+    FAT_CONTRATO: IFaturaContratoDesbloquearHabilitacao[] | any;
 }
 export {};

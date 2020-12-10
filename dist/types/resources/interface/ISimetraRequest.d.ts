@@ -137,3 +137,10 @@ export interface IContratoDesbloquearRequest {
 export interface IAtendimentoConsultaRequest {
     PROTOCOLO: string;
 }
+export interface IHabilitacaoProvisoriaConsultaRequest {
+    CLIENTE_CNPJ_CPF: string;
+}
+export interface IHabilitacaoProvisoriaDesbloquearRequest {
+    CLIENTE_CNPJ_CPF: string;
+    COD_CNTR: string;
+}

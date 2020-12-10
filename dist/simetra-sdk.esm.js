@@ -3918,6 +3918,61 @@ var Contrato = /** @class */ (function (_super) {
     return Contrato;
 }(Resource));
 
+var HabilitacaoProvisoria = /** @class */ (function (_super) {
+    __extends(HabilitacaoProvisoria, _super);
+    function HabilitacaoProvisoria(config) {
+        return _super.call(this, config) || this;
+    }
+    HabilitacaoProvisoria.prototype.consulta = function (_a) {
+        var CLIENTE_CNPJ_CPF = _a.CLIENTE_CNPJ_CPF;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_CONSULTAR' },
+                            data: {
+                                CLIENTE_CNPJ_CPF: CLIENTE_CNPJ_CPF,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    HabilitacaoProvisoria.prototype.desbloquear = function (_a) {
+        var CLIENTE_CNPJ_CPF = _a.CLIENTE_CNPJ_CPF, COD_CNTR = _a.COD_CNTR;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'NETWORK_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
+                            data: {
+                                CLIENTE_CNPJ_CPF: CLIENTE_CNPJ_CPF,
+                                COD_CNTR: COD_CNTR,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    return HabilitacaoProvisoria;
+}(Resource));
+
 /**
  * Exemplo uso da SDK
  *
@@ -3999,6 +4054,13 @@ var SimetraSdk = /** @class */ (function () {
     Object.defineProperty(SimetraSdk.prototype, "Contrato", {
         get: function () {
             return new Contrato(this.config);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(SimetraSdk.prototype, "HabilitacaoProvisoria", {
+        get: function () {
+            return new HabilitacaoProvisoria(this.config);
         },
         enumerable: false,
         configurable: true

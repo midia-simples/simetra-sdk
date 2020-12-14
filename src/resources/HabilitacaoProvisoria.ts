@@ -43,7 +43,7 @@ export default class HabilitacaoProvisoria extends Resource {
   > {
     const { data } = await this.callApi({
       method: 'post',
-      params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
+      params: { sNomeProc: 'NETWORK_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
       data: {
         CLIENTE_CNPJ_CPF,
         COD_CNTR,

@@ -13,8 +13,9 @@ dotenv.config({
       baseURI: process.env.SIMETRA_BASE_URL || '',
     });
 
-    const r = await simetraLib.HabilitacaoProvisoria.consulta({
+    const r = await simetraLib.HabilitacaoProvisoria.desbloquear({
       CLIENTE_CNPJ_CPF: '51755451830',
+      COD_CNTR: 350348,
     });
 
     // eslint-disable-next-line no-console

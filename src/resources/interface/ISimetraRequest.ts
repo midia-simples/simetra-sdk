@@ -163,5 +163,5 @@ export interface IHabilitacaoProvisoriaConsultaRequest {
 
 export interface IHabilitacaoProvisoriaDesbloquearRequest {
   CLIENTE_CNPJ_CPF: string;
-  COD_CNTR: string;
+  COD_CNTR: number;
 }

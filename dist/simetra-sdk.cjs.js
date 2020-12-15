@@ -2,6 +2,9 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var fs = _interopDefault(require('fs'));
+var path = require('path');
+var path__default = _interopDefault(path);
 var http = _interopDefault(require('http'));
 var https = _interopDefault(require('https'));
 var url = _interopDefault(require('url'));
@@ -89,6 +92,125 @@ function __generator(thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 }
+
+/* @flow */
+/*::
+
+type DotenvParseOptions = {
+  debug?: boolean
+}
+
+// keys and values from src
+type DotenvParseOutput = { [string]: string }
+
+type DotenvConfigOptions = {
+  path?: string, // path to .env file
+  encoding?: string, // encoding of .env file
+  debug?: string // turn on logging for debugging purposes
+}
+
+type DotenvConfigOutput = {
+  parsed?: DotenvParseOutput,
+  error?: Error
+}
+
+*/
+
+
+
+
+function log (message /*: string */) {
+  console.log(`[dotenv][DEBUG] ${message}`);
+}
+
+const NEWLINE = '\n';
+const RE_INI_KEY_VAL = /^\s*([\w.-]+)\s*=\s*(.*)?\s*$/;
+const RE_NEWLINES = /\\n/g;
+const NEWLINES_MATCH = /\n|\r|\r\n/;
+
+// Parses src into an Object
+function parse (src /*: string | Buffer */, options /*: ?DotenvParseOptions */) /*: DotenvParseOutput */ {
+  const debug = Boolean(options && options.debug);
+  const obj = {};
+
+  // convert Buffers before splitting into lines and processing
+  src.toString().split(NEWLINES_MATCH).forEach(function (line, idx) {
+    // matching "KEY' and 'VAL' in 'KEY=VAL'
+    const keyValueArr = line.match(RE_INI_KEY_VAL);
+    // matched?
+    if (keyValueArr != null) {
+      const key = keyValueArr[1];
+      // default undefined or missing values to empty string
+      let val = (keyValueArr[2] || '');
+      const end = val.length - 1;
+      const isDoubleQuoted = val[0] === '"' && val[end] === '"';
+      const isSingleQuoted = val[0] === "'" && val[end] === "'";
+
+      // if single or double quoted, remove quotes
+      if (isSingleQuoted || isDoubleQuoted) {
+        val = val.substring(1, end);
+
+        // if double quoted, expand newlines
+        if (isDoubleQuoted) {
+          val = val.replace(RE_NEWLINES, NEWLINE);
+        }
+      } else {
+        // remove surrounding whitespace
+        val = val.trim();
+      }
+
+      obj[key] = val;
+    } else if (debug) {
+      log(`did not match key and value when parsing line ${idx + 1}: ${line}`);
+    }
+  });
+
+  return obj
+}
+
+// Populates process.env from .env file
+function config (options /*: ?DotenvConfigOptions */) /*: DotenvConfigOutput */ {
+  let dotenvPath = path__default.resolve(process.cwd(), '.env');
+  let encoding /*: string */ = 'utf8';
+  let debug = false;
+
+  if (options) {
+    if (options.path != null) {
+      dotenvPath = options.path;
+    }
+    if (options.encoding != null) {
+      encoding = options.encoding;
+    }
+    if (options.debug != null) {
+      debug = true;
+    }
+  }
+
+  try {
+    // specifying an encoding returns a string instead of a buffer
+    const parsed = parse(fs.readFileSync(dotenvPath, { encoding }), { debug });
+
+    Object.keys(parsed).forEach(function (key) {
+      if (!Object.prototype.hasOwnProperty.call(process.env, key)) {
+        process.env[key] = parsed[key];
+      } else if (debug) {
+        log(`"${key}" is already defined in \`process.env\` and will not be overwritten`);
+      }
+    });
+
+    return { parsed }
+  } catch (e) {
+    return { error: e }
+  }
+}
+
+var config_1 = config;
+var parse_1 = parse;
+
+var main = {
+	config: config_1,
+	parse: parse_1
+};
 
 var bind = function bind(fn, thisArg) {
   return function wrap() {
@@ -1080,7 +1202,7 @@ var ms = function(val, options) {
   options = options || {};
   var type = typeof val;
   if (type === 'string' && val.length > 0) {
-    return parse(val);
+    return parse$1(val);
   } else if (type === 'number' && isNaN(val) === false) {
     return options.long ? fmtLong(val) : fmtShort(val);
   }
@@ -1098,7 +1220,7 @@ var ms = function(val, options) {
  * @api private
  */
 
-function parse(str) {
+function parse$1(str) {
   str = String(str);
   if (str.length > 100) {
     return;
@@ -2321,7 +2443,7 @@ followRedirects.wrap = wrap_1;
 var name = "axios";
 var version = "0.19.2";
 var description = "Promise based HTTP client for the browser and node.js";
-var main = "index.js";
+var main$1 = "index.js";
 var scripts = {
 	test: "grunt test && bundlesize",
 	start: "node ./sandbox/server.js",
@@ -2404,7 +2526,7 @@ var _package = {
 	name: name,
 	version: version,
 	description: description,
-	main: main,
+	main: main$1,
 	scripts: scripts,
 	repository: repository,
 	keywords: keywords,
@@ -2424,7 +2546,7 @@ var _package$1 = /*#__PURE__*/Object.freeze({
     name: name,
     version: version,
     description: description,
-    main: main,
+    main: main$1,
     scripts: scripts,
     repository: repository,
     keywords: keywords,
@@ -3922,6 +4044,61 @@ var Contrato = /** @class */ (function (_super) {
     return Contrato;
 }(Resource));
 
+var HabilitacaoProvisoria = /** @class */ (function (_super) {
+    __extends(HabilitacaoProvisoria, _super);
+    function HabilitacaoProvisoria(config) {
+        return _super.call(this, config) || this;
+    }
+    HabilitacaoProvisoria.prototype.consulta = function (_a) {
+        var CLIENTE_CNPJ_CPF = _a.CLIENTE_CNPJ_CPF;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_CONSULTAR' },
+                            data: {
+                                CLIENTE_CNPJ_CPF: CLIENTE_CNPJ_CPF,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    HabilitacaoProvisoria.prototype.desbloquear = function (_a) {
+        var CLIENTE_CNPJ_CPF = _a.CLIENTE_CNPJ_CPF, COD_CNTR = _a.COD_CNTR;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
+                            data: {
+                                CLIENTE_CNPJ_CPF: CLIENTE_CNPJ_CPF,
+                                COD_CNTR: COD_CNTR,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    return HabilitacaoProvisoria;
+}(Resource));
+
 /**
  * Exemplo uso da SDK
  *
@@ -4007,8 +4184,46 @@ var SimetraSdk = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(SimetraSdk.prototype, "HabilitacaoProvisoria", {
+        get: function () {
+            return new HabilitacaoProvisoria(this.config);
+        },
+        enumerable: false,
+        configurable: true
+    });
     return SimetraSdk;
 }());
 
-module.exports = SimetraSdk;
+main.config({
+    path: path.join(__dirname, '../.env'),
+});
+(function () { return __awaiter(void 0, void 0, void 0, function () {
+    var simetraLib, r, e_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                simetraLib = new SimetraSdk({
+                    usuario: process.env.SIMETRA_USUARIO || '',
+                    senha: process.env.SIMETRA_SENHA || '',
+                    baseURI: process.env.SIMETRA_BASE_URL || '',
+                });
+                return [4 /*yield*/, simetraLib.HabilitacaoProvisoria.desbloquear({
+                        CLIENTE_CNPJ_CPF: '***REMOVED***',
+                        COD_CNTR: 350348,
+                    })];
+            case 1:
+                r = _a.sent();
+                // eslint-disable-next-line no-console
+                console.log(r);
+                return [3 /*break*/, 3];
+            case 2:
+                e_1 = _a.sent();
+                // eslint-disable-next-line no-console
+                console.log('err', e_1);
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
+        }
+    });
+}); })();
 //# sourceMappingURL=simetra-sdk.cjs.js.map

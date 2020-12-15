@@ -3954,7 +3954,7 @@ var HabilitacaoProvisoria = /** @class */ (function (_super) {
                 switch (_b.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
-                            params: { sNomeProc: 'NETWORK_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
+                            params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
                             data: {
                                 CLIENTE_CNPJ_CPF: CLIENTE_CNPJ_CPF,
                                 COD_CNTR: COD_CNTR,

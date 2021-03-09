@@ -2,11 +2,13 @@ import Resource from './Resource';
 import {
   IContratoCadastrarAnexoResponse,
   IContratoDesbloquearResponse,
+  IContratoConsultaLinhaMovelResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
   IContratoCadastrarAnexoRequest,
   IContratoDesbloquearRequest,
+  IContratoConsultaLinhaMovelRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 export default class Contrato extends Resource {
@@ -55,6 +57,28 @@ export default class Contrato extends Resource {
     if (!(data.retorno.codigo === '0')) {
       throw new SimetraError(data.retorno.mensagem);
     }
+
+    return data;
+  }
+
+  public async consultarContratoLinhaMovel({
+    COD_CNTR,
+    DATA_CONSUMO,
+    SEQ_LINHA,
+  }: IContratoConsultaLinhaMovelRequest): Promise<
+    IContratoConsultaLinhaMovelResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: {
+        sNomeProc: 'FITTELECOM_CONTRATO_CONSULTAR_CONSUMO_LINHA_MOVEL',
+      },
+      data: {
+        COD_CNTR,
+        DATA_CONSUMO,
+        SEQ_LINHA,
+      },
+    });
 
     return data;
   }

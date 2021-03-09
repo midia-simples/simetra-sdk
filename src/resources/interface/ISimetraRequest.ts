@@ -165,3 +165,9 @@ export interface IHabilitacaoProvisoriaDesbloquearRequest {
   CLIENTE_CNPJ_CPF: string;
   COD_CNTR: number;
 }
+
+export interface IContratoConsultaLinhaMovelRequest {
+  COD_CNTR: number;
+  SEQ_LINHA: number;
+  DATA_CONSUMO: string;
+}

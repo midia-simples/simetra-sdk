@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -364,5 +364,17 @@ export interface IHabilitacaoProvisoriaDesbloquearResponse {
     requisicao: IHabilitacaoProvisoriaDesbloquearRequest | any;
     retorno: IRetorno | any;
     FAT_CONTRATO: IFaturaContratoDesbloquearHabilitacao[] | any;
+}
+interface IExtratoContratoConsumoLinhaMovel {
+    Data: string;
+    Numero_SimCard: string;
+    Consumo_Segundos: number;
+    Consumo_Sms: number;
+    Consumo_Dados: number;
+}
+export interface IContratoConsultaLinhaMovelResponse {
+    requisicao: IContratoConsultaLinhaMovelRequest | any;
+    retorno: IRetorno | any;
+    extrato: IExtratoContratoConsumoLinhaMovel[];
 }
 export {};

@@ -2735,6 +2735,9 @@ img {
 					<a href="contrato.html#callapi" class="tsd-kind-icon">call<wbr>Api</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="contrato.html#consultarcontratolinhamovel" class="tsd-kind-icon">consultar<wbr>Contrato<wbr>Linha<wbr>Movel</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="contrato.html#desbloquear" class="tsd-kind-icon">desbloquear</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
@@ -2774,6 +2777,7 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="contrato.html#cadastraranexo" class="tsd-kind-icon">cadastrar<wbr>Anexo</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="contrato.html#callapi" class="tsd-kind-icon">call<wbr>Api</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="contrato.html#consultarcontratolinhamovel" class="tsd-kind-icon">consultar<wbr>Contrato<wbr>Linha<wbr>Movel</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="contrato.html#desbloquear" class="tsd-kind-icon">desbloquear</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="contrato.html#processresponse" class="tsd-kind-icon">process<wbr>Response</a></li>
 						</ul>
@@ -2794,7 +2798,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="resource.html">Resource</a>.<a href="resource.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Contrato.ts#L12">src/resources/Contrato.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/58780a2/src/resources/Contrato.ts#L14">src/resources/Contrato.ts:14</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2820,7 +2824,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Contrato.ts#L17">src/resources/Contrato.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/58780a2/src/resources/Contrato.ts#L19">src/resources/Contrato.ts:19</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2858,7 +2862,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#callapi">callApi</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Resource.ts#L49">src/resources/Resource.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/58780a2/src/resources/Resource.ts#L49">src/resources/Resource.ts:49</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2883,6 +2887,40 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="consultarcontratolinhamovel" class="tsd-anchor"></a>
+				<h3>consultar<wbr>Contrato<wbr>Linha<wbr>Movel</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">consultar<wbr>Contrato<wbr>Linha<wbr>Movel<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>COD_CNTR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>DATA_CONSUMO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>SEQ_LINHA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/icontratoconsultalinhamovelresponse.html" class="tsd-signature-type">IContratoConsultaLinhaMovelResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/58780a2/src/resources/Contrato.ts#L64">src/resources/Contrato.ts:64</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>COD_CNTR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>DATA_CONSUMO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>SEQ_LINHA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>CNTR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>DATA_<wbr>CONSUMO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>SEQ_<wbr>LINHA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/icontratoconsultalinhamovelresponse.html" class="tsd-signature-type">IContratoConsultaLinhaMovelResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="desbloquear" class="tsd-anchor"></a>
 				<h3>desbloquear</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -2892,7 +2930,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Contrato.ts#L43">src/resources/Contrato.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/58780a2/src/resources/Contrato.ts#L45">src/resources/Contrato.ts:45</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2921,7 +2959,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#processresponse">processResponse</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/58780a2/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

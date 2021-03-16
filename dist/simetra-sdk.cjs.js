@@ -3943,6 +3943,35 @@ var Contrato = /** @class */ (function (_super) {
             });
         });
     };
+    Contrato.prototype.trocarFormaPagamento = function (_a) {
+        var COD_CNTR = _a.COD_CNTR, FORM_PAGTO = _a.FORM_PAGTO, BANDEIRACARTAO = _a.BANDEIRACARTAO, CVVCARTAO = _a.CVVCARTAO, DATAVALIDADECARTAO = _a.DATAVALIDADECARTAO, NOMECARTAO = _a.NOMECARTAO, NUMEROCARTAO = _a.NUMEROCARTAO, IND_BOLETO_FISICO = _a.IND_BOLETO_FISICO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_FORMA_PAGAMENTO',
+                            },
+                            data: {
+                                COD_CNTR: COD_CNTR,
+                                FORM_PAGTO: FORM_PAGTO,
+                                BANDEIRACARTAO: BANDEIRACARTAO,
+                                CVVCARTAO: CVVCARTAO,
+                                DATAVALIDADECARTAO: DATAVALIDADECARTAO,
+                                NOMECARTAO: NOMECARTAO,
+                                NUMEROCARTAO: NUMEROCARTAO,
+                                IND_BOLETO_FISICO: IND_BOLETO_FISICO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Contrato;
 }(Resource));
 

@@ -149,3 +149,13 @@ export interface IContratoConsultaLinhaMovelRequest {
     SEQ_LINHA: number;
     DATA_CONSUMO: string;
 }
+export interface ITrocaFormaPagamentoRequest {
+    COD_CNTR: number;
+    FORM_PAGTO: string;
+    IND_BOLETO_FISICO?: number;
+    NOMECARTAO?: string;
+    DATAVALIDADECARTAO?: string;
+    NUMEROCARTAO?: string;
+    CVVCARTAO?: string;
+    BANDEIRACARTAO?: string;
+}

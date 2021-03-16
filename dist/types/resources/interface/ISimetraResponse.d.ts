@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -376,5 +376,9 @@ export interface IContratoConsultaLinhaMovelResponse {
     requisicao: IContratoConsultaLinhaMovelRequest | any;
     retorno: IRetorno | any;
     extrato: IExtratoContratoConsumoLinhaMovel[];
+}
+export interface ITrocaFormaPagamentoResponse {
+    retorno: IRetorno | any;
+    requisicao: ITrocaFormaPagamentoRequest | any;
 }
 export {};

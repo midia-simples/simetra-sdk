@@ -2,6 +2,7 @@ import {
   IHabilitacaoProvisoriaDesbloquearRequest,
   IHabilitacaoProvisoriaConsultaRequest,
   IContratoConsultaLinhaMovelRequest,
+  ITrocaFormaPagamentoRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -429,4 +430,9 @@ export interface IContratoConsultaLinhaMovelResponse {
   requisicao: IContratoConsultaLinhaMovelRequest | any;
   retorno: IRetorno | any;
   extrato: IExtratoContratoConsumoLinhaMovel[];
+}
+
+export interface ITrocaFormaPagamentoResponse {
+  retorno: IRetorno | any;
+  requisicao: ITrocaFormaPagamentoRequest | any;
 }

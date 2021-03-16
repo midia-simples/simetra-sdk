@@ -3,12 +3,14 @@ import {
   IContratoCadastrarAnexoResponse,
   IContratoDesbloquearResponse,
   IContratoConsultaLinhaMovelResponse,
+  ITrocaFormaPagamentoResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
   IContratoCadastrarAnexoRequest,
   IContratoDesbloquearRequest,
   IContratoConsultaLinhaMovelRequest,
+  ITrocaFormaPagamentoRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 export default class Contrato extends Resource {
@@ -77,6 +79,36 @@ export default class Contrato extends Resource {
         COD_CNTR,
         DATA_CONSUMO,
         SEQ_LINHA,
+      },
+    });
+
+    return data;
+  }
+
+  public async trocarFormaPagamento({
+    COD_CNTR,
+    FORM_PAGTO,
+    BANDEIRACARTAO,
+    CVVCARTAO,
+    DATAVALIDADECARTAO,
+    NOMECARTAO,
+    NUMEROCARTAO,
+    IND_BOLETO_FISICO,
+  }: ITrocaFormaPagamentoRequest): Promise<ITrocaFormaPagamentoResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: {
+        sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_FORMA_PAGAMENTO',
+      },
+      data: {
+        COD_CNTR,
+        FORM_PAGTO,
+        BANDEIRACARTAO,
+        CVVCARTAO,
+        DATAVALIDADECARTAO,
+        NOMECARTAO,
+        NUMEROCARTAO,
+        IND_BOLETO_FISICO,
       },
     });
 

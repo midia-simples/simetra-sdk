@@ -182,3 +182,9 @@ export interface ITrocaFormaPagamentoRequest {
   CVVCARTAO?: string;
   BANDEIRACARTAO?: string;
 }
+
+export interface IAlterarDiaDeVencimentoRequest {
+  CNPJ_CPF_CLIE: string;
+  COD_CNTR: number;
+  DIA_VENC: number;
+}

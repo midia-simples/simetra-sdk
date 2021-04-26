@@ -13,6 +13,7 @@ import {
   ITituloQuitarRequest,
   ITituloDownloadRequest,
   IClientConsultaCadastroVindiRequest,
+  IAlterarDiaDeVencimentoRequest,
 } from './ISimetraRequest';
 
 export interface IRetorno {
@@ -435,4 +436,9 @@ export interface IContratoConsultaLinhaMovelResponse {
 export interface ITrocaFormaPagamentoResponse {
   retorno: IRetorno | any;
   requisicao: ITrocaFormaPagamentoRequest | any;
+}
+
+export interface IAlterarDiaDeVencimentoResponse {
+  requisicao: IAlterarDiaDeVencimentoRequest | any;
+  retorno: IRetorno | any;
 }

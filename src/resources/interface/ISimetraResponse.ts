@@ -3,6 +3,7 @@ import {
   IHabilitacaoProvisoriaConsultaRequest,
   IContratoConsultaLinhaMovelRequest,
   ITrocaFormaPagamentoRequest,
+  IAlterarWifiRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -440,5 +441,10 @@ export interface ITrocaFormaPagamentoResponse {
 
 export interface IAlterarDiaDeVencimentoResponse {
   requisicao: IAlterarDiaDeVencimentoRequest | any;
+  retorno: IRetorno | any;
+}
+
+export interface IAlterarWifiResponse {
+  requisicao: IAlterarWifiRequest | any;
   retorno: IRetorno | any;
 }

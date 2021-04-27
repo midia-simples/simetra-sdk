@@ -188,3 +188,12 @@ export interface IAlterarDiaDeVencimentoRequest {
   COD_CNTR: number;
   DIA_VENC: number;
 }
+
+export interface IAlterarWifiRequest {
+  COD_CLIE: number;
+  COD_CNTR: number;
+  COD_CNTR_ITEM: number;
+  COD_PROTOCOLO: number;
+  NOM_WIFI_NOVO: string;
+  SEN_WIFI_NOVO: string;
+}

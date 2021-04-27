@@ -3968,6 +3968,57 @@ var Contrato = /** @class */ (function (_super) {
             });
         });
     };
+    Contrato.prototype.alterarDiaDeVencimento = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, COD_CNTR = _a.COD_CNTR, DIA_VENC = _a.DIA_VENC;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_DATA_VENCIMENTO',
+                            },
+                            data: {
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                COD_CNTR: COD_CNTR,
+                                DIA_VENC: DIA_VENC,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Contrato.prototype.alterarWifi = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CNTR = _a.COD_CNTR, COD_CNTR_ITEM = _a.COD_CNTR_ITEM, COD_PROTOCOLO = _a.COD_PROTOCOLO, NOM_WIFI_NOVO = _a.NOM_WIFI_NOVO, SEN_WIFI_NOVO = _a.SEN_WIFI_NOVO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_WIFI',
+                            },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CNTR: COD_CNTR,
+                                COD_CNTR_ITEM: COD_CNTR_ITEM,
+                                COD_PROTOCOLO: COD_PROTOCOLO,
+                                NOM_WIFI_NOVO: NOM_WIFI_NOVO,
+                                SEN_WIFI_NOVO: SEN_WIFI_NOVO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Contrato;
 }(Resource));
 

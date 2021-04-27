@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IApiResponse | @midia-simples/simetra-sdk</title>
+	<title>IAlterarWifiRequest | @midia-simples/simetra-sdk</title>
 	<meta name="description" content="Documentation for @midia-simples/simetra-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2722,17 +2722,26 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class="current tsd-kind-interface tsd-has-type-parameter">
-			<a href="iapiresponse.html" class="tsd-kind-icon">IApi<wbr>Response</a>
+		<li class="current tsd-kind-interface">
+			<a href="ialterarwifirequest.html" class="tsd-kind-icon">IAlterar<wbr>Wifi<wbr>Request</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iapiresponse.html#data" class="tsd-kind-icon">data</a>
+					<a href="ialterarwifirequest.html#cod_clie" class="tsd-kind-icon">COD_<wbr>CLIE</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iapiresponse.html#request" class="tsd-kind-icon">request</a>
+					<a href="ialterarwifirequest.html#cod_cntr" class="tsd-kind-icon">COD_<wbr>CNTR</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="iapiresponse.html#status" class="tsd-kind-icon">status</a>
+					<a href="ialterarwifirequest.html#cod_cntr_item" class="tsd-kind-icon">COD_<wbr>CNTR_<wbr>ITEM</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ialterarwifirequest.html#cod_protocolo" class="tsd-kind-icon">COD_<wbr>PROTOCOLO</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ialterarwifirequest.html#nom_wifi_novo" class="tsd-kind-icon">NOM_<wbr>WIFI_<wbr>NOVO</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="ialterarwifirequest.html#sen_wifi_novo" class="tsd-kind-icon">SEN_<wbr>WIFI_<wbr>NOVO</a>
 				</li>
 			</ul>
 		</li>
@@ -2740,19 +2749,11 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<section class="tsd-panel tsd-type-parameters">
-			<h3>Type parameters</h3>
-			<ul class="tsd-type-parameters">
-				<li>
-					<h4>T</h4>
-				</li>
-			</ul>
-		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">IApiResponse</span>
+					<span class="target">IAlterarWifiRequest</span>
 				</li>
 			</ul>
 		</section>
@@ -2763,9 +2764,12 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapiresponse.html#data" class="tsd-kind-icon">data</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapiresponse.html#request" class="tsd-kind-icon">request</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapiresponse.html#status" class="tsd-kind-icon">status</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ialterarwifirequest.html#cod_clie" class="tsd-kind-icon">COD_<wbr>CLIE</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ialterarwifirequest.html#cod_cntr" class="tsd-kind-icon">COD_<wbr>CNTR</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ialterarwifirequest.html#cod_cntr_item" class="tsd-kind-icon">COD_<wbr>CNTR_<wbr>ITEM</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ialterarwifirequest.html#cod_protocolo" class="tsd-kind-icon">COD_<wbr>PROTOCOLO</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ialterarwifirequest.html#nom_wifi_novo" class="tsd-kind-icon">NOM_<wbr>WIFI_<wbr>NOVO</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ialterarwifirequest.html#sen_wifi_novo" class="tsd-kind-icon">SEN_<wbr>WIFI_<wbr>NOVO</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2774,32 +2778,62 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="data" class="tsd-anchor"></a>
-				<h3>data</h3>
-				<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
+				<a name="cod_clie" class="tsd-anchor"></a>
+				<h3>COD_<wbr>CLIE</h3>
+				<div class="tsd-signature tsd-kind-icon">COD_<wbr>CLIE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/http/interface/IApiResponse.ts#L4">src/http/interface/IApiResponse.ts:4</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/resources/interface/ISimetraRequest.ts#L193">src/resources/interface/ISimetraRequest.ts:193</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="request" class="tsd-anchor"></a>
-				<h3>request</h3>
-				<div class="tsd-signature tsd-kind-icon">request<span class="tsd-signature-symbol">:</span> <a href="irequest.html" class="tsd-signature-type">IRequest</a></div>
+				<a name="cod_cntr" class="tsd-anchor"></a>
+				<h3>COD_<wbr>CNTR</h3>
+				<div class="tsd-signature tsd-kind-icon">COD_<wbr>CNTR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/http/interface/IApiResponse.ts#L6">src/http/interface/IApiResponse.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/resources/interface/ISimetraRequest.ts#L194">src/resources/interface/ISimetraRequest.ts:194</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="status" class="tsd-anchor"></a>
-				<h3>status</h3>
-				<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<a name="cod_cntr_item" class="tsd-anchor"></a>
+				<h3>COD_<wbr>CNTR_<wbr>ITEM</h3>
+				<div class="tsd-signature tsd-kind-icon">COD_<wbr>CNTR_<wbr>ITEM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/http/interface/IApiResponse.ts#L5">src/http/interface/IApiResponse.ts:5</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/resources/interface/ISimetraRequest.ts#L195">src/resources/interface/ISimetraRequest.ts:195</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="cod_protocolo" class="tsd-anchor"></a>
+				<h3>COD_<wbr>PROTOCOLO</h3>
+				<div class="tsd-signature tsd-kind-icon">COD_<wbr>PROTOCOLO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/resources/interface/ISimetraRequest.ts#L196">src/resources/interface/ISimetraRequest.ts:196</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="nom_wifi_novo" class="tsd-anchor"></a>
+				<h3>NOM_<wbr>WIFI_<wbr>NOVO</h3>
+				<div class="tsd-signature tsd-kind-icon">NOM_<wbr>WIFI_<wbr>NOVO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/resources/interface/ISimetraRequest.ts#L197">src/resources/interface/ISimetraRequest.ts:197</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="sen_wifi_novo" class="tsd-anchor"></a>
+				<h3>SEN_<wbr>WIFI_<wbr>NOVO</h3>
+				<div class="tsd-signature tsd-kind-icon">SEN_<wbr>WIFI_<wbr>NOVO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/8d72493/src/resources/interface/ISimetraRequest.ts#L198">src/resources/interface/ISimetraRequest.ts:198</a></li>
 					</ul>
 				</aside>
 			</section>

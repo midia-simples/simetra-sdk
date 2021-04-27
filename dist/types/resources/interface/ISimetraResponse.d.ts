@@ -1,5 +1,5 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest } from './ISimetraRequest';
-import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest } from './ISimetraRequest';
+import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
     mensagem?: string;
@@ -380,5 +380,13 @@ export interface IContratoConsultaLinhaMovelResponse {
 export interface ITrocaFormaPagamentoResponse {
     retorno: IRetorno | any;
     requisicao: ITrocaFormaPagamentoRequest | any;
+}
+export interface IAlterarDiaDeVencimentoResponse {
+    requisicao: IAlterarDiaDeVencimentoRequest | any;
+    retorno: IRetorno | any;
+}
+export interface IAlterarWifiResponse {
+    requisicao: IAlterarWifiRequest | any;
+    retorno: IRetorno | any;
 }
 export {};

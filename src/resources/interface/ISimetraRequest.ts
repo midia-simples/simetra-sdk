@@ -182,3 +182,18 @@ export interface ITrocaFormaPagamentoRequest {
   CVVCARTAO?: string;
   BANDEIRACARTAO?: string;
 }
+
+export interface IAlterarDiaDeVencimentoRequest {
+  CNPJ_CPF_CLIE: string;
+  COD_CNTR: number;
+  DIA_VENC: number;
+}
+
+export interface IAlterarWifiRequest {
+  COD_CLIE: number;
+  COD_CNTR: number;
+  COD_CNTR_ITEM: number;
+  COD_PROTOCOLO: number;
+  NOM_WIFI_NOVO: string;
+  SEN_WIFI_NOVO: string;
+}

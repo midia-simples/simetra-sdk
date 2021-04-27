@@ -4,6 +4,8 @@ import {
   IContratoDesbloquearResponse,
   IContratoConsultaLinhaMovelResponse,
   ITrocaFormaPagamentoResponse,
+  IAlterarDiaDeVencimentoResponse,
+  IAlterarWifiResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -11,6 +13,8 @@ import {
   IContratoDesbloquearRequest,
   IContratoConsultaLinhaMovelRequest,
   ITrocaFormaPagamentoRequest,
+  IAlterarDiaDeVencimentoRequest,
+  IAlterarWifiRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 export default class Contrato extends Resource {
@@ -109,6 +113,52 @@ export default class Contrato extends Resource {
         NOMECARTAO,
         NUMEROCARTAO,
         IND_BOLETO_FISICO,
+      },
+    });
+
+    return data;
+  }
+
+  public async alterarDiaDeVencimento({
+    CNPJ_CPF_CLIE,
+    COD_CNTR,
+    DIA_VENC,
+  }: IAlterarDiaDeVencimentoRequest): Promise<IAlterarDiaDeVencimentoResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: {
+        sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_DATA_VENCIMENTO',
+      },
+      data: {
+        CNPJ_CPF_CLIE,
+        COD_CNTR,
+        DIA_VENC,
+      },
+    });
+
+    return data;
+  }
+
+  public async alterarWifi({
+    COD_CLIE,
+    COD_CNTR,
+    COD_CNTR_ITEM,
+    COD_PROTOCOLO,
+    NOM_WIFI_NOVO,
+    SEN_WIFI_NOVO,
+  }: IAlterarWifiRequest): Promise<IAlterarWifiResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: {
+        sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_WIFI',
+      },
+      data: {
+        COD_CLIE,
+        COD_CNTR,
+        COD_CNTR_ITEM,
+        COD_PROTOCOLO,
+        NOM_WIFI_NOVO,
+        SEN_WIFI_NOVO,
       },
     });
 

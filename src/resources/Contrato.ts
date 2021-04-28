@@ -5,6 +5,7 @@ import {
   IContratoConsultaLinhaMovelResponse,
   ITrocaFormaPagamentoResponse,
   IAlterarDiaDeVencimentoResponse,
+  IConsultarDiasDeVencimentoResponse,
   IAlterarWifiResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
@@ -159,6 +160,19 @@ export default class Contrato extends Resource {
         COD_PROTOCOLO,
         NOM_WIFI_NOVO,
         SEN_WIFI_NOVO,
+      },
+    });
+
+    return data;
+  }
+
+  public async consultarDiasDeVencimento(): Promise<
+    IConsultarDiasDeVencimentoResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'get',
+      params: {
+        sNomeProc: 'FITTELECOM_PARAMETRO_DIAS_VENCIMENTO_CONSULTAR',
       },
     });
 

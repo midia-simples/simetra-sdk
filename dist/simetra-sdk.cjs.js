@@ -4023,6 +4023,24 @@ var Contrato = /** @class */ (function (_super) {
             });
         });
     };
+    Contrato.prototype.consultarDiasDeVencimento = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'get',
+                            params: {
+                                sNomeProc: 'FITTELECOM_PARAMETRO_DIAS_VENCIMENTO_CONSULTAR',
+                            },
+                        })];
+                    case 1:
+                        data = (_a.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Contrato;
 }(Resource));
 

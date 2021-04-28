@@ -389,4 +389,8 @@ export interface IAlterarWifiResponse {
     requisicao: IAlterarWifiRequest | any;
     retorno: IRetorno | any;
 }
+export interface IConsultarDiasDeVencimentoResponse {
+    retorno: IRetorno | any;
+    parametro: string | any;
+}
 export {};

@@ -3492,6 +3492,91 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * @param {Object} param
+     * @param param.COD_CLIE
+     * @param param.COD_CNTR
+     * @param param.CNPJ_CPF_CLIE
+     * @param param.nomeCartao
+     * @param param.dataValidadeCartao DEVE SER PADRAO MMAA, exemplo: 0425
+     * @param param.numeroCartao
+     * @param param.cvvCartao
+     * @param param.bandeiraCartao Americanet: Amex, Diners, Hipercard, Master, Visa, Fit: visa, elo, hipercard, mastercard, diners_club, american_express, Rede: mastercard, visa, diners_club, elo, american_express, Network: visa, master, amex, elo, aura, jcb, diners, discover
+     * @param param.COD_EMPR_FATR Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+     */
+    Cliente.prototype.CartaoCadastrarNovo = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CNTR = _a.COD_CNTR, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, nomeCartao = _a.nomeCartao, dataValidadeCartao = _a.dataValidadeCartao, numeroCartao = _a.numeroCartao, cvvCartao = _a.cvvCartao, bandeiraCartao = _a.bandeiraCartao, COD_EMPR_FATR = _a.COD_EMPR_FATR;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_CARTAO' },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CNTR: COD_CNTR,
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                nomeCartao: nomeCartao,
+                                dataValidadeCartao: dataValidadeCartao,
+                                numeroCartao: numeroCartao,
+                                cvvCartao: cvvCartao,
+                                bandeiraCartao: bandeiraCartao,
+                                COD_EMPR_FATR: COD_EMPR_FATR,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    /**
+     * @param {Object} param
+     * @param param.COD_CLIE Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+     * @param param.COD_CLIE_CARTAO Retornado no método FITTELECOM_CLIENTE_CONSULTAR_CARTAO
+     * @param param.COD_CNTR_TITL Retornado no método FITTELECOM_CONTRATO_CONSULTAR_TITULO
+     * @param param.NRO_PARCELA Ate 6 vezes
+     * @param param.VLR_TOTAL Passar 0 (somente usado para acordo)
+     * @param param.CNPJ_CPF_CLIE
+     * @param param.OPERACAO_USN Passar 0
+     * @param param.CODE_OPERACAO Passar tit_COD_CNTR_TITL - exemplo tit_56087544
+     * @constructor
+     */
+    Cliente.prototype.CartaoPagamentorapido = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CLIE_CARTAO = _a.COD_CLIE_CARTAO, COD_CNTR_TITL = _a.COD_CNTR_TITL, NRO_PARCELA = _a.NRO_PARCELA, VLR_TOTAL = _a.VLR_TOTAL, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, OPERACAO_USN = _a.OPERACAO_USN, CODE_OPERACAO = _a.CODE_OPERACAO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONTRATO_TITULO_PAGAMENTO_RAPIDO' },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CLIE_CARTAO: COD_CLIE_CARTAO,
+                                COD_CNTR_TITL: COD_CNTR_TITL,
+                                NRO_PARCELA: NRO_PARCELA,
+                                VLR_TOTAL: VLR_TOTAL,
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                OPERACAO_USN: OPERACAO_USN,
+                                CODE_OPERACAO: CODE_OPERACAO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 

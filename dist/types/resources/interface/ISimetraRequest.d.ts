@@ -62,6 +62,60 @@ export interface IClientAtualizarRequest {
     TELEFONE4: string;
     EMAIL: string;
 }
+export interface IClienteCartaoCadastrarNovoRequest {
+    COD_CLIE: number;
+    COD_CNTR: number;
+    CNPJ_CPF_CLIE: string;
+    nomeCartao: string;
+    /**
+     * DEVE SER PADRAO MMAA, exemplo: 0425
+     */
+    dataValidadeCartao: string;
+    numeroCartao: string;
+    cvvCartao: string;
+    /**
+     * Americanet - DEVE SER: Amex, Diners, Hipercard, Master, Visa
+     * Fit - DEVE SER: visa, elo, hipercard, mastercard, diners_club, american_express
+     * Rede - DEVE SER: mastercard, visa, diners_club, elo, american_express
+     * Network - DEVE SER: visa, master, amex, elo, aura, jcb, diners, discover
+     */
+    bandeiraCartao: string;
+    /**
+     * Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+     */
+    COD_EMPR_FATR: string;
+}
+export interface IClienteCartaoPagamentorapidoRequest {
+    /**
+     * Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+     */
+    COD_CLIE: string;
+    /**
+     * Retornado no método FITTELECOM_CLIENTE_CONSULTAR_CARTAO
+     */
+    COD_CLIE_CARTAO: string;
+    /**
+     * Retornado no método FITTELECOM_CONTRATO_CONSULTAR_TITULO
+     */
+    COD_CNTR_TITL: string;
+    /**
+     * Ate 6 vezes
+     */
+    NRO_PARCELA: string;
+    /**
+     * Passar 0 (somente usado para acordo)
+     */
+    VLR_TOTAL: number;
+    CNPJ_CPF_CLIE: string;
+    /**
+     * Passar 0
+     */
+    OPERACAO_USN: string;
+    /**
+     * Passar tit_COD_CNTR_TITL - exemplo tit_56087544
+     */
+    CODE_OPERACAO: string;
+}
 export interface IAtendimentoCadastrarRequest {
     COD_CNTR: string;
     COD_CNTR_ITEM: string;

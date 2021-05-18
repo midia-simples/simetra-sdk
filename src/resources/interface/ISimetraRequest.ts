@@ -93,6 +93,38 @@ export interface IClienteCartaoCadastrarNovoRequest {
   COD_EMPR_FATR: string;
 }
 
+export interface IClienteCartaoPagamentorapidoRequest {
+  /**
+   * Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+   */
+  COD_CLIE: string;
+  /**
+   * Retornado no método FITTELECOM_CLIENTE_CONSULTAR_CARTAO
+   */
+  COD_CLIE_CARTAO: string;
+  /**
+   * Retornado no método FITTELECOM_CONTRATO_CONSULTAR_TITULO
+   */
+  COD_CNTR_TITL: string;
+  /**
+   * Ate 6 vezes
+   */
+  NRO_PARCELA: string;
+  /**
+   * Passar 0 (somente usado para acordo)
+   */
+  VLR_TOTAL: number;
+  CNPJ_CPF_CLIE: string;
+  /**
+   * Passar 0
+   */
+  OPERACAO_USN: string;
+  /**
+   * Passar tit_COD_CNTR_TITL - exemplo tit_56087544
+   */
+  CODE_OPERACAO: string;
+}
+
 export interface IAtendimentoCadastrarRequest {
   COD_CNTR: string;
   COD_CNTR_ITEM: string;

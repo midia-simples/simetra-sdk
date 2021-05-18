@@ -154,15 +154,34 @@ interface IRequisicaoClienteCartaoCadastrarNovoResponse {
   COD_EMPR_FATR: string;
 }
 
-interface IRetornoClienteCartaoCadastrarNovo extends IRetorno {
+interface IRetornoClienteCartaoCadastrarNovoResponse extends IRetorno {
   COD_CLIE_CARTAO: number;
 }
 
 export interface IClienteCartaoCadastrarNovoResponse {
   requisicao: IRequisicaoClienteCartaoCadastrarNovoResponse;
-  retorno: IRetornoClienteCartaoCadastrarNovo;
+  retorno: IRetornoClienteCartaoCadastrarNovoResponse;
 }
 
+interface IRequisicaoClienteCartaoPagamentorapidoResponse {
+  COD_CLIE: string;
+  COD_CLIE_CARTAO: string;
+  COD_CNTR_TITL: string;
+  NRO_PARCELA: string;
+  VLR_TOTAL: string;
+  CNPJ_CPF_CLIE: string;
+  OPERACAO_USN: string;
+  CODE_OPERACAO: string;
+}
+
+interface IRetornoClienteCartaoPagamentorapidoResponse extends IRetorno {
+  COD_CLIE_CARTAO_OPERACAO: string;
+}
+
+export interface IClienteCartaoPagamentorapidoResponse {
+  requisicao: IRequisicaoClienteCartaoPagamentorapidoResponse;
+  retorno: IRetornoClienteCartaoPagamentorapidoResponse;
+}
 interface IAtendimentoRequisicaoCadastrarResponse {
   COD_CNTR?: number;
   COD_CNTR_ITEM?: number;

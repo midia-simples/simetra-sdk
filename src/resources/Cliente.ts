@@ -7,6 +7,7 @@ import {
   IClientCadastrarVindiResponse,
   IClientConsultaCadastroVindiResponse,
   IClienteCartaoCadastrarNovoResponse,
+  IClienteCartaoPagamentorapidoResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -17,6 +18,7 @@ import {
   IClientCadastrarVindiRequest,
   IClientConsultaCadastroVindiRequest,
   IClienteCartaoCadastrarNovoRequest,
+  IClienteCartaoPagamentorapidoRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -259,6 +261,52 @@ export default class Cliente extends Resource {
         cvvCartao,
         bandeiraCartao,
         COD_EMPR_FATR,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  /**
+   * @param {Object} param
+   * @param param.COD_CLIE Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+   * @param param.COD_CLIE_CARTAO Retornado no método FITTELECOM_CLIENTE_CONSULTAR_CARTAO
+   * @param param.COD_CNTR_TITL Retornado no método FITTELECOM_CONTRATO_CONSULTAR_TITULO
+   * @param param.NRO_PARCELA Ate 6 vezes
+   * @param param.VLR_TOTAL Passar 0 (somente usado para acordo)
+   * @param param.CNPJ_CPF_CLIE
+   * @param param.OPERACAO_USN Passar 0
+   * @param param.CODE_OPERACAO Passar tit_COD_CNTR_TITL - exemplo tit_56087544
+   * @constructor
+   */
+  public async CartaoPagamentorapido({
+    COD_CLIE,
+    COD_CLIE_CARTAO,
+    COD_CNTR_TITL,
+    NRO_PARCELA,
+    VLR_TOTAL,
+    CNPJ_CPF_CLIE,
+    OPERACAO_USN,
+    CODE_OPERACAO,
+  }: IClienteCartaoPagamentorapidoRequest): Promise<
+    IClienteCartaoPagamentorapidoResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONTRATO_TITULO_PAGAMENTO_RAPIDO' },
+      data: {
+        COD_CLIE,
+        COD_CLIE_CARTAO,
+        COD_CNTR_TITL,
+        NRO_PARCELA,
+        VLR_TOTAL,
+        CNPJ_CPF_CLIE,
+        OPERACAO_USN,
+        CODE_OPERACAO,
       },
     });
 

@@ -147,6 +147,22 @@ export interface IClientAtualizarResponse {
   retorno: IRetorno | any;
 }
 
+interface IRequisicaoClienteCartaoCadastrarNovoResponse {
+  COD_CLIE: string;
+  COD_CNTR: string;
+  CNPJ_CPF_CLIE: string;
+  COD_EMPR_FATR: string;
+}
+
+interface IRetornoClienteCartaoCadastrarNovo extends IRetorno {
+  COD_CLIE_CARTAO: number;
+}
+
+export interface IClienteCartaoCadastrarNovoResponse {
+  requisicao: IRequisicaoClienteCartaoCadastrarNovoResponse;
+  retorno: IRetornoClienteCartaoCadastrarNovo;
+}
+
 interface IAtendimentoRequisicaoCadastrarResponse {
   COD_CNTR?: number;
   COD_CNTR_ITEM?: number;

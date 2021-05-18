@@ -69,6 +69,30 @@ export interface IClientAtualizarRequest {
   EMAIL: string;
 }
 
+export interface IClienteCartaoCadastrarNovoRequest {
+  COD_CLIE: number;
+  COD_CNTR: number;
+  CNPJ_CPF_CLIE: string;
+  nomeCartao: string;
+  /**
+   * DEVE SER PADRAO MMAA, exemplo: 0425
+   */
+  dataValidadeCartao: string;
+  numeroCartao: string;
+  cvvCartao: string;
+  /**
+   * Americanet - DEVE SER: Amex, Diners, Hipercard, Master, Visa
+   * Fit - DEVE SER: visa, elo, hipercard, mastercard, diners_club, american_express
+   * Rede - DEVE SER: mastercard, visa, diners_club, elo, american_express
+   * Network - DEVE SER: visa, master, amex, elo, aura, jcb, diners, discover
+   */
+  bandeiraCartao: string;
+  /**
+   * Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+   */
+  COD_EMPR_FATR: string;
+}
+
 export interface IAtendimentoCadastrarRequest {
   COD_CNTR: string;
   COD_CNTR_ITEM: string;

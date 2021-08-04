@@ -3577,6 +3577,33 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.EnviarEmail = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, EMAIL_ASSUNTO = _a.EMAIL_ASSUNTO, EMAIL_DESTINO = _a.EMAIL_DESTINO, EMAIL_MENSAGEM = _a.EMAIL_MENSAGEM, EMAIL_SENDER = _a.EMAIL_SENDER;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_ENVIAR_EMAIL' },
+                            data: {
+                                EMAIL_ASSUNTO: EMAIL_ASSUNTO,
+                                EMAIL_DESTINO: EMAIL_DESTINO,
+                                EMAIL_MENSAGEM: EMAIL_MENSAGEM,
+                                EMAIL_SENDER: EMAIL_SENDER,
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 

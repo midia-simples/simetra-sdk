@@ -226,3 +226,10 @@ export interface IAlterarWifiRequest {
     NOM_WIFI_NOVO: string;
     SEN_WIFI_NOVO: string;
 }
+export interface IEnviarEmailRequest {
+    CNPJ_CPF_CLIE: string;
+    EMAIL_ASSUNTO: string;
+    EMAIL_MENSAGEM: string;
+    EMAIL_DESTINO: string;
+    EMAIL_SENDER: string;
+}

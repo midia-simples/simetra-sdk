@@ -2735,6 +2735,9 @@ img {
 					<a href="cliente.html#cartaopagamentorapido" class="tsd-kind-icon">Cartao<wbr>Pagamentorapido</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cliente.html#enviaremail" class="tsd-kind-icon">Enviar<wbr>Email</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="cliente.html#atualizar" class="tsd-kind-icon">atualizar</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -2792,6 +2795,7 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cartaocadastrarnovo" class="tsd-kind-icon">Cartao<wbr>Cadastrar<wbr>Novo</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cartaopagamentorapido" class="tsd-kind-icon">Cartao<wbr>Pagamentorapido</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#enviaremail" class="tsd-kind-icon">Enviar<wbr>Email</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#atualizar" class="tsd-kind-icon">atualizar</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cadastrarcontrato" class="tsd-kind-icon">cadastrar<wbr>Contrato</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cadastrarvindi" class="tsd-kind-icon">cadastrar<wbr>Vindi</a></li>
@@ -2818,7 +2822,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="resource.html">Resource</a>.<a href="resource.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L25">src/resources/Cliente.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L27">src/resources/Cliente.ts:27</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2844,7 +2848,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L238">src/resources/Cliente.ts:238</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L240">src/resources/Cliente.ts:240</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2898,7 +2902,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L286">src/resources/Cliente.ts:286</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L288">src/resources/Cliente.ts:288</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2940,6 +2944,46 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="enviaremail" class="tsd-anchor"></a>
+				<h3>Enviar<wbr>Email</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Enviar<wbr>Email<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_ASSUNTO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_DESTINO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_MENSAGEM<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_SENDER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ienviaremailresponse.html" class="tsd-signature-type">IEnviarEmailResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L322">src/resources/Cliente.ts:322</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_ASSUNTO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_DESTINO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_MENSAGEM<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_SENDER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>CNPJ_<wbr>CPF_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>ASSUNTO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>DESTINO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>MENSAGEM<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>SENDER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ienviaremailresponse.html" class="tsd-signature-type">IEnviarEmailResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="atualizar" class="tsd-anchor"></a>
 				<h3>atualizar</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -2949,7 +2993,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L196">src/resources/Cliente.ts:196</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L198">src/resources/Cliente.ts:198</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2995,7 +3039,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L70">src/resources/Cliente.ts:70</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L72">src/resources/Cliente.ts:72</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3113,7 +3157,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L146">src/resources/Cliente.ts:146</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L148">src/resources/Cliente.ts:148</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3157,7 +3201,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#callapi">callApi</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Resource.ts#L49">src/resources/Resource.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Resource.ts#L49">src/resources/Resource.ts:49</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3191,7 +3235,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L30">src/resources/Cliente.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L32">src/resources/Cliente.ts:32</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3222,7 +3266,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L176">src/resources/Cliente.ts:176</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L178">src/resources/Cliente.ts:178</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3250,7 +3294,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Cliente.ts#L50">src/resources/Cliente.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Cliente.ts#L52">src/resources/Cliente.ts:52</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3282,7 +3326,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#processresponse">processResponse</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d71cb8d/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/a4dd3b5/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

@@ -8,6 +8,7 @@ import {
   IClientConsultaCadastroVindiResponse,
   IClienteCartaoCadastrarNovoResponse,
   IClienteCartaoPagamentorapidoResponse,
+  IEnviarEmailResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -19,6 +20,7 @@ import {
   IClientConsultaCadastroVindiRequest,
   IClienteCartaoCadastrarNovoRequest,
   IClienteCartaoPagamentorapidoRequest,
+  IEnviarEmailRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -307,6 +309,32 @@ export default class Cliente extends Resource {
         CNPJ_CPF_CLIE,
         OPERACAO_USN,
         CODE_OPERACAO,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async EnviarEmail({
+    CNPJ_CPF_CLIE,
+    EMAIL_ASSUNTO,
+    EMAIL_DESTINO,
+    EMAIL_MENSAGEM,
+    EMAIL_SENDER,
+  }: IEnviarEmailRequest): Promise<IEnviarEmailResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_ENVIAR_EMAIL' },
+      data: {
+        EMAIL_ASSUNTO,
+        EMAIL_DESTINO,
+        EMAIL_MENSAGEM,
+        EMAIL_SENDER,
+        CNPJ_CPF_CLIE,
       },
     });
 

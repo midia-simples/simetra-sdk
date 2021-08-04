@@ -4,6 +4,7 @@ import {
   IContratoConsultaLinhaMovelRequest,
   ITrocaFormaPagamentoRequest,
   IAlterarWifiRequest,
+  IEnviarEmailRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -487,4 +488,16 @@ export interface IAlterarWifiResponse {
 export interface IConsultarDiasDeVencimentoResponse {
   retorno: IRetorno | any;
   parametro: string | any;
+}
+
+export interface IFAT_CONTRATO_INTERACAO {
+  COD_CNTR_INTERACAO: number | any;
+  RETORNO_CODIGO: string | any;
+  RETORNO_MENSAGEM: string | any;
+}
+
+export interface IEnviarEmailResponse {
+  requisicao: IEnviarEmailRequest | any;
+  retorno: IRetorno | any;
+  FAT_CONTRATO_INTERACAO: IFAT_CONTRATO_INTERACAO[] | any;
 }

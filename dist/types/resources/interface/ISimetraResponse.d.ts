@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -432,5 +432,20 @@ export interface IEnviarEmailResponse {
     requisicao: IEnviarEmailRequest | any;
     retorno: IRetorno | any;
     FAT_CONTRATO_INTERACAO: IFAT_CONTRATO_INTERACAO[] | any;
+}
+export interface FAT_CLIENTE_CARTAO {
+    COD_CLIE: number | any;
+    COD_CLIE_CARTAO: number | any;
+    CARTAO_NOME: string | any;
+    CARTAO_NRO: string | any;
+    CARTAO_BANDEIRA: string | any;
+    CARTAO_DATA_VALIDADE: string | any;
+    CARTAO_PLATAFORMA: string | any;
+    CARTAO_EMPRESA: number | any;
+}
+export interface ICartaoConsultarCadastradosResponse {
+    requisicao: ICartaoConsultarCadastradosRequest | any;
+    retorno: IRetorno | any;
+    FAT_CLIENTE_CARTAO: FAT_CLIENTE_CARTAO | any;
 }
 export {};

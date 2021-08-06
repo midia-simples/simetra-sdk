@@ -1,7 +1,7 @@
 import Resource from './Resource';
-import { IClientAtualizarResponse, IClientConsultaResponse, IClientCadastrarContratoResponse, IClientLoginResponse, IClientCadastrarVindiResponse, IClientConsultaCadastroVindiResponse, IClienteCartaoCadastrarNovoResponse, IClienteCartaoPagamentorapidoResponse, IEnviarEmailResponse } from './interface/ISimetraResponse';
+import { IClientAtualizarResponse, IClientConsultaResponse, IClientCadastrarContratoResponse, IClientLoginResponse, IClientCadastrarVindiResponse, IClientConsultaCadastroVindiResponse, IClienteCartaoCadastrarNovoResponse, IClienteCartaoPagamentorapidoResponse, IEnviarEmailResponse, ICartaoConsultarCadastradosResponse } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
-import { IClientAtualizarRequest, IClientConsultaRequest, IClientCadastrarContratoRequest, IClientLoginRequest, IClientCadastrarVindiRequest, IClientConsultaCadastroVindiRequest, IClienteCartaoCadastrarNovoRequest, IClienteCartaoPagamentorapidoRequest, IEnviarEmailRequest } from './interface/ISimetraRequest';
+import { IClientAtualizarRequest, IClientConsultaRequest, IClientCadastrarContratoRequest, IClientLoginRequest, IClientCadastrarVindiRequest, IClientConsultaCadastroVindiRequest, IClienteCartaoCadastrarNovoRequest, IClienteCartaoPagamentorapidoRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest } from './interface/ISimetraRequest';
 export default class Cliente extends Resource {
     constructor(config: IConfig);
     consulta({ CNPJ_CPF_CLIE, COD_CNTR, }: IClientConsultaRequest): Promise<IClientConsultaResponse | any>;
@@ -37,4 +37,5 @@ export default class Cliente extends Resource {
      */
     CartaoPagamentorapido({ COD_CLIE, COD_CLIE_CARTAO, COD_CNTR_TITL, NRO_PARCELA, VLR_TOTAL, CNPJ_CPF_CLIE, OPERACAO_USN, CODE_OPERACAO, }: IClienteCartaoPagamentorapidoRequest): Promise<IClienteCartaoPagamentorapidoResponse>;
     EnviarEmail({ CNPJ_CPF_CLIE, EMAIL_ASSUNTO, EMAIL_DESTINO, EMAIL_MENSAGEM, EMAIL_SENDER, }: IEnviarEmailRequest): Promise<IEnviarEmailResponse>;
+    CartaoConsultarCadastrados({ CNPJ_CPF_CLIE, }: ICartaoConsultarCadastradosRequest): Promise<ICartaoConsultarCadastradosResponse>;
 }

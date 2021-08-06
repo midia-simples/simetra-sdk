@@ -3608,6 +3608,29 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.CartaoConsultarCadastrados = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR_CARTAO' },
+                            data: {
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 

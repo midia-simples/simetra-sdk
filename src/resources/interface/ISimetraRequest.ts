@@ -261,3 +261,7 @@ export interface IEnviarEmailRequest {
   EMAIL_DESTINO: string;
   EMAIL_SENDER: string;
 }
+
+export interface ICartaoConsultarCadastradosRequest {
+  CNPJ_CPF_CLIE: string;
+}

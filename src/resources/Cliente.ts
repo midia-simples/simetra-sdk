@@ -9,6 +9,7 @@ import {
   IClienteCartaoCadastrarNovoResponse,
   IClienteCartaoPagamentorapidoResponse,
   IEnviarEmailResponse,
+  ICartaoConsultarCadastradosResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -21,6 +22,7 @@ import {
   IClienteCartaoCadastrarNovoRequest,
   IClienteCartaoPagamentorapidoRequest,
   IEnviarEmailRequest,
+  ICartaoConsultarCadastradosRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -334,6 +336,26 @@ export default class Cliente extends Resource {
         EMAIL_DESTINO,
         EMAIL_MENSAGEM,
         EMAIL_SENDER,
+        CNPJ_CPF_CLIE,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async CartaoConsultarCadastrados({
+    CNPJ_CPF_CLIE,
+  }: ICartaoConsultarCadastradosRequest): Promise<
+    ICartaoConsultarCadastradosResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR_CARTAO' },
+      data: {
         CNPJ_CPF_CLIE,
       },
     });

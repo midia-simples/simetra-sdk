@@ -14,7 +14,7 @@ dotenv.config({
     });
 
     const r = await simetraLib.HabilitacaoProvisoria.desbloquear({
-      CLIENTE_CNPJ_CPF: '***REMOVED***',
+      CLIENTE_CNPJ_CPF: '',
       COD_CNTR: 350348,
     });
 

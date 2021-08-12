@@ -3631,6 +3631,60 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.IndicarNovoLead = function (_a) {
+        var CNPJ_CPF = _a.CNPJ_CPF, CNPJ_CPF_INDICANTE = _a.CNPJ_CPF_INDICANTE, DATA_NASCIMENTO = _a.DATA_NASCIMENTO, DDD_CELULAR1 = _a.DDD_CELULAR1, DDD_CELULAR2 = _a.DDD_CELULAR2, DDD_CELULAR3 = _a.DDD_CELULAR3, DDD_TELEFONE1 = _a.DDD_TELEFONE1, DDD_TELEFONE2 = _a.DDD_TELEFONE2, DDD_TELEFONE3 = _a.DDD_TELEFONE3, EMAIL = _a.EMAIL, ENDERECO_BAIRRO = _a.ENDERECO_BAIRRO, ENDERECO_CEP = _a.ENDERECO_CEP, ENDERECO_CIDADE = _a.ENDERECO_CIDADE, ENDERECO_COMPLEMENTO = _a.ENDERECO_COMPLEMENTO, ENDERECO_LOGRADOURO = _a.ENDERECO_LOGRADOURO, ENDERECO_LOGRADOURO_TIPO = _a.ENDERECO_LOGRADOURO_TIPO, ENDERECO_NUMERO = _a.ENDERECO_NUMERO, ENDERECO_UF = _a.ENDERECO_UF, INSCRICAO_MUNICIPAL = _a.INSCRICAO_MUNICIPAL, NOME_CLIENTE = _a.NOME_CLIENTE, NOME_MAE = _a.NOME_MAE, NOME_PAI = _a.NOME_PAI, NUMERO_CELULAR1 = _a.NUMERO_CELULAR1, NUMERO_CELULAR2 = _a.NUMERO_CELULAR2, NUMERO_CELULAR3 = _a.NUMERO_CELULAR3, NUMERO_TELEFONE1 = _a.NUMERO_TELEFONE1, NUMERO_TELEFONE2 = _a.NUMERO_TELEFONE2, NUMERO_TELEFONE3 = _a.NUMERO_TELEFONE3, ORIGEM = _a.ORIGEM, RAZAO_SOCIAL = _a.RAZAO_SOCIAL, RG = _a.RG, SEXO = _a.SEXO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_NOVO_LEAD' },
+                            data: {
+                                CNPJ_CPF: CNPJ_CPF,
+                                CNPJ_CPF_INDICANTE: CNPJ_CPF_INDICANTE,
+                                DATA_NASCIMENTO: DATA_NASCIMENTO,
+                                DDD_CELULAR1: DDD_CELULAR1,
+                                DDD_CELULAR2: DDD_CELULAR2,
+                                DDD_CELULAR3: DDD_CELULAR3,
+                                DDD_TELEFONE1: DDD_TELEFONE1,
+                                DDD_TELEFONE2: DDD_TELEFONE2,
+                                DDD_TELEFONE3: DDD_TELEFONE3,
+                                EMAIL: EMAIL,
+                                ENDERECO_BAIRRO: ENDERECO_BAIRRO,
+                                ENDERECO_CEP: ENDERECO_CEP,
+                                ENDERECO_CIDADE: ENDERECO_CIDADE,
+                                ENDERECO_COMPLEMENTO: ENDERECO_COMPLEMENTO,
+                                ENDERECO_LOGRADOURO: ENDERECO_LOGRADOURO,
+                                ENDERECO_LOGRADOURO_TIPO: ENDERECO_LOGRADOURO_TIPO,
+                                ENDERECO_NUMERO: ENDERECO_NUMERO,
+                                ENDERECO_UF: ENDERECO_UF,
+                                INSCRICAO_MUNICIPAL: INSCRICAO_MUNICIPAL,
+                                NOME_CLIENTE: NOME_CLIENTE,
+                                NOME_MAE: NOME_MAE,
+                                NOME_PAI: NOME_PAI,
+                                NUMERO_CELULAR1: NUMERO_CELULAR1,
+                                NUMERO_CELULAR2: NUMERO_CELULAR2,
+                                NUMERO_CELULAR3: NUMERO_CELULAR3,
+                                NUMERO_TELEFONE1: NUMERO_TELEFONE1,
+                                NUMERO_TELEFONE2: NUMERO_TELEFONE2,
+                                NUMERO_TELEFONE3: NUMERO_TELEFONE3,
+                                ORIGEM: ORIGEM,
+                                RAZAO_SOCIAL: RAZAO_SOCIAL,
+                                RG: RG,
+                                SEXO: SEXO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!data.retorno) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 

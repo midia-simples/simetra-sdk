@@ -448,4 +448,7 @@ export interface ICartaoConsultarCadastradosResponse {
     retorno: IRetorno | any;
     FAT_CLIENTE_CARTAO: FAT_CLIENTE_CARTAO | any;
 }
+export interface IIndicarNovoLeadResponse {
+    retorno: string | any;
+}
 export {};

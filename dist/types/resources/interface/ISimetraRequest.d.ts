@@ -236,3 +236,37 @@ export interface IEnviarEmailRequest {
 export interface ICartaoConsultarCadastradosRequest {
     CNPJ_CPF_CLIE: string;
 }
+export interface IIndicarNovoLeadRequest {
+    CNPJ_CPF?: string;
+    CNPJ_CPF_INDICANTE: string;
+    NOME_CLIENTE: string;
+    ORIGEM?: string;
+    RAZAO_SOCIAL?: string;
+    NOME_MAE?: string;
+    NOME_PAI?: string;
+    RG?: string;
+    INSCRICAO_MUNICIPAL?: string;
+    DATA_NASCIMENTO?: string;
+    SEXO?: 'M' | 'F';
+    ENDERECO_LOGRADOURO_TIPO?: string;
+    ENDERECO_LOGRADOURO?: string;
+    ENDERECO_NUMERO?: string;
+    ENDERECO_COMPLEMENTO?: string;
+    ENDERECO_BAIRRO?: string;
+    ENDERECO_CIDADE?: string;
+    ENDERECO_UF?: string;
+    ENDERECO_CEP?: string;
+    DDD_CELULAR1: string;
+    NUMERO_CELULAR1: string;
+    DDD_CELULAR2?: string;
+    NUMERO_CELULAR2?: string;
+    DDD_CELULAR3?: string;
+    NUMERO_CELULAR3?: string;
+    DDD_TELEFONE1?: string;
+    NUMERO_TELEFONE1?: string;
+    DDD_TELEFONE2?: string;
+    NUMERO_TELEFONE2?: string;
+    DDD_TELEFONE3?: string;
+    NUMERO_TELEFONE3?: string;
+    EMAIL?: string;
+}

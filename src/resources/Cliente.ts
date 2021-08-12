@@ -10,6 +10,7 @@ import {
   IClienteCartaoPagamentorapidoResponse,
   IEnviarEmailResponse,
   ICartaoConsultarCadastradosResponse,
+  IIndicarNovoLeadResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -23,6 +24,7 @@ import {
   IClienteCartaoPagamentorapidoRequest,
   IEnviarEmailRequest,
   ICartaoConsultarCadastradosRequest,
+  IIndicarNovoLeadRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -361,6 +363,86 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async IndicarNovoLead({
+    CNPJ_CPF,
+    CNPJ_CPF_INDICANTE,
+    DATA_NASCIMENTO,
+    DDD_CELULAR1,
+    DDD_CELULAR2,
+    DDD_CELULAR3,
+    DDD_TELEFONE1,
+    DDD_TELEFONE2,
+    DDD_TELEFONE3,
+    EMAIL,
+    ENDERECO_BAIRRO,
+    ENDERECO_CEP,
+    ENDERECO_CIDADE,
+    ENDERECO_COMPLEMENTO,
+    ENDERECO_LOGRADOURO,
+    ENDERECO_LOGRADOURO_TIPO,
+    ENDERECO_NUMERO,
+    ENDERECO_UF,
+    INSCRICAO_MUNICIPAL,
+    NOME_CLIENTE,
+    NOME_MAE,
+    NOME_PAI,
+    NUMERO_CELULAR1,
+    NUMERO_CELULAR2,
+    NUMERO_CELULAR3,
+    NUMERO_TELEFONE1,
+    NUMERO_TELEFONE2,
+    NUMERO_TELEFONE3,
+    ORIGEM,
+    RAZAO_SOCIAL,
+    RG,
+    SEXO,
+  }: IIndicarNovoLeadRequest): Promise<IIndicarNovoLeadResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_NOVO_LEAD' },
+      data: {
+        CNPJ_CPF,
+        CNPJ_CPF_INDICANTE,
+        DATA_NASCIMENTO,
+        DDD_CELULAR1,
+        DDD_CELULAR2,
+        DDD_CELULAR3,
+        DDD_TELEFONE1,
+        DDD_TELEFONE2,
+        DDD_TELEFONE3,
+        EMAIL,
+        ENDERECO_BAIRRO,
+        ENDERECO_CEP,
+        ENDERECO_CIDADE,
+        ENDERECO_COMPLEMENTO,
+        ENDERECO_LOGRADOURO,
+        ENDERECO_LOGRADOURO_TIPO,
+        ENDERECO_NUMERO,
+        ENDERECO_UF,
+        INSCRICAO_MUNICIPAL,
+        NOME_CLIENTE,
+        NOME_MAE,
+        NOME_PAI,
+        NUMERO_CELULAR1,
+        NUMERO_CELULAR2,
+        NUMERO_CELULAR3,
+        NUMERO_TELEFONE1,
+        NUMERO_TELEFONE2,
+        NUMERO_TELEFONE3,
+        ORIGEM,
+        RAZAO_SOCIAL,
+        RG,
+        SEXO,
+      },
+    });
+
+    if (!data.retorno) {
       throw new SimetraError(data.retorno.mensagem);
     }
 

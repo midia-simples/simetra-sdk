@@ -2729,6 +2729,18 @@ img {
 					<a href="cliente.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cliente.html#cartaocadastrarnovo" class="tsd-kind-icon">Cartao<wbr>Cadastrar<wbr>Novo</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cliente.html#cartaoconsultarcadastrados" class="tsd-kind-icon">Cartao<wbr>Consultar<wbr>Cadastrados</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cliente.html#cartaopagamentorapido" class="tsd-kind-icon">Cartao<wbr>Pagamentorapido</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="cliente.html#enviaremail" class="tsd-kind-icon">Enviar<wbr>Email</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="cliente.html#atualizar" class="tsd-kind-icon">atualizar</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -2784,6 +2796,10 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cartaocadastrarnovo" class="tsd-kind-icon">Cartao<wbr>Cadastrar<wbr>Novo</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cartaoconsultarcadastrados" class="tsd-kind-icon">Cartao<wbr>Consultar<wbr>Cadastrados</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cartaopagamentorapido" class="tsd-kind-icon">Cartao<wbr>Pagamentorapido</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#enviaremail" class="tsd-kind-icon">Enviar<wbr>Email</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#atualizar" class="tsd-kind-icon">atualizar</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cadastrarcontrato" class="tsd-kind-icon">cadastrar<wbr>Contrato</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="cliente.html#cadastrarvindi" class="tsd-kind-icon">cadastrar<wbr>Vindi</a></li>
@@ -2810,7 +2826,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="resource.html">Resource</a>.<a href="resource.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L21">src/resources/Cliente.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L29">src/resources/Cliente.ts:29</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2827,6 +2843,179 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="cartaocadastrarnovo" class="tsd-anchor"></a>
+				<h3>Cartao<wbr>Cadastrar<wbr>Novo</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Cartao<wbr>Cadastrar<wbr>Novo<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>COD_CNTR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>COD_EMPR_FATR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>bandeiraCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>cvvCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>dataValidadeCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>nomeCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>numeroCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iclientecartaocadastrarnovoresponse.html" class="tsd-signature-type">IClienteCartaoCadastrarNovoResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L242">src/resources/Cliente.ts:242</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>COD_CNTR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>COD_EMPR_FATR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>bandeiraCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>cvvCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>dataValidadeCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>nomeCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>numeroCartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>CNPJ_<wbr>CPF_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>CNTR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>EMPR_<wbr>FATR<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>bandeira<wbr>Cartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>cvv<wbr>Cartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>data<wbr>Validade<wbr>Cartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>nome<wbr>Cartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>numero<wbr>Cartao<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iclientecartaocadastrarnovoresponse.html" class="tsd-signature-type">IClienteCartaoCadastrarNovoResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="cartaoconsultarcadastrados" class="tsd-anchor"></a>
+				<h3>Cartao<wbr>Consultar<wbr>Cadastrados</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Cartao<wbr>Consultar<wbr>Cadastrados<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/icartaoconsultarcadastradosresponse.html" class="tsd-signature-type">ICartaoConsultarCadastradosResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L350">src/resources/Cliente.ts:350</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>CNPJ_<wbr>CPF_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/icartaoconsultarcadastradosresponse.html" class="tsd-signature-type">ICartaoConsultarCadastradosResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="cartaopagamentorapido" class="tsd-anchor"></a>
+				<h3>Cartao<wbr>Pagamentorapido</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Cartao<wbr>Pagamentorapido<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>CODE_OPERACAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CLIE_CARTAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CNTR_TITL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>NRO_PARCELA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>OPERACAO_USN<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>VLR_TOTAL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iclientecartaopagamentorapidoresponse.html" class="tsd-signature-type">IClienteCartaoPagamentorapidoResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L290">src/resources/Cliente.ts:290</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>CODE_OPERACAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CLIE_CARTAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>COD_CNTR_TITL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>NRO_PARCELA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>OPERACAO_USN<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>VLR_TOTAL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>CNPJ_<wbr>CPF_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>CODE_<wbr>OPERACAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>CLIE_<wbr>CARTAO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>COD_<wbr>CNTR_<wbr>TITL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>NRO_<wbr>PARCELA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>OPERACAO_<wbr>USN<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>VLR_<wbr>TOTAL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iclientecartaopagamentorapidoresponse.html" class="tsd-signature-type">IClienteCartaoPagamentorapidoResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="enviaremail" class="tsd-anchor"></a>
+				<h3>Enviar<wbr>Email</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Enviar<wbr>Email<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_ASSUNTO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_DESTINO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_MENSAGEM<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_SENDER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ienviaremailresponse.html" class="tsd-signature-type">IEnviarEmailResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L324">src/resources/Cliente.ts:324</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>CNPJ_CPF_CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_ASSUNTO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_DESTINO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_MENSAGEM<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>EMAIL_SENDER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>CNPJ_<wbr>CPF_<wbr>CLIE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>ASSUNTO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>DESTINO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>MENSAGEM<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>EMAIL_<wbr>SENDER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ienviaremailresponse.html" class="tsd-signature-type">IEnviarEmailResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="atualizar" class="tsd-anchor"></a>
 				<h3>atualizar</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -2836,7 +3025,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L192">src/resources/Cliente.ts:192</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L200">src/resources/Cliente.ts:200</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2882,7 +3071,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L66">src/resources/Cliente.ts:66</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L74">src/resources/Cliente.ts:74</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3000,7 +3189,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L142">src/resources/Cliente.ts:142</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L150">src/resources/Cliente.ts:150</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3044,7 +3233,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#callapi">callApi</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Resource.ts#L49">src/resources/Resource.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Resource.ts#L49">src/resources/Resource.ts:49</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3078,7 +3267,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L26">src/resources/Cliente.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L34">src/resources/Cliente.ts:34</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3109,7 +3298,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L172">src/resources/Cliente.ts:172</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L180">src/resources/Cliente.ts:180</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3137,7 +3326,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Cliente.ts#L46">src/resources/Cliente.ts:46</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Cliente.ts#L54">src/resources/Cliente.ts:54</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3169,7 +3358,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#processresponse">processResponse</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/d4903b2/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/69d4b04/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

@@ -1,5 +1,5 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest } from './ISimetraRequest';
-import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest } from './ISimetraRequest';
+import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
     mensagem?: string;
@@ -117,6 +117,36 @@ interface IRequisicaoClientAtualizarResponse {
 export interface IClientAtualizarResponse {
     requisicao: IRequisicaoClientAtualizarResponse | any;
     retorno: IRetorno | any;
+}
+interface IRequisicaoClienteCartaoCadastrarNovoResponse {
+    COD_CLIE: string;
+    COD_CNTR: string;
+    CNPJ_CPF_CLIE: string;
+    COD_EMPR_FATR: string;
+}
+interface IRetornoClienteCartaoCadastrarNovoResponse extends IRetorno {
+    COD_CLIE_CARTAO: number;
+}
+export interface IClienteCartaoCadastrarNovoResponse {
+    requisicao: IRequisicaoClienteCartaoCadastrarNovoResponse;
+    retorno: IRetornoClienteCartaoCadastrarNovoResponse;
+}
+interface IRequisicaoClienteCartaoPagamentorapidoResponse {
+    COD_CLIE: string;
+    COD_CLIE_CARTAO: string;
+    COD_CNTR_TITL: string;
+    NRO_PARCELA: string;
+    VLR_TOTAL: string;
+    CNPJ_CPF_CLIE: string;
+    OPERACAO_USN: string;
+    CODE_OPERACAO: string;
+}
+interface IRetornoClienteCartaoPagamentorapidoResponse extends IRetorno {
+    COD_CLIE_CARTAO_OPERACAO: string;
+}
+export interface IClienteCartaoPagamentorapidoResponse {
+    requisicao: IRequisicaoClienteCartaoPagamentorapidoResponse;
+    retorno: IRetornoClienteCartaoPagamentorapidoResponse;
 }
 interface IAtendimentoRequisicaoCadastrarResponse {
     COD_CNTR?: number;
@@ -364,5 +394,58 @@ export interface IHabilitacaoProvisoriaDesbloquearResponse {
     requisicao: IHabilitacaoProvisoriaDesbloquearRequest | any;
     retorno: IRetorno | any;
     FAT_CONTRATO: IFaturaContratoDesbloquearHabilitacao[] | any;
+}
+interface IExtratoContratoConsumoLinhaMovel {
+    Data: string;
+    Numero_SimCard: string;
+    Consumo_Segundos: number;
+    Consumo_Sms: number;
+    Consumo_Dados: number;
+}
+export interface IContratoConsultaLinhaMovelResponse {
+    requisicao: IContratoConsultaLinhaMovelRequest | any;
+    retorno: IRetorno | any;
+    extrato: IExtratoContratoConsumoLinhaMovel[];
+}
+export interface ITrocaFormaPagamentoResponse {
+    retorno: IRetorno | any;
+    requisicao: ITrocaFormaPagamentoRequest | any;
+}
+export interface IAlterarDiaDeVencimentoResponse {
+    requisicao: IAlterarDiaDeVencimentoRequest | any;
+    retorno: IRetorno | any;
+}
+export interface IAlterarWifiResponse {
+    requisicao: IAlterarWifiRequest | any;
+    retorno: IRetorno | any;
+}
+export interface IConsultarDiasDeVencimentoResponse {
+    retorno: IRetorno | any;
+    parametro: string | any;
+}
+export interface IFAT_CONTRATO_INTERACAO {
+    COD_CNTR_INTERACAO: number | any;
+    RETORNO_CODIGO: string | any;
+    RETORNO_MENSAGEM: string | any;
+}
+export interface IEnviarEmailResponse {
+    requisicao: IEnviarEmailRequest | any;
+    retorno: IRetorno | any;
+    FAT_CONTRATO_INTERACAO: IFAT_CONTRATO_INTERACAO[] | any;
+}
+export interface FAT_CLIENTE_CARTAO {
+    COD_CLIE: number | any;
+    COD_CLIE_CARTAO: number | any;
+    CARTAO_NOME: string | any;
+    CARTAO_NRO: string | any;
+    CARTAO_BANDEIRA: string | any;
+    CARTAO_DATA_VALIDADE: string | any;
+    CARTAO_PLATAFORMA: string | any;
+    CARTAO_EMPRESA: number | any;
+}
+export interface ICartaoConsultarCadastradosResponse {
+    requisicao: ICartaoConsultarCadastradosRequest | any;
+    retorno: IRetorno | any;
+    FAT_CLIENTE_CARTAO: FAT_CLIENTE_CARTAO | any;
 }
 export {};

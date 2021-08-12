@@ -3496,6 +3496,141 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * @param {Object} param
+     * @param param.COD_CLIE
+     * @param param.COD_CNTR
+     * @param param.CNPJ_CPF_CLIE
+     * @param param.nomeCartao
+     * @param param.dataValidadeCartao DEVE SER PADRAO MMAA, exemplo: 0425
+     * @param param.numeroCartao
+     * @param param.cvvCartao
+     * @param param.bandeiraCartao Americanet: Amex, Diners, Hipercard, Master, Visa, Fit: visa, elo, hipercard, mastercard, diners_club, american_express, Rede: mastercard, visa, diners_club, elo, american_express, Network: visa, master, amex, elo, aura, jcb, diners, discover
+     * @param param.COD_EMPR_FATR Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+     */
+    Cliente.prototype.CartaoCadastrarNovo = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CNTR = _a.COD_CNTR, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, nomeCartao = _a.nomeCartao, dataValidadeCartao = _a.dataValidadeCartao, numeroCartao = _a.numeroCartao, cvvCartao = _a.cvvCartao, bandeiraCartao = _a.bandeiraCartao, COD_EMPR_FATR = _a.COD_EMPR_FATR;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_CARTAO' },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CNTR: COD_CNTR,
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                nomeCartao: nomeCartao,
+                                dataValidadeCartao: dataValidadeCartao,
+                                numeroCartao: numeroCartao,
+                                cvvCartao: cvvCartao,
+                                bandeiraCartao: bandeiraCartao,
+                                COD_EMPR_FATR: COD_EMPR_FATR,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    /**
+     * @param {Object} param
+     * @param param.COD_CLIE Retornado no método FITTELECOM_CLIENTE_CONSULTAR
+     * @param param.COD_CLIE_CARTAO Retornado no método FITTELECOM_CLIENTE_CONSULTAR_CARTAO
+     * @param param.COD_CNTR_TITL Retornado no método FITTELECOM_CONTRATO_CONSULTAR_TITULO
+     * @param param.NRO_PARCELA Ate 6 vezes
+     * @param param.VLR_TOTAL Passar 0 (somente usado para acordo)
+     * @param param.CNPJ_CPF_CLIE
+     * @param param.OPERACAO_USN Passar 0
+     * @param param.CODE_OPERACAO Passar tit_COD_CNTR_TITL - exemplo tit_56087544
+     * @constructor
+     */
+    Cliente.prototype.CartaoPagamentorapido = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CLIE_CARTAO = _a.COD_CLIE_CARTAO, COD_CNTR_TITL = _a.COD_CNTR_TITL, NRO_PARCELA = _a.NRO_PARCELA, VLR_TOTAL = _a.VLR_TOTAL, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, OPERACAO_USN = _a.OPERACAO_USN, CODE_OPERACAO = _a.CODE_OPERACAO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONTRATO_TITULO_PAGAMENTO_RAPIDO' },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CLIE_CARTAO: COD_CLIE_CARTAO,
+                                COD_CNTR_TITL: COD_CNTR_TITL,
+                                NRO_PARCELA: NRO_PARCELA,
+                                VLR_TOTAL: VLR_TOTAL,
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                OPERACAO_USN: OPERACAO_USN,
+                                CODE_OPERACAO: CODE_OPERACAO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Cliente.prototype.EnviarEmail = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, EMAIL_ASSUNTO = _a.EMAIL_ASSUNTO, EMAIL_DESTINO = _a.EMAIL_DESTINO, EMAIL_MENSAGEM = _a.EMAIL_MENSAGEM, EMAIL_SENDER = _a.EMAIL_SENDER;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_ENVIAR_EMAIL' },
+                            data: {
+                                EMAIL_ASSUNTO: EMAIL_ASSUNTO,
+                                EMAIL_DESTINO: EMAIL_DESTINO,
+                                EMAIL_MENSAGEM: EMAIL_MENSAGEM,
+                                EMAIL_SENDER: EMAIL_SENDER,
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Cliente.prototype.CartaoConsultarCadastrados = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR_CARTAO' },
+                            data: {
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 
@@ -3914,6 +4049,128 @@ var Contrato = /** @class */ (function (_super) {
                         if (!(data.retorno.codigo === '0')) {
                             throw new SimetraError(data.retorno.mensagem);
                         }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Contrato.prototype.consultarContratoLinhaMovel = function (_a) {
+        var COD_CNTR = _a.COD_CNTR, DATA_CONSUMO = _a.DATA_CONSUMO, SEQ_LINHA = _a.SEQ_LINHA;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_CONSULTAR_CONSUMO_LINHA_MOVEL',
+                            },
+                            data: {
+                                COD_CNTR: COD_CNTR,
+                                DATA_CONSUMO: DATA_CONSUMO,
+                                SEQ_LINHA: SEQ_LINHA,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Contrato.prototype.trocarFormaPagamento = function (_a) {
+        var COD_CNTR = _a.COD_CNTR, FORM_PAGTO = _a.FORM_PAGTO, BANDEIRACARTAO = _a.BANDEIRACARTAO, CVVCARTAO = _a.CVVCARTAO, DATAVALIDADECARTAO = _a.DATAVALIDADECARTAO, NOMECARTAO = _a.NOMECARTAO, NUMEROCARTAO = _a.NUMEROCARTAO, IND_BOLETO_FISICO = _a.IND_BOLETO_FISICO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_FORMA_PAGAMENTO',
+                            },
+                            data: {
+                                COD_CNTR: COD_CNTR,
+                                FORM_PAGTO: FORM_PAGTO,
+                                BANDEIRACARTAO: BANDEIRACARTAO,
+                                CVVCARTAO: CVVCARTAO,
+                                DATAVALIDADECARTAO: DATAVALIDADECARTAO,
+                                NOMECARTAO: NOMECARTAO,
+                                NUMEROCARTAO: NUMEROCARTAO,
+                                IND_BOLETO_FISICO: IND_BOLETO_FISICO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Contrato.prototype.alterarDiaDeVencimento = function (_a) {
+        var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, COD_CNTR = _a.COD_CNTR, DIA_VENC = _a.DIA_VENC;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_DATA_VENCIMENTO',
+                            },
+                            data: {
+                                CNPJ_CPF_CLIE: CNPJ_CPF_CLIE,
+                                COD_CNTR: COD_CNTR,
+                                DIA_VENC: DIA_VENC,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Contrato.prototype.alterarWifi = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CNTR = _a.COD_CNTR, COD_CNTR_ITEM = _a.COD_CNTR_ITEM, COD_PROTOCOLO = _a.COD_PROTOCOLO, NOM_WIFI_NOVO = _a.NOM_WIFI_NOVO, SEN_WIFI_NOVO = _a.SEN_WIFI_NOVO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_WIFI',
+                            },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CNTR: COD_CNTR,
+                                COD_CNTR_ITEM: COD_CNTR_ITEM,
+                                COD_PROTOCOLO: COD_PROTOCOLO,
+                                NOM_WIFI_NOVO: NOM_WIFI_NOVO,
+                                SEN_WIFI_NOVO: SEN_WIFI_NOVO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Contrato.prototype.consultarDiasDeVencimento = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'get',
+                            params: {
+                                sNomeProc: 'FITTELECOM_PARAMETRO_DIAS_VENCIMENTO_CONSULTAR',
+                            },
+                        })];
+                    case 1:
+                        data = (_a.sent()).data;
                         return [2 /*return*/, data];
                 }
             });

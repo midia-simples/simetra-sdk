@@ -11,6 +11,7 @@ import {
   IEnviarEmailResponse,
   ICartaoConsultarCadastradosResponse,
   IIndicarNovoLeadResponse,
+  IEnviarSMSResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -25,6 +26,7 @@ import {
   IEnviarEmailRequest,
   ICartaoConsultarCadastradosRequest,
   IIndicarNovoLeadRequest,
+  IEnviarSMSRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -443,6 +445,26 @@ export default class Cliente extends Resource {
     });
 
     if (!data.retorno) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async EnviarSMS({
+    Celular,
+    Texto,
+  }: IEnviarSMSRequest): Promise<IEnviarSMSResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_ENVIAR_SMS' },
+      data: {
+        Celular,
+        Texto,
+      },
+    });
+
+    if (!(String(data.retorno.codigo) === '0')) {
       throw new SimetraError(data.retorno.mensagem);
     }
 

@@ -6,6 +6,7 @@ import {
   IAlterarWifiRequest,
   IEnviarEmailRequest,
   ICartaoConsultarCadastradosRequest,
+  IEnviarSMSRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -522,4 +523,9 @@ export interface ICartaoConsultarCadastradosResponse {
 
 export interface IIndicarNovoLeadResponse {
   retorno: string | any;
+}
+
+export interface IEnviarSMSResponse {
+  requisicao: IEnviarSMSRequest | any;
+  retorno: IRetorno | any;
 }

@@ -270,3 +270,7 @@ export interface IIndicarNovoLeadRequest {
     NUMERO_TELEFONE3?: string;
     EMAIL?: string;
 }
+export interface IEnviarSMSRequest {
+    Celular: string;
+    Texto: string;
+}

@@ -3681,6 +3681,30 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.EnviarSMS = function (_a) {
+        var Celular = _a.Celular, Texto = _a.Texto;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_ENVIAR_SMS' },
+                            data: {
+                                Celular: Celular,
+                                Texto: Texto,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(String(data.retorno.codigo) === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 

@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -450,5 +450,9 @@ export interface ICartaoConsultarCadastradosResponse {
 }
 export interface IIndicarNovoLeadResponse {
     retorno: string | any;
+}
+export interface IEnviarSMSResponse {
+    requisicao: IEnviarSMSRequest | any;
+    retorno: IRetorno | any;
 }
 export {};

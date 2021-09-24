@@ -7,6 +7,7 @@ import {
   IEnviarEmailRequest,
   ICartaoConsultarCadastradosRequest,
   IEnviarSMSRequest,
+  IInteragirAppMeuAmericanetRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -527,5 +528,10 @@ export interface IIndicarNovoLeadResponse {
 
 export interface IEnviarSMSResponse {
   requisicao: IEnviarSMSRequest | any;
+  retorno: IRetorno | any;
+}
+
+export interface IInteragirAppMeuAmericanetResponse {
+  requisicao: IInteragirAppMeuAmericanetRequest | any;
   retorno: IRetorno | any;
 }

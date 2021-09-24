@@ -3,12 +3,14 @@ import {
   IAtendimentoCadastrarResponse,
   IAtendimentoDelegarResponse,
   IAtendimentoConsultaResponse,
+  IInteragirAppMeuAmericanetResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
   IAtendimentoCadastrarRequest,
   IAtendimentoDelegarRequest,
   IAtendimentoConsultaRequest,
+  IInteragirAppMeuAmericanetRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -77,6 +79,28 @@ export default class Atendimento extends Resource {
         SEQ_CHAMADO,
         COD_FLUXO_PARA,
         DES_DETALHE,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async InteragirAppMeuAmericanet({
+    DES_DETALHE,
+    SEQ_CHAMADO,
+  }: IInteragirAppMeuAmericanetRequest): Promise<
+    IInteragirAppMeuAmericanetResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CHAMADO_INTERAGIR' },
+      data: {
+        DES_DETALHE,
+        SEQ_CHAMADO,
       },
     });
 

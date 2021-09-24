@@ -274,3 +274,7 @@ export interface IEnviarSMSRequest {
     Celular: string;
     Texto: string;
 }
+export interface IInteragirAppMeuAmericanetRequest {
+    SEQ_CHAMADO: string;
+    DES_DETALHE: string;
+}

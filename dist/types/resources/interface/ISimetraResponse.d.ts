@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -453,6 +453,10 @@ export interface IIndicarNovoLeadResponse {
 }
 export interface IEnviarSMSResponse {
     requisicao: IEnviarSMSRequest | any;
+    retorno: IRetorno | any;
+}
+export interface IInteragirAppMeuAmericanetResponse {
+    requisicao: IInteragirAppMeuAmericanetRequest | any;
     retorno: IRetorno | any;
 }
 export {};

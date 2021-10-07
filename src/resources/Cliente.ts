@@ -12,6 +12,7 @@ import {
   ICartaoConsultarCadastradosResponse,
   IIndicarNovoLeadResponse,
   IEnviarSMSResponse,
+  IRegistrarLogDeAcessoResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -27,6 +28,7 @@ import {
   ICartaoConsultarCadastradosRequest,
   IIndicarNovoLeadRequest,
   IEnviarSMSRequest,
+  IRegistrarLogDeAcessoRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -461,6 +463,32 @@ export default class Cliente extends Resource {
       data: {
         Celular,
         Texto,
+      },
+    });
+
+    if (!(String(data.retorno.codigo) === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async RegistrarLogDeAcesso({
+    COD_CLIE,
+    AUDIT_APL_INCL,
+    AUDIT_IP_INCL,
+    CNPJ_CPF_CLIE,
+    COD_CLIE_PORTAL_LOG_ACAO,
+  }: IRegistrarLogDeAcessoRequest): Promise<IRegistrarLogDeAcessoResponse> {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CLIENTE_REGISTRAR_LOG_ACESSO' },
+      data: {
+        COD_CLIE,
+        AUDIT_APL_INCL,
+        AUDIT_IP_INCL,
+        CNPJ_CPF_CLIE,
+        COD_CLIE_PORTAL_LOG_ACAO,
       },
     });
 

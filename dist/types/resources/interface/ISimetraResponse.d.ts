@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -457,6 +457,15 @@ export interface IEnviarSMSResponse {
 }
 export interface IInteragirAppMeuAmericanetResponse {
     requisicao: IInteragirAppMeuAmericanetRequest | any;
+    retorno: IRetorno | any;
+}
+export interface FAT_CLIENTE_PORTAL_LOG {
+    COD_CLIE_PORTAL_LOG: number;
+    RETORNO_CODIGO: string;
+    RETORNO_MENSAGEM: string;
+}
+export interface IRegistrarLogDeAcessoResponse {
+    requisicao: IRegistrarLogDeAcessoRequest | any;
     retorno: IRetorno | any;
 }
 export {};

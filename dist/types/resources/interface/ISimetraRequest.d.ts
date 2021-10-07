@@ -278,3 +278,10 @@ export interface IInteragirAppMeuAmericanetRequest {
     SEQ_CHAMADO: string;
     DES_DETALHE: string;
 }
+export interface IRegistrarLogDeAcessoRequest {
+    COD_CLIE: number;
+    CNPJ_CPF_CLIE: string;
+    COD_CLIE_PORTAL_LOG_ACAO: number;
+    AUDIT_IP_INCL: string;
+    AUDIT_APL_INCL: string;
+}

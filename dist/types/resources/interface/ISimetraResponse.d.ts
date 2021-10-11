@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest, IConsultarCampanhaIndiqueEGanheRequest, IConsultarSaldoIndiqueEGanheRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -467,5 +467,25 @@ export interface FAT_CLIENTE_PORTAL_LOG {
 export interface IRegistrarLogDeAcessoResponse {
     requisicao: IRegistrarLogDeAcessoRequest | any;
     retorno: IRetorno | any;
+}
+export interface INDICACAO {
+    Chave_Lead: number;
+    Nome: string;
+    Telefone: string;
+    Celular: string;
+    Status: string;
+    Data_Indicacao: string;
+}
+export interface IConsultarCampanhaIndiqueEGanheResponse {
+    requisicao: IConsultarCampanhaIndiqueEGanheRequest | any;
+    retorno: IRetorno | any;
+    Indicacoes: INDICACAO[] | any;
+}
+export interface ConsultarSaldoRetorno extends IRetorno {
+    saldo: number;
+}
+export interface IConsultarSaldoIndiqueEGanheResponse {
+    requisicao: IConsultarSaldoIndiqueEGanheRequest | any;
+    retorno: ConsultarSaldoRetorno | any;
 }
 export {};

@@ -3736,6 +3736,54 @@ var Cliente = /** @class */ (function (_super) {
             });
         });
     };
+    Cliente.prototype.ConsultarCampanhaIndiqueEGanhe = function (_a) {
+        var CNPJ_CPF_INDICANTE = _a.CNPJ_CPF_INDICANTE, DATA_FIM = _a.DATA_FIM, DATA_INICIO = _a.DATA_INICIO;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONSULTA_CAMPANHA_INDIQUEGANHE' },
+                            data: {
+                                CNPJ_CPF_INDICANTE: CNPJ_CPF_INDICANTE,
+                                DATA_FIM: DATA_FIM,
+                                DATA_INICIO: DATA_INICIO,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(String(data.retorno.codigo) === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Cliente.prototype.ConsultarSaldoIndiqueEGanhe = function (_a) {
+        var CNPJ_CPF_INDICANTE = _a.CNPJ_CPF_INDICANTE;
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CONSULTA_SALDO_INDIQUEGANHE' },
+                            data: {
+                                CNPJ_CPF_INDICANTE: CNPJ_CPF_INDICANTE,
+                            },
+                        })];
+                    case 1:
+                        data = (_b.sent()).data;
+                        if (!(String(data.retorno.codigo) === '0')) {
+                            throw new SimetraError(data.retorno.mensagem);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Cliente;
 }(Resource));
 

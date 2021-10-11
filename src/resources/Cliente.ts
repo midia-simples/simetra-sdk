@@ -13,6 +13,7 @@ import {
   IIndicarNovoLeadResponse,
   IEnviarSMSResponse,
   IRegistrarLogDeAcessoResponse,
+  IConsultarCampanhaIndiqueEGanheResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -29,6 +30,7 @@ import {
   IIndicarNovoLeadRequest,
   IEnviarSMSRequest,
   IRegistrarLogDeAcessoRequest,
+  IConsultarCampanhaIndiqueEGanheRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -489,6 +491,30 @@ export default class Cliente extends Resource {
         AUDIT_IP_INCL,
         CNPJ_CPF_CLIE,
         COD_CLIE_PORTAL_LOG_ACAO,
+      },
+    });
+
+    if (!(String(data.retorno.codigo) === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async ConsultarCampanhaIndiqueEGanhe({
+    CNPJ_CPF_INDICANTE,
+    DATA_FIM,
+    DATA_INICIO,
+  }: IConsultarCampanhaIndiqueEGanheRequest): Promise<
+    IConsultarCampanhaIndiqueEGanheResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONSULTA_CAMPANHA_INDIQUEGANHE' },
+      data: {
+        CNPJ_CPF_INDICANTE,
+        DATA_FIM,
+        DATA_INICIO,
       },
     });
 

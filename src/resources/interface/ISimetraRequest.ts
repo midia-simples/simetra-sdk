@@ -318,3 +318,9 @@ export interface IRegistrarLogDeAcessoRequest {
   AUDIT_IP_INCL: string;
   AUDIT_APL_INCL: string;
 }
+
+export interface IConsultarCampanhaIndiqueEGanheRequest {
+  CNPJ_CPF_INDICANTE: string;
+  DATA_INICIO: string;
+  DATA_FIM: string;
+}

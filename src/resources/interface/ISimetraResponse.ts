@@ -10,6 +10,7 @@ import {
   IInteragirAppMeuAmericanetRequest,
   IRegistrarLogDeAcessoRequest,
   IConsultarCampanhaIndiqueEGanheRequest,
+  IConsultarSaldoIndiqueEGanheRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -561,5 +562,15 @@ export interface INDICACAO {
 export interface IConsultarCampanhaIndiqueEGanheResponse {
   requisicao: IConsultarCampanhaIndiqueEGanheRequest | any;
   retorno: IRetorno | any;
-  Indicacoes: INDICACAO[];
+  Indicacoes: INDICACAO[] | any;
+}
+
+export interface ConsultarSaldoRetorno extends IRetorno {
+  Chave_Lead: number;
+  saldo: number;
+}
+
+export interface IConsultarSaldoIndiqueEGanheResponse {
+  requisicao: IConsultarSaldoIndiqueEGanheRequest | any;
+  retorno: ConsultarSaldoRetorno | any;
 }

@@ -14,6 +14,7 @@ import {
   IEnviarSMSResponse,
   IRegistrarLogDeAcessoResponse,
   IConsultarCampanhaIndiqueEGanheResponse,
+  IConsultarSaldoIndiqueEGanheResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -31,6 +32,7 @@ import {
   IEnviarSMSRequest,
   IRegistrarLogDeAcessoRequest,
   IConsultarCampanhaIndiqueEGanheRequest,
+  IConsultarSaldoIndiqueEGanheRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -511,6 +513,30 @@ export default class Cliente extends Resource {
     const { data } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONSULTA_CAMPANHA_INDIQUEGANHE' },
+      data: {
+        CNPJ_CPF_INDICANTE,
+        DATA_FIM,
+        DATA_INICIO,
+      },
+    });
+
+    if (!(String(data.retorno.codigo) === '0')) {
+      throw new SimetraError(data.retorno.mensagem);
+    }
+
+    return data;
+  }
+
+  public async ConsultarSaldoIndiqueEGanhe({
+    CNPJ_CPF_INDICANTE,
+    DATA_FIM,
+    DATA_INICIO,
+  }: IConsultarSaldoIndiqueEGanheRequest): Promise<
+    IConsultarSaldoIndiqueEGanheResponse
+  > {
+    const { data } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CONSULTA_SALDO_INDIQUEGANHE' },
       data: {
         CNPJ_CPF_INDICANTE,
         DATA_FIM,

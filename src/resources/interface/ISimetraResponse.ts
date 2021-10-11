@@ -566,7 +566,6 @@ export interface IConsultarCampanhaIndiqueEGanheResponse {
 }
 
 export interface ConsultarSaldoRetorno extends IRetorno {
-  Chave_Lead: number;
   saldo: number;
 }
 

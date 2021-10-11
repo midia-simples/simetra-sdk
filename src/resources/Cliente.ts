@@ -529,8 +529,6 @@ export default class Cliente extends Resource {
 
   public async ConsultarSaldoIndiqueEGanhe({
     CNPJ_CPF_INDICANTE,
-    DATA_FIM,
-    DATA_INICIO,
   }: IConsultarSaldoIndiqueEGanheRequest): Promise<
     IConsultarSaldoIndiqueEGanheResponse
   > {
@@ -539,8 +537,6 @@ export default class Cliente extends Resource {
       params: { sNomeProc: 'FITTELECOM_CONSULTA_SALDO_INDIQUEGANHE' },
       data: {
         CNPJ_CPF_INDICANTE,
-        DATA_FIM,
-        DATA_INICIO,
       },
     });
 

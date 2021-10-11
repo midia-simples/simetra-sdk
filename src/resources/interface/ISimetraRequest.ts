@@ -327,6 +327,4 @@ export interface IConsultarCampanhaIndiqueEGanheRequest {
 
 export interface IConsultarSaldoIndiqueEGanheRequest {
   CNPJ_CPF_INDICANTE: string;
-  DATA_INICIO: string;
-  DATA_FIM: string;
 }

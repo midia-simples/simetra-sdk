@@ -26,7 +26,7 @@ export default class Titulo extends Resource {
     DAT_VENC,
     VLR_TOTAL,
   }: ITituloCadastrarRequest): Promise<ITituloCadastrarResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_TITULO' },
       data: {
@@ -39,7 +39,7 @@ export default class Titulo extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -55,7 +55,7 @@ export default class Titulo extends Resource {
     DAT_RECEB_INICIAL,
     DAT_RECEB_FINAL,
   }: ITituloConsultaRequest): Promise<ITituloConsultaResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_CONSULTAR_TITULO' },
       data: {
@@ -71,7 +71,7 @@ export default class Titulo extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -83,7 +83,7 @@ export default class Titulo extends Resource {
     DAT_RECEB,
     VLR_RECEB,
   }: ITituloQuitarRequest): Promise<ITituloQuitarResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_QUITAR_TITULO' },
       data: {
@@ -95,7 +95,7 @@ export default class Titulo extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -105,7 +105,7 @@ export default class Titulo extends Resource {
     COD_CNTR_TITL,
     COD_ARQ_DOC,
   }: ITituloDownloadRequest): Promise<ITituloDownloadResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_DOWNLOAD_TITULO' },
       data: {
@@ -115,7 +115,7 @@ export default class Titulo extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

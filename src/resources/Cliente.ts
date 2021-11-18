@@ -45,7 +45,7 @@ export default class Cliente extends Resource {
     CNPJ_CPF_CLIE = undefined,
     COD_CNTR = undefined,
   }: IClientConsultaRequest): Promise<IClientConsultaResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR' },
       data: {
@@ -55,7 +55,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -65,7 +65,7 @@ export default class Cliente extends Resource {
     CNPJ_CPF_CLIE,
     ASSINANTE_SENHA,
   }: IClientLoginRequest): Promise<IClientLoginResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CLIENTE_LOGIN' },
       data: {
@@ -75,7 +75,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -167,7 +167,7 @@ export default class Cliente extends Resource {
   }: IClientCadastrarVindiRequest): Promise<
     IClientCadastrarVindiResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_VINDI_CARTAO_CADASTRAR' },
       data: {
@@ -181,7 +181,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -192,7 +192,7 @@ export default class Cliente extends Resource {
   }: IClientConsultaCadastroVindiRequest): Promise<
     IClientConsultaCadastroVindiResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_VINDI_CONSULTAR_CADASTRO' },
       data: {
@@ -201,7 +201,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -216,7 +216,7 @@ export default class Cliente extends Resource {
     TELEFONE3,
     TELEFONE4,
   }: IClientAtualizarRequest): Promise<IClientAtualizarResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CLIENTE_ATUALIZAR' },
       data: {
@@ -231,7 +231,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -262,7 +262,7 @@ export default class Cliente extends Resource {
   }: IClienteCartaoCadastrarNovoRequest): Promise<
     IClienteCartaoCadastrarNovoResponse
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_CARTAO' },
       data: {
@@ -279,7 +279,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -309,7 +309,7 @@ export default class Cliente extends Resource {
   }: IClienteCartaoPagamentorapidoRequest): Promise<
     IClienteCartaoPagamentorapidoResponse
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_TITULO_PAGAMENTO_RAPIDO' },
       data: {
@@ -325,7 +325,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -338,7 +338,7 @@ export default class Cliente extends Resource {
     EMAIL_MENSAGEM,
     EMAIL_SENDER,
   }: IEnviarEmailRequest): Promise<IEnviarEmailResponse> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_ENVIAR_EMAIL' },
       data: {
@@ -351,7 +351,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -362,7 +362,7 @@ export default class Cliente extends Resource {
   }: ICartaoConsultarCadastradosRequest): Promise<
     ICartaoConsultarCadastradosResponse
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR_CARTAO' },
       data: {
@@ -371,7 +371,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -411,7 +411,7 @@ export default class Cliente extends Resource {
     RG,
     SEXO,
   }: IIndicarNovoLeadRequest): Promise<IIndicarNovoLeadResponse> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_NOVO_LEAD' },
       data: {
@@ -451,7 +451,7 @@ export default class Cliente extends Resource {
     });
 
     if (!data.retorno) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -461,7 +461,7 @@ export default class Cliente extends Resource {
     Celular,
     Texto,
   }: IEnviarSMSRequest): Promise<IEnviarSMSResponse> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_ENVIAR_SMS' },
       data: {
@@ -471,7 +471,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(String(data.retorno.codigo) === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -484,7 +484,7 @@ export default class Cliente extends Resource {
     CNPJ_CPF_CLIE,
     COD_CLIE_PORTAL_LOG_ACAO,
   }: IRegistrarLogDeAcessoRequest): Promise<IRegistrarLogDeAcessoResponse> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CLIENTE_REGISTRAR_LOG_ACESSO' },
       data: {
@@ -497,7 +497,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(String(data.retorno.codigo) === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -510,7 +510,7 @@ export default class Cliente extends Resource {
   }: IConsultarCampanhaIndiqueEGanheRequest): Promise<
     IConsultarCampanhaIndiqueEGanheResponse
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONSULTA_CAMPANHA_INDIQUEGANHE' },
       data: {
@@ -521,7 +521,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(String(data.retorno.codigo) === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -532,7 +532,7 @@ export default class Cliente extends Resource {
   }: IConsultarSaldoIndiqueEGanheRequest): Promise<
     IConsultarSaldoIndiqueEGanheResponse
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONSULTA_SALDO_INDIQUEGANHE' },
       data: {
@@ -541,7 +541,7 @@ export default class Cliente extends Resource {
     });
 
     if (!(String(data.retorno.codigo) === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

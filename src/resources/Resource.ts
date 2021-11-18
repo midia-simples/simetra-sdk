@@ -27,7 +27,9 @@ export default class Resource {
 
       if (data.retorno === 'ACESSO NAO AUTORIZADO') {
         throw new SimetraError(
-          'Acesso não autorizado, verifique as credencias informadas'
+          'Acesso não autorizado, verifique as credencias informadas',
+          data,
+          request
         );
       }
 

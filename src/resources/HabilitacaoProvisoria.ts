@@ -20,7 +20,7 @@ export default class HabilitacaoProvisoria extends Resource {
   }: IHabilitacaoProvisoriaConsultaRequest): Promise<
     IHabilitacaoProvisoriaConsultaResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_CONSULTAR' },
       data: {
@@ -29,7 +29,7 @@ export default class HabilitacaoProvisoria extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -41,7 +41,7 @@ export default class HabilitacaoProvisoria extends Resource {
   }: IHabilitacaoProvisoriaDesbloquearRequest): Promise<
     IHabilitacaoProvisoriaDesbloquearResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
       data: {
@@ -51,7 +51,7 @@ export default class HabilitacaoProvisoria extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

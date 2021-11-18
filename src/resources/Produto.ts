@@ -12,7 +12,7 @@ export default class Produto extends Resource {
   public async consulta({
     TIPO_PRODUTO,
   }: IProdutoConsultaRequest): Promise<IProdutoConsultaResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_PRODUTO_CONSULTAR' },
       data: {
@@ -21,7 +21,7 @@ export default class Produto extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

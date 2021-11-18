@@ -22,14 +22,14 @@ export default class Atendimento extends Resource {
   public async consulta({
     PROTOCOLO,
   }: IAtendimentoConsultaRequest): Promise<IAtendimentoConsultaResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },
       data: { PROTOCOLO },
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -46,7 +46,7 @@ export default class Atendimento extends Resource {
   }: IAtendimentoCadastrarRequest): Promise<
     IAtendimentoCadastrarResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_CADASTRAR' },
       data: {
@@ -61,7 +61,7 @@ export default class Atendimento extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -72,7 +72,7 @@ export default class Atendimento extends Resource {
     COD_FLUXO_PARA,
     DES_DETALHE,
   }: IAtendimentoDelegarRequest): Promise<IAtendimentoDelegarResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_DELEGAR' },
       data: {
@@ -83,7 +83,7 @@ export default class Atendimento extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -95,7 +95,7 @@ export default class Atendimento extends Resource {
   }: IInteragirAppMeuAmericanetRequest): Promise<
     IInteragirAppMeuAmericanetResponse
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_INTERAGIR' },
       data: {
@@ -105,7 +105,7 @@ export default class Atendimento extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

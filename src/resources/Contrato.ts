@@ -31,7 +31,7 @@ export default class Contrato extends Resource {
   }: IContratoCadastrarAnexoRequest): Promise<
     IContratoCadastrarAnexoResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_ANEXO' },
       data: {
@@ -43,7 +43,7 @@ export default class Contrato extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;
@@ -52,7 +52,7 @@ export default class Contrato extends Resource {
   public async desbloquear({
     COD_CNTR,
   }: IContratoDesbloquearRequest): Promise<IContratoDesbloquearResponse | any> {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CONTRATO_DESBLOQUEAR' },
       data: {
@@ -62,7 +62,7 @@ export default class Contrato extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

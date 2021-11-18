@@ -17,7 +17,7 @@ export default class IncidenteRede extends Resource {
   }: IIncidenteRedeConsultaRequest): Promise<
     IIncidenteRedeConsultaResponse | any
   > {
-    const { data } = await this.callApi({
+    const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR_INCIDENTE_DE_REDE' },
       data: {
@@ -29,7 +29,7 @@ export default class IncidenteRede extends Resource {
     });
 
     if (!(data.retorno.codigo === '0')) {
-      throw new SimetraError(data.retorno.mensagem);
+      throw new SimetraError(data.retorno.mensagem, data, request);
     }
 
     return data;

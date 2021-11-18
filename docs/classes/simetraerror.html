@@ -2728,11 +2728,17 @@ img {
 				<li class=" tsd-kind-constructor tsd-parent-kind-class">
 					<a href="simetraerror.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="simetraerror.html#data" class="tsd-kind-icon">data</a>
+				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="simetraerror.html#message" class="tsd-kind-icon">message</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="simetraerror.html#name" class="tsd-kind-icon">name</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="simetraerror.html#request" class="tsd-kind-icon">request</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="simetraerror.html#stack" class="tsd-kind-icon">stack</a>
@@ -2772,8 +2778,10 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="simetraerror.html#data" class="tsd-kind-icon">data</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="simetraerror.html#message" class="tsd-kind-icon">message</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="simetraerror.html#name" class="tsd-kind-icon">name</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="simetraerror.html#request" class="tsd-kind-icon">request</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="simetraerror.html#stack" class="tsd-kind-icon">stack</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="simetraerror.html#error" class="tsd-kind-icon">Error</a></li>
 						</ul>
@@ -2787,19 +2795,25 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Simetra<wbr>Error<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="simetraerror.html" class="tsd-signature-type">SimetraError</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Simetra<wbr>Error<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, request<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="simetraerror.html" class="tsd-signature-type">SimetraError</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/89772fd/src/resources/SimetraError.ts#L1">src/resources/SimetraError.ts:1</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/580300e/src/resources/SimetraError.ts#L3">src/resources/SimetraError.ts:3</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>name: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> data: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> = undefined</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> request: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> = undefined</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="simetraerror.html" class="tsd-signature-type">SimetraError</a></h4>
@@ -2809,6 +2823,16 @@ img {
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="data" class="tsd-anchor"></a>
+				<h3>data</h3>
+				<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/580300e/src/resources/SimetraError.ts#L3">src/resources/SimetraError.ts:3</a></li>
+					</ul>
+				</aside>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="message" class="tsd-anchor"></a>
 				<h3>message</h3>
@@ -2828,6 +2852,16 @@ img {
 					<p>Inherited from <a href="simetraerror.html">SimetraError</a>.<a href="simetraerror.html#name">name</a></p>
 					<ul>
 						<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:973</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="request" class="tsd-anchor"></a>
+				<h3>request</h3>
+				<div class="tsd-signature tsd-kind-icon">request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/580300e/src/resources/SimetraError.ts#L2">src/resources/SimetraError.ts:2</a></li>
 					</ul>
 				</aside>
 			</section>

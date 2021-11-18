@@ -3251,8 +3251,12 @@ var HttpClient = /** @class */ (function () {
 
 var SimetraError = /** @class */ (function (_super) {
     __extends(SimetraError, _super);
-    function SimetraError(name) {
+    function SimetraError(name, data, request) {
+        if (data === void 0) { data = undefined; }
+        if (request === void 0) { request = undefined; }
         var _this = _super.call(this, name) || this;
+        _this.request = request;
+        _this.data = data;
         Object.setPrototypeOf(_this, SimetraError.prototype);
         return _this;
     }
@@ -3275,7 +3279,7 @@ var Resource = /** @class */ (function () {
         try {
             var data = response.data, request = response.request, status = response.status;
             if (data.retorno === 'ACESSO NAO AUTORIZADO') {
-                throw new SimetraError('Acesso não autorizado, verifique as credencias informadas');
+                throw new SimetraError('Acesso não autorizado, verifique as credencias informadas', data, request);
             }
             return {
                 data: data,
@@ -3321,9 +3325,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.consulta = function (_a) {
         var _b = _a.CNPJ_CPF_CLIE, CNPJ_CPF_CLIE = _b === void 0 ? undefined : _b, _c = _a.COD_CNTR, COD_CNTR = _c === void 0 ? undefined : _c;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_d) {
-                switch (_d.label) {
+            var _d, data, request;
+            return __generator(this, function (_e) {
+                switch (_e.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR' },
@@ -3333,9 +3337,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_d.sent()).data;
+                        _d = _e.sent(), data = _d.data, request = _d.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3345,9 +3349,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.login = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, ASSINANTE_SENHA = _a.ASSINANTE_SENHA;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CLIENTE_LOGIN' },
@@ -3357,9 +3361,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3419,9 +3423,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.cadastrarVindi = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, nomeCartao = _a.nomeCartao, dataValidadeCartao = _a.dataValidadeCartao, numeroCartao = _a.numeroCartao, cvvCartao = _a.cvvCartao, bandeiraCartao = _a.bandeiraCartao;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_VINDI_CARTAO_CADASTRAR' },
@@ -3435,9 +3439,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3447,9 +3451,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.consultaCadastroVindi = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_VINDI_CONSULTAR_CADASTRO' },
@@ -3458,9 +3462,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3470,9 +3474,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.atualizar = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, COD_CLIE = _a.COD_CLIE, EMAIL = _a.EMAIL, TELEFONE1 = _a.TELEFONE1, TELEFONE2 = _a.TELEFONE2, TELEFONE3 = _a.TELEFONE3, TELEFONE4 = _a.TELEFONE4;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CLIENTE_ATUALIZAR' },
@@ -3487,9 +3491,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3511,9 +3515,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.CartaoCadastrarNovo = function (_a) {
         var COD_CLIE = _a.COD_CLIE, COD_CNTR = _a.COD_CNTR, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, nomeCartao = _a.nomeCartao, dataValidadeCartao = _a.dataValidadeCartao, numeroCartao = _a.numeroCartao, cvvCartao = _a.cvvCartao, bandeiraCartao = _a.bandeiraCartao, COD_EMPR_FATR = _a.COD_EMPR_FATR;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_CARTAO' },
@@ -3530,9 +3534,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3554,9 +3558,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.CartaoPagamentorapido = function (_a) {
         var COD_CLIE = _a.COD_CLIE, COD_CLIE_CARTAO = _a.COD_CLIE_CARTAO, COD_CNTR_TITL = _a.COD_CNTR_TITL, NRO_PARCELA = _a.NRO_PARCELA, VLR_TOTAL = _a.VLR_TOTAL, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, OPERACAO_USN = _a.OPERACAO_USN, CODE_OPERACAO = _a.CODE_OPERACAO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_TITULO_PAGAMENTO_RAPIDO' },
@@ -3572,9 +3576,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3584,9 +3588,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.EnviarEmail = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, EMAIL_ASSUNTO = _a.EMAIL_ASSUNTO, EMAIL_DESTINO = _a.EMAIL_DESTINO, EMAIL_MENSAGEM = _a.EMAIL_MENSAGEM, EMAIL_SENDER = _a.EMAIL_SENDER;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_ENVIAR_EMAIL' },
@@ -3599,9 +3603,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3611,9 +3615,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.CartaoConsultarCadastrados = function (_a) {
         var CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR_CARTAO' },
@@ -3622,9 +3626,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3634,9 +3638,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.IndicarNovoLead = function (_a) {
         var CNPJ_CPF = _a.CNPJ_CPF, CNPJ_CPF_INDICANTE = _a.CNPJ_CPF_INDICANTE, DATA_NASCIMENTO = _a.DATA_NASCIMENTO, DDD_CELULAR1 = _a.DDD_CELULAR1, DDD_CELULAR2 = _a.DDD_CELULAR2, DDD_CELULAR3 = _a.DDD_CELULAR3, DDD_TELEFONE1 = _a.DDD_TELEFONE1, DDD_TELEFONE2 = _a.DDD_TELEFONE2, DDD_TELEFONE3 = _a.DDD_TELEFONE3, EMAIL = _a.EMAIL, ENDERECO_BAIRRO = _a.ENDERECO_BAIRRO, ENDERECO_CEP = _a.ENDERECO_CEP, ENDERECO_CIDADE = _a.ENDERECO_CIDADE, ENDERECO_COMPLEMENTO = _a.ENDERECO_COMPLEMENTO, ENDERECO_LOGRADOURO = _a.ENDERECO_LOGRADOURO, ENDERECO_LOGRADOURO_TIPO = _a.ENDERECO_LOGRADOURO_TIPO, ENDERECO_NUMERO = _a.ENDERECO_NUMERO, ENDERECO_UF = _a.ENDERECO_UF, INSCRICAO_MUNICIPAL = _a.INSCRICAO_MUNICIPAL, NOME_CLIENTE = _a.NOME_CLIENTE, NOME_MAE = _a.NOME_MAE, NOME_PAI = _a.NOME_PAI, NUMERO_CELULAR1 = _a.NUMERO_CELULAR1, NUMERO_CELULAR2 = _a.NUMERO_CELULAR2, NUMERO_CELULAR3 = _a.NUMERO_CELULAR3, NUMERO_TELEFONE1 = _a.NUMERO_TELEFONE1, NUMERO_TELEFONE2 = _a.NUMERO_TELEFONE2, NUMERO_TELEFONE3 = _a.NUMERO_TELEFONE3, ORIGEM = _a.ORIGEM, RAZAO_SOCIAL = _a.RAZAO_SOCIAL, RG = _a.RG, SEXO = _a.SEXO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_NOVO_LEAD' },
@@ -3676,9 +3680,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!data.retorno) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3688,9 +3692,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.EnviarSMS = function (_a) {
         var Celular = _a.Celular, Texto = _a.Texto;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_ENVIAR_SMS' },
@@ -3700,9 +3704,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(String(data.retorno.codigo) === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3712,9 +3716,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.RegistrarLogDeAcesso = function (_a) {
         var COD_CLIE = _a.COD_CLIE, AUDIT_APL_INCL = _a.AUDIT_APL_INCL, AUDIT_IP_INCL = _a.AUDIT_IP_INCL, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE, COD_CLIE_PORTAL_LOG_ACAO = _a.COD_CLIE_PORTAL_LOG_ACAO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CLIENTE_REGISTRAR_LOG_ACESSO' },
@@ -3727,9 +3731,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(String(data.retorno.codigo) === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3739,9 +3743,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.ConsultarCampanhaIndiqueEGanhe = function (_a) {
         var CNPJ_CPF_INDICANTE = _a.CNPJ_CPF_INDICANTE, DATA_FIM = _a.DATA_FIM, DATA_INICIO = _a.DATA_INICIO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONSULTA_CAMPANHA_INDIQUEGANHE' },
@@ -3752,9 +3756,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(String(data.retorno.codigo) === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3764,9 +3768,9 @@ var Cliente = /** @class */ (function (_super) {
     Cliente.prototype.ConsultarSaldoIndiqueEGanhe = function (_a) {
         var CNPJ_CPF_INDICANTE = _a.CNPJ_CPF_INDICANTE;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONSULTA_SALDO_INDIQUEGANHE' },
@@ -3775,9 +3779,9 @@ var Cliente = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(String(data.retorno.codigo) === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3795,18 +3799,18 @@ var Atendimento = /** @class */ (function (_super) {
     Atendimento.prototype.consulta = function (_a) {
         var PROTOCOLO = _a.PROTOCOLO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },
                             data: { PROTOCOLO: PROTOCOLO },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3816,9 +3820,9 @@ var Atendimento = /** @class */ (function (_super) {
     Atendimento.prototype.cadastrar = function (_a) {
         var COD_CNTR = _a.COD_CNTR, COD_CNTR_ITEM = _a.COD_CNTR_ITEM, COD_CHAMADO_FLUXO = _a.COD_CHAMADO_FLUXO, TELEFONE1 = _a.TELEFONE1, TELEFONE2 = _a.TELEFONE2, DES_SOLICITANTE_EMAIL = _a.DES_SOLICITANTE_EMAIL, DES_SOLICITACAO = _a.DES_SOLICITACAO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CHAMADO_CADASTRAR' },
@@ -3833,9 +3837,9 @@ var Atendimento = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3845,9 +3849,9 @@ var Atendimento = /** @class */ (function (_super) {
     Atendimento.prototype.delegar = function (_a) {
         var SEQ_CHAMADO = _a.SEQ_CHAMADO, COD_FLUXO_PARA = _a.COD_FLUXO_PARA, DES_DETALHE = _a.DES_DETALHE;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CHAMADO_DELEGAR' },
@@ -3858,9 +3862,9 @@ var Atendimento = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3870,9 +3874,9 @@ var Atendimento = /** @class */ (function (_super) {
     Atendimento.prototype.InteragirAppMeuAmericanet = function (_a) {
         var DES_DETALHE = _a.DES_DETALHE, SEQ_CHAMADO = _a.SEQ_CHAMADO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CHAMADO_INTERAGIR' },
@@ -3882,9 +3886,9 @@ var Atendimento = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3902,9 +3906,9 @@ var IncidenteRede = /** @class */ (function (_super) {
     IncidenteRede.prototype.consulta = function (_a) {
         var POP_IP = _a.POP_IP, ENDER_CDE_NOM = _a.ENDER_CDE_NOM, ENDER_BAIR_NOM = _a.ENDER_BAIR_NOM, ENDER_UF = _a.ENDER_UF;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR_INCIDENTE_DE_REDE' },
@@ -3916,9 +3920,9 @@ var IncidenteRede = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3936,9 +3940,9 @@ var Titulo = /** @class */ (function (_super) {
     Titulo.prototype.cadastrar = function (_a) {
         var COD_CNTR = _a.COD_CNTR, TIPO_DE_COBRANCA = _a.TIPO_DE_COBRANCA, FORMA_DE_PAGAMENTO = _a.FORMA_DE_PAGAMENTO, DAT_VENC = _a.DAT_VENC, VLR_TOTAL = _a.VLR_TOTAL;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_TITULO' },
@@ -3951,9 +3955,9 @@ var Titulo = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3963,9 +3967,9 @@ var Titulo = /** @class */ (function (_super) {
     Titulo.prototype.consulta = function (_a) {
         var COD_CNTR = _a.COD_CNTR, COD_CNTR_TITL = _a.COD_CNTR_TITL, COD_CLIE = _a.COD_CLIE, COD_STAT_TITL = _a.COD_STAT_TITL, DAT_VENC_INICIAL = _a.DAT_VENC_INICIAL, DAT_VENC_FINAL = _a.DAT_VENC_FINAL, DAT_RECEB_INICIAL = _a.DAT_RECEB_INICIAL, DAT_RECEB_FINAL = _a.DAT_RECEB_FINAL;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_CONSULTAR_TITULO' },
@@ -3981,9 +3985,9 @@ var Titulo = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -3993,9 +3997,9 @@ var Titulo = /** @class */ (function (_super) {
     Titulo.prototype.quitar = function (_a) {
         var COD_CNTR = _a.COD_CNTR, COD_CNTR_TITL = _a.COD_CNTR_TITL, DAT_RECEB = _a.DAT_RECEB, VLR_RECEB = _a.VLR_RECEB;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_QUITAR_TITULO' },
@@ -4007,9 +4011,9 @@ var Titulo = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4019,9 +4023,9 @@ var Titulo = /** @class */ (function (_super) {
     Titulo.prototype.download = function (_a) {
         var COD_CNTR_TITL = _a.COD_CNTR_TITL, COD_ARQ_DOC = _a.COD_ARQ_DOC;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_DOWNLOAD_TITULO' },
@@ -4031,9 +4035,9 @@ var Titulo = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4050,17 +4054,17 @@ var Vencimentos = /** @class */ (function (_super) {
     }
     Vencimentos.prototype.consulta = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var _a, data, request;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'get',
                             params: { sNomeProc: 'FITTELECOM_PARAMETRO_DIAS_VENCIMENTO_CONSULTAR' },
                         })];
                     case 1:
-                        data = (_a.sent()).data;
+                        _a = _b.sent(), data = _a.data, request = _a.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4078,9 +4082,9 @@ var Produto = /** @class */ (function (_super) {
     Produto.prototype.consulta = function (_a) {
         var TIPO_PRODUTO = _a.TIPO_PRODUTO;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_PRODUTO_CONSULTAR' },
@@ -4089,9 +4093,9 @@ var Produto = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4184,9 +4188,9 @@ var Contrato = /** @class */ (function (_super) {
     Contrato.prototype.cadastrarAnexo = function (_a) {
         var COD_CNTR = _a.COD_CNTR, SEQ_CONTRATO_ANEXO_TIPO = _a.SEQ_CONTRATO_ANEXO_TIPO, ANEXO_BUFFER = _a.ANEXO_BUFFER, ANEXO_NOME = _a.ANEXO_NOME;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_ANEXO' },
@@ -4198,9 +4202,9 @@ var Contrato = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4210,9 +4214,9 @@ var Contrato = /** @class */ (function (_super) {
     Contrato.prototype.desbloquear = function (_a) {
         var COD_CNTR = _a.COD_CNTR;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CONTRATO_DESBLOQUEAR' },
@@ -4222,9 +4226,9 @@ var Contrato = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4364,9 +4368,9 @@ var HabilitacaoProvisoria = /** @class */ (function (_super) {
     HabilitacaoProvisoria.prototype.consulta = function (_a) {
         var CLIENTE_CNPJ_CPF = _a.CLIENTE_CNPJ_CPF;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_CONSULTAR' },
@@ -4375,9 +4379,9 @@ var HabilitacaoProvisoria = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }
@@ -4387,9 +4391,9 @@ var HabilitacaoProvisoria = /** @class */ (function (_super) {
     HabilitacaoProvisoria.prototype.desbloquear = function (_a) {
         var CLIENTE_CNPJ_CPF = _a.CLIENTE_CNPJ_CPF, COD_CNTR = _a.COD_CNTR;
         return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_PROMESSA_PAGAMENTO_DESBLOQUEAR' },
@@ -4399,9 +4403,9 @@ var HabilitacaoProvisoria = /** @class */ (function (_super) {
                             },
                         })];
                     case 1:
-                        data = (_b.sent()).data;
+                        _b = _c.sent(), data = _b.data, request = _b.request;
                         if (!(data.retorno.codigo === '0')) {
-                            throw new SimetraError(data.retorno.mensagem);
+                            throw new SimetraError(data.retorno.mensagem, data, request);
                         }
                         return [2 /*return*/, data];
                 }

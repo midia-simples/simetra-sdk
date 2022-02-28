@@ -39,7 +39,7 @@ export default class Cliente extends Resource {
     EnviarEmail({ CNPJ_CPF_CLIE, EMAIL_ASSUNTO, EMAIL_DESTINO, EMAIL_MENSAGEM, EMAIL_SENDER, }: IEnviarEmailRequest): Promise<IEnviarEmailResponse>;
     CartaoConsultarCadastrados({ CNPJ_CPF_CLIE, }: ICartaoConsultarCadastradosRequest): Promise<ICartaoConsultarCadastradosResponse>;
     IndicarNovoLead({ CNPJ_CPF, CNPJ_CPF_INDICANTE, DATA_NASCIMENTO, DDD_CELULAR1, DDD_CELULAR2, DDD_CELULAR3, DDD_TELEFONE1, DDD_TELEFONE2, DDD_TELEFONE3, EMAIL, ENDERECO_BAIRRO, ENDERECO_CEP, ENDERECO_CIDADE, ENDERECO_COMPLEMENTO, ENDERECO_LOGRADOURO, ENDERECO_LOGRADOURO_TIPO, ENDERECO_NUMERO, ENDERECO_UF, INSCRICAO_MUNICIPAL, NOME_CLIENTE, NOME_MAE, NOME_PAI, NUMERO_CELULAR1, NUMERO_CELULAR2, NUMERO_CELULAR3, NUMERO_TELEFONE1, NUMERO_TELEFONE2, NUMERO_TELEFONE3, ORIGEM, RAZAO_SOCIAL, RG, SEXO, }: IIndicarNovoLeadRequest): Promise<IIndicarNovoLeadResponse>;
-    EnviarSMS({ Celular, Texto, }: IEnviarSMSRequest): Promise<IEnviarSMSResponse>;
+    EnviarSMS({ Celular, Texto, Cod_Cntr, }: IEnviarSMSRequest): Promise<IEnviarSMSResponse>;
     RegistrarLogDeAcesso({ COD_CLIE, AUDIT_APL_INCL, AUDIT_IP_INCL, CNPJ_CPF_CLIE, COD_CLIE_PORTAL_LOG_ACAO, }: IRegistrarLogDeAcessoRequest): Promise<IRegistrarLogDeAcessoResponse>;
     ConsultarCampanhaIndiqueEGanhe({ CNPJ_CPF_INDICANTE, DATA_FIM, DATA_INICIO, }: IConsultarCampanhaIndiqueEGanheRequest): Promise<IConsultarCampanhaIndiqueEGanheResponse>;
     ConsultarSaldoIndiqueEGanhe({ CNPJ_CPF_INDICANTE, }: IConsultarSaldoIndiqueEGanheRequest): Promise<IConsultarSaldoIndiqueEGanheResponse>;

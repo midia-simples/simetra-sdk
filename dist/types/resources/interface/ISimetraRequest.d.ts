@@ -273,6 +273,7 @@ export interface IIndicarNovoLeadRequest {
 export interface IEnviarSMSRequest {
     Celular: string;
     Texto: string;
+    Cod_Cntr: number;
 }
 export interface IInteragirAppMeuAmericanetRequest {
     SEQ_CHAMADO: string;

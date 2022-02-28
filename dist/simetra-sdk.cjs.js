@@ -3690,7 +3690,7 @@ var Cliente = /** @class */ (function (_super) {
         });
     };
     Cliente.prototype.EnviarSMS = function (_a) {
-        var Celular = _a.Celular, Texto = _a.Texto;
+        var Celular = _a.Celular, Texto = _a.Texto, Cod_Cntr = _a.Cod_Cntr;
         return __awaiter(this, void 0, void 0, function () {
             var _b, data, request;
             return __generator(this, function (_c) {
@@ -3701,6 +3701,7 @@ var Cliente = /** @class */ (function (_super) {
                             data: {
                                 Celular: Celular,
                                 Texto: Texto,
+                                Cod_Cntr: Cod_Cntr,
                             },
                         })];
                     case 1:

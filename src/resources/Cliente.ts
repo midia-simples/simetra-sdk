@@ -460,6 +460,7 @@ export default class Cliente extends Resource {
   public async EnviarSMS({
     Celular,
     Texto,
+    Cod_Cntr,
   }: IEnviarSMSRequest): Promise<IEnviarSMSResponse> {
     const { data, request } = await this.callApi({
       method: 'post',
@@ -467,6 +468,7 @@ export default class Cliente extends Resource {
       data: {
         Celular,
         Texto,
+        Cod_Cntr,
       },
     });
 

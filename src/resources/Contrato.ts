@@ -7,6 +7,7 @@ import {
   IAlterarDiaDeVencimentoResponse,
   IConsultarDiasDeVencimentoResponse,
   IAlterarWifiResponse,
+  ITituloPixGerarBoletoResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -16,6 +17,7 @@ import {
   ITrocaFormaPagamentoRequest,
   IAlterarDiaDeVencimentoRequest,
   IAlterarWifiRequest,
+  ITituloPixGerarBoletoRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 export default class Contrato extends Resource {
@@ -175,6 +177,26 @@ export default class Contrato extends Resource {
         sNomeProc: 'FITTELECOM_PARAMETRO_DIAS_VENCIMENTO_CONSULTAR',
       },
     });
+
+    return data;
+  }
+
+  public async tituloPixGerarBoleto({
+    COD_CLIE,
+    COD_CNTR_TITL,
+  }: ITituloPixGerarBoletoRequest): Promise<ITituloPixGerarBoletoResponse> {
+    const { data, request } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_PIX_GERAR_BOLETO' },
+      data: {
+        COD_CLIE,
+        COD_CNTR_TITL,
+      },
+    });
+
+    if (!(String(data.retorno.codigo) === '0')) {
+      throw new SimetraError(data.retorno.mensagem, data, request);
+    }
 
     return data;
   }

@@ -11,6 +11,7 @@ import {
   IRegistrarLogDeAcessoRequest,
   IConsultarCampanhaIndiqueEGanheRequest,
   IConsultarSaldoIndiqueEGanheRequest,
+  ITituloPixGerarBoletoRequest,
 } from './ISimetraRequest';
 import {
   IClientConsultaRequest,
@@ -572,4 +573,9 @@ export interface ConsultarSaldoRetorno extends IRetorno {
 export interface IConsultarSaldoIndiqueEGanheResponse {
   requisicao: IConsultarSaldoIndiqueEGanheRequest | any;
   retorno: ConsultarSaldoRetorno | any;
+}
+
+export interface ITituloPixGerarBoletoResponse {
+  requisicao: ITituloPixGerarBoletoRequest | any;
+  retorno: IRetorno | any;
 }

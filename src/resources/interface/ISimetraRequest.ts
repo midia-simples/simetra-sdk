@@ -329,3 +329,8 @@ export interface IConsultarCampanhaIndiqueEGanheRequest {
 export interface IConsultarSaldoIndiqueEGanheRequest {
   CNPJ_CPF_INDICANTE: string;
 }
+
+export interface ITituloPixGerarBoletoRequest {
+  COD_CNTR_TITL: string;
+  COD_CLIE: string;
+}

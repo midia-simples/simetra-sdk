@@ -4358,6 +4358,30 @@ var Contrato = /** @class */ (function (_super) {
             });
         });
     };
+    Contrato.prototype.tituloPixGerarBoleto = function (_a) {
+        var COD_CLIE = _a.COD_CLIE, COD_CNTR_TITL = _a.COD_CNTR_TITL;
+        return __awaiter(this, void 0, void 0, function () {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_PIX_GERAR_BOLETO' },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                                COD_CNTR_TITL: COD_CNTR_TITL,
+                            },
+                        })];
+                    case 1:
+                        _b = _c.sent(), data = _b.data, request = _b.request;
+                        if (!(String(data.retorno.codigo) === '0')) {
+                            throw new SimetraError(data.retorno.mensagem, data, request);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Contrato;
 }(Resource));
 

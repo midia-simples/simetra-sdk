@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest, IConsultarCampanhaIndiqueEGanheRequest, IConsultarSaldoIndiqueEGanheRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest, IConsultarCampanhaIndiqueEGanheRequest, IConsultarSaldoIndiqueEGanheRequest, ITituloPixGerarBoletoRequest } from './ISimetraRequest';
 import { IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
@@ -487,5 +487,9 @@ export interface ConsultarSaldoRetorno extends IRetorno {
 export interface IConsultarSaldoIndiqueEGanheResponse {
     requisicao: IConsultarSaldoIndiqueEGanheRequest | any;
     retorno: ConsultarSaldoRetorno | any;
+}
+export interface ITituloPixGerarBoletoResponse {
+    requisicao: ITituloPixGerarBoletoRequest | any;
+    retorno: IRetorno | any;
 }
 export {};

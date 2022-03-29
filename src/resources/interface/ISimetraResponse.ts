@@ -579,3 +579,7 @@ export interface ITituloPixGerarBoletoResponse {
   requisicao: ITituloPixGerarBoletoRequest | any;
   retorno: IRetorno | any;
 }
+
+export interface IAlterarFormaDePagamentoGrupoResponse {
+  retorno: IRetorno | any;
+}

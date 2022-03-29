@@ -8,6 +8,7 @@ import {
   IConsultarDiasDeVencimentoResponse,
   IAlterarWifiResponse,
   ITituloPixGerarBoletoResponse,
+  IAlterarFormaDePagamentoGrupoResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -18,6 +19,7 @@ import {
   IAlterarDiaDeVencimentoRequest,
   IAlterarWifiRequest,
   ITituloPixGerarBoletoRequest,
+  IAlterarFormaDePagamentoGrupoRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 export default class Contrato extends Resource {
@@ -191,6 +193,36 @@ export default class Contrato extends Resource {
       data: {
         COD_CLIE,
         COD_CNTR_TITL,
+      },
+    });
+
+    if (!(String(data.retorno.codigo) === '0')) {
+      throw new SimetraError(data.retorno.mensagem, data, request);
+    }
+
+    return data;
+  }
+
+  public async alterarFormaDePagamentoGrupo({
+    COD_CNTR,
+    FORM_PAGTO,
+    COD_CLIE_CARTAO,
+    COD_CLIE_DEBITO_EM_CONTA,
+    IND_BOLETO_FISICO,
+  }: IAlterarFormaDePagamentoGrupoRequest): Promise<
+    IAlterarFormaDePagamentoGrupoResponse
+  > {
+    const { data, request } = await this.callApi({
+      method: 'post',
+      params: {
+        sNomeProc: 'FITTELECOM_CONTRATO_ALTERAR_FORMA_PAGAMENTO_GRUPO',
+      },
+      data: {
+        COD_CNTR,
+        FORM_PAGTO,
+        COD_CLIE_CARTAO,
+        COD_CLIE_DEBITO_EM_CONTA,
+        IND_BOLETO_FISICO,
       },
     });
 

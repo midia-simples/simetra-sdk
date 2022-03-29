@@ -298,3 +298,10 @@ export interface ITituloPixGerarBoletoRequest {
     COD_CNTR_TITL: string;
     COD_CLIE: string;
 }
+export interface IAlterarFormaDePagamentoGrupoRequest {
+    COD_CNTR: string | number;
+    FORM_PAGTO: string;
+    IND_BOLETO_FISICO?: number;
+    COD_CLIE_CARTAO?: number;
+    COD_CLIE_DEBITO_EM_CONTA?: number;
+}

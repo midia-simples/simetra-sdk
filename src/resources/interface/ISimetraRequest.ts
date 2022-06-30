@@ -210,7 +210,8 @@ export interface IContratoDesbloquearRequest {
 }
 
 export interface IAtendimentoConsultaRequest {
-  PROTOCOLO: string;
+  PROTOCOLO?: string;
+  CNPJ_CPF_CLIE?: string;
 }
 
 export interface IHabilitacaoProvisoriaConsultaRequest {

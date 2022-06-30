@@ -189,7 +189,8 @@ export interface IContratoDesbloquearRequest {
     COD_CNTR: number;
 }
 export interface IAtendimentoConsultaRequest {
-    PROTOCOLO: string;
+    PROTOCOLO?: string;
+    CNPJ_CPF_CLIE?: string;
 }
 export interface IHabilitacaoProvisoriaConsultaRequest {
     CLIENTE_CNPJ_CPF: string;

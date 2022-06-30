@@ -3798,7 +3798,7 @@ var Atendimento = /** @class */ (function (_super) {
         return _super.call(this, config) || this;
     }
     Atendimento.prototype.consulta = function (_a) {
-        var PROTOCOLO = _a.PROTOCOLO;
+        var PROTOCOLO = _a.PROTOCOLO, CNPJ_CPF_CLIE = _a.CNPJ_CPF_CLIE;
         return __awaiter(this, void 0, void 0, function () {
             var _b, data, request;
             return __generator(this, function (_c) {
@@ -3806,7 +3806,7 @@ var Atendimento = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, this.callApi({
                             method: 'post',
                             params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },
-                            data: { PROTOCOLO: PROTOCOLO },
+                            data: { PROTOCOLO: PROTOCOLO, CNPJ_CPF_CLIE: CNPJ_CPF_CLIE },
                         })];
                     case 1:
                         _b = _c.sent(), data = _b.data, request = _b.request;

@@ -21,11 +21,12 @@ export default class Atendimento extends Resource {
 
   public async consulta({
     PROTOCOLO,
+    CNPJ_CPF_CLIE,
   }: IAtendimentoConsultaRequest): Promise<IAtendimentoConsultaResponse | any> {
     const { data, request } = await this.callApi({
       method: 'post',
       params: { sNomeProc: 'FITTELECOM_CHAMADO_CONSULTAR' },
-      data: { PROTOCOLO },
+      data: { PROTOCOLO, CNPJ_CPF_CLIE },
     });
 
     if (!(data.retorno.codigo === '0')) {

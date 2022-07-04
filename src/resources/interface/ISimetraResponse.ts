@@ -12,8 +12,6 @@ import {
   IConsultarCampanhaIndiqueEGanheRequest,
   IConsultarSaldoIndiqueEGanheRequest,
   ITituloPixGerarBoletoRequest,
-} from './ISimetraRequest';
-import {
   IClientConsultaRequest,
   IProdutoConsultaRequest,
   IClientLoginRequest,
@@ -23,6 +21,7 @@ import {
   ITituloDownloadRequest,
   IClientConsultaCadastroVindiRequest,
   IAlterarDiaDeVencimentoRequest,
+  IDebitoCadastrarContaRequest,
 } from './ISimetraRequest';
 
 export interface IRetorno {
@@ -582,4 +581,13 @@ export interface ITituloPixGerarBoletoResponse {
 
 export interface IAlterarFormaDePagamentoGrupoResponse {
   retorno: IRetorno | any;
+}
+
+interface _IDebitoCadastrarContaRetorno extends IRetorno {
+  COD_CLIE_DEBITO_EM_CONTA: number;
+}
+
+export interface IDebitoCadastrarContaResponse {
+  retorno: _IDebitoCadastrarContaRetorno | any;
+  requisicao: IDebitoCadastrarContaRequest | any;
 }

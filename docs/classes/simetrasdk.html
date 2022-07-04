@@ -2741,6 +2741,9 @@ img {
 					<a href="simetrasdk.html#contrato" class="tsd-kind-icon">Contrato</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="simetrasdk.html#debito" class="tsd-kind-icon">Debito</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="simetrasdk.html#habilitacaoprovisoria" class="tsd-kind-icon">Habilitacao<wbr>Provisoria</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
@@ -2774,12 +2777,12 @@ img {
 (<span class="hljs-keyword">async</span> () =&gt; {
    <span class="hljs-keyword">try</span> {
      <span class="hljs-keyword">const</span> simetraLib = <span class="hljs-keyword">new</span> SimetraSdk({
-       usuario: <span class="hljs-string">&#x27;SIMETRA_USUARIO&#x27;</span>,
-       senha: <span class="hljs-string">&#x27;SIMETRA_SENHA&#x27;</span>,
-       baseURI: <span class="hljs-string">&#x27;SIMETRA_BASE_URL&#x27;</span>,
+       <span class="hljs-attr">usuario</span>: <span class="hljs-string">&#x27;SIMETRA_USUARIO&#x27;</span>,
+       <span class="hljs-attr">senha</span>: <span class="hljs-string">&#x27;SIMETRA_SENHA&#x27;</span>,
+       <span class="hljs-attr">baseURI</span>: <span class="hljs-string">&#x27;SIMETRA_BASE_URL&#x27;</span>,
      });
      <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> SimetraSdk.Cliente.consulta({
-      CNPJ_CPF_CLIE: <span class="hljs-string">&#x27;&#x27;</span>,
+      <span class="hljs-attr">CNPJ_CPF_CLIE</span>: <span class="hljs-string">&#x27;&#x27;</span>,
      });
      response.FAT_CLIENTE.COD_CLIE;
      response.FAT_CLIENTE.DAT_NASC;
@@ -2820,6 +2823,7 @@ img {
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#atendimento" class="tsd-kind-icon">Atendimento</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#cliente" class="tsd-kind-icon">Cliente</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#contrato" class="tsd-kind-icon">Contrato</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#debito" class="tsd-kind-icon">Debito</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#habilitacaoprovisoria" class="tsd-kind-icon">Habilitacao<wbr>Provisoria</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#incidenterede" class="tsd-kind-icon">Incidente<wbr>Rede</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="simetrasdk.html#produto" class="tsd-kind-icon">Produto</a></li>
@@ -2843,7 +2847,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L38">src/simetra-sdk.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L39">src/simetra-sdk.ts:39</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2865,7 +2869,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IConfig</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L38">src/simetra-sdk.ts:38</a></li>
+						<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L39">src/simetra-sdk.ts:39</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2882,7 +2886,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L44">src/simetra-sdk.ts:44</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L45">src/simetra-sdk.ts:45</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="atendimento.html" class="tsd-signature-type">Atendimento</a></h4>
@@ -2899,7 +2903,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L48">src/simetra-sdk.ts:48</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L49">src/simetra-sdk.ts:49</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="cliente.html" class="tsd-signature-type">Cliente</a></h4>
@@ -2916,10 +2920,27 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L72">src/simetra-sdk.ts:72</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L73">src/simetra-sdk.ts:73</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="contrato.html" class="tsd-signature-type">Contrato</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="debito" class="tsd-anchor"></a>
+				<h3>Debito</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> Debito<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="debito.html" class="tsd-signature-type">Debito</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L81">src/simetra-sdk.ts:81</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <a href="debito.html" class="tsd-signature-type">Debito</a></h4>
 					</li>
 				</ul>
 			</section>
@@ -2933,7 +2954,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L76">src/simetra-sdk.ts:76</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L77">src/simetra-sdk.ts:77</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="habilitacaoprovisoria.html" class="tsd-signature-type">HabilitacaoProvisoria</a></h4>
@@ -2950,7 +2971,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L52">src/simetra-sdk.ts:52</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L53">src/simetra-sdk.ts:53</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="incidenterede.html" class="tsd-signature-type">IncidenteRede</a></h4>
@@ -2967,7 +2988,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L64">src/simetra-sdk.ts:64</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L65">src/simetra-sdk.ts:65</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="produto.html" class="tsd-signature-type">Produto</a></h4>
@@ -2984,7 +3005,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L56">src/simetra-sdk.ts:56</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L57">src/simetra-sdk.ts:57</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="titulo.html" class="tsd-signature-type">Titulo</a></h4>
@@ -3001,7 +3022,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L68">src/simetra-sdk.ts:68</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L69">src/simetra-sdk.ts:69</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="validar.html" class="tsd-signature-type">Validar</a></h4>
@@ -3018,7 +3039,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/2dfd4d5/src/simetra-sdk.ts#L60">src/simetra-sdk.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/simetra-sdk.ts#L61">src/simetra-sdk.ts:61</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <a href="vencimentos.html" class="tsd-signature-type">Vencimentos</a></h4>

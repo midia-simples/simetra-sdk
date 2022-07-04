@@ -4465,6 +4465,69 @@ var HabilitacaoProvisoria = /** @class */ (function (_super) {
     return HabilitacaoProvisoria;
 }(Resource));
 
+var Debito = /** @class */ (function (_super) {
+    __extends(Debito, _super);
+    function Debito(config) {
+        return _super.call(this, config) || this;
+    }
+    Debito.prototype.cadastrarConta = function (_a) {
+        var AGENCIA_DIGITO = _a.AGENCIA_DIGITO, AGENCIA_NRO = _a.AGENCIA_NRO, COD_CLIE = _a.COD_CLIE, CONTA_DIGITO = _a.CONTA_DIGITO, CONTA_NRO = _a.CONTA_NRO, NOME_BANCO = _a.NOME_BANCO;
+        return __awaiter(this, void 0, void 0, function () {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CONTRATO_CADASTRAR_DEBITO_EM_CONTA',
+                            },
+                            data: {
+                                AGENCIA_DIGITO: AGENCIA_DIGITO,
+                                AGENCIA_NRO: AGENCIA_NRO,
+                                COD_CLIE: COD_CLIE,
+                                CONTA_DIGITO: CONTA_DIGITO,
+                                CONTA_NRO: CONTA_NRO,
+                                NOME_BANCO: NOME_BANCO,
+                            },
+                        })];
+                    case 1:
+                        _b = _c.sent(), data = _b.data, request = _b.request;
+                        if (!(String(data.retorno.codigo) === '0')) {
+                            throw new SimetraError(data.retorno.mensagem, data, request);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    Debito.prototype.consultarConta = function (_a) {
+        var COD_CLIE = _a.COD_CLIE;
+        return __awaiter(this, void 0, void 0, function () {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: {
+                                sNomeProc: 'FITTELECOM_CLIENTE_CONSULTAR_DEBITO_EM_CONTA',
+                            },
+                            data: {
+                                COD_CLIE: COD_CLIE,
+                            },
+                        })];
+                    case 1:
+                        _b = _c.sent(), data = _b.data, request = _b.request;
+                        if (!(String(data.retorno.codigo) === '0')) {
+                            throw new SimetraError(data.retorno.mensagem, data, request);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
+    return Debito;
+}(Resource));
+
 /**
  * Exemplo uso da SDK
  *
@@ -4553,6 +4616,13 @@ var SimetraSdk = /** @class */ (function () {
     Object.defineProperty(SimetraSdk.prototype, "HabilitacaoProvisoria", {
         get: function () {
             return new HabilitacaoProvisoria(this.config);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(SimetraSdk.prototype, "Debito", {
+        get: function () {
+            return new Debito(this.config);
         },
         enumerable: false,
         configurable: true

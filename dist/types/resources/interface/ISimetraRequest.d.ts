@@ -306,3 +306,14 @@ export interface IAlterarFormaDePagamentoGrupoRequest {
     COD_CLIE_CARTAO?: number;
     COD_CLIE_DEBITO_EM_CONTA?: number;
 }
+export interface IDebitoCadastrarContaRequest {
+    AGENCIA_NRO: string;
+    AGENCIA_DIGITO: string;
+    CONTA_NRO: string;
+    CONTA_DIGITO: string;
+    NOME_BANCO: string;
+    COD_CLIE: string | number;
+}
+export interface IDebitoConsultarContaRequest {
+    COD_CLIE: string | number;
+}

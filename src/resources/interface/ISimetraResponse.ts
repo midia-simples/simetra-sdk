@@ -22,6 +22,7 @@ import {
   IClientConsultaCadastroVindiRequest,
   IAlterarDiaDeVencimentoRequest,
   IDebitoCadastrarContaRequest,
+  IDebitoConsultarContaRequest,
 } from './ISimetraRequest';
 
 export interface IRetorno {
@@ -590,4 +591,20 @@ interface _IDebitoCadastrarContaRetorno extends IRetorno {
 export interface IDebitoCadastrarContaResponse {
   retorno: _IDebitoCadastrarContaRetorno | any;
   requisicao: IDebitoCadastrarContaRequest | any;
+}
+
+interface _IFatClienteDebitoEmConta {
+  COD_CLIE_DEBITO_EM_CONTA: number;
+  COD_CLIE: number;
+  NOME_BANCO: string;
+  AGENCIA_NRO: string;
+  AGENCIA_DIGITO: string;
+  CONTA_NRO: string;
+  CONTA_DIGITO: string;
+}
+
+export interface IDebitoConsultarContaResponse {
+  requisicao: IDebitoConsultarContaRequest | any;
+  retorno: IRetorno;
+  FAT_CLIENTE_DEBITO_EM_CONTA: _IFatClienteDebitoEmConta[];
 }

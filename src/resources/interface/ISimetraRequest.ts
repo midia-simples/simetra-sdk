@@ -352,3 +352,7 @@ export interface IDebitoCadastrarContaRequest {
   NOME_BANCO: string;
   COD_CLIE: string | number;
 }
+
+export interface IDebitoConsultarContaRequest {
+  COD_CLIE: string | number;
+}

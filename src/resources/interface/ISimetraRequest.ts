@@ -356,3 +356,10 @@ export interface IDebitoCadastrarContaRequest {
 export interface IDebitoConsultarContaRequest {
   COD_CLIE: string | number;
 }
+
+export interface IAtendimentoCadastrarAnexoRequest {
+  SEQ_CHAMADO: string;
+  SEQ_CHAMADO_ANEXO_TIPO: string;
+  ANEXO_BUFFER: string;
+  ANEXO_NOME: string;
+}

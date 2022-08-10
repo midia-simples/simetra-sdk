@@ -4,6 +4,7 @@ import {
   IAtendimentoDelegarResponse,
   IAtendimentoConsultaResponse,
   IInteragirAppMeuAmericanetResponse,
+  IAtendimentoCadastrarAnexoResponse,
 } from './interface/ISimetraResponse';
 import IConfig from './interface/IConfig';
 import {
@@ -11,6 +12,7 @@ import {
   IAtendimentoDelegarRequest,
   IAtendimentoConsultaRequest,
   IInteragirAppMeuAmericanetRequest,
+  IAtendimentoCadastrarAnexoRequest,
 } from './interface/ISimetraRequest';
 import SimetraError from './SimetraError';
 
@@ -102,6 +104,32 @@ export default class Atendimento extends Resource {
       data: {
         DES_DETALHE,
         SEQ_CHAMADO,
+      },
+    });
+
+    if (!(data.retorno.codigo === '0')) {
+      throw new SimetraError(data.retorno.mensagem, data, request);
+    }
+
+    return data;
+  }
+
+  public async CadastrarAnexo({
+    SEQ_CHAMADO,
+    ANEXO_BUFFER,
+    ANEXO_NOME,
+    SEQ_CHAMADO_ANEXO_TIPO,
+  }: IAtendimentoCadastrarAnexoRequest): Promise<
+    IAtendimentoCadastrarAnexoResponse
+  > {
+    const { data, request } = await this.callApi({
+      method: 'post',
+      params: { sNomeProc: 'FITTELECOM_CHAMADO_ANEXO' },
+      data: {
+        SEQ_CHAMADO,
+        ANEXO_BUFFER,
+        ANEXO_NOME,
+        SEQ_CHAMADO_ANEXO_TIPO,
       },
     });
 

@@ -3896,6 +3896,32 @@ var Atendimento = /** @class */ (function (_super) {
             });
         });
     };
+    Atendimento.prototype.CadastrarAnexo = function (_a) {
+        var SEQ_CHAMADO = _a.SEQ_CHAMADO, ANEXO_BUFFER = _a.ANEXO_BUFFER, ANEXO_NOME = _a.ANEXO_NOME, SEQ_CHAMADO_ANEXO_TIPO = _a.SEQ_CHAMADO_ANEXO_TIPO;
+        return __awaiter(this, void 0, void 0, function () {
+            var _b, data, request;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, this.callApi({
+                            method: 'post',
+                            params: { sNomeProc: 'FITTELECOM_CHAMADO_ANEXO' },
+                            data: {
+                                SEQ_CHAMADO: SEQ_CHAMADO,
+                                ANEXO_BUFFER: ANEXO_BUFFER,
+                                ANEXO_NOME: ANEXO_NOME,
+                                SEQ_CHAMADO_ANEXO_TIPO: SEQ_CHAMADO_ANEXO_TIPO,
+                            },
+                        })];
+                    case 1:
+                        _b = _c.sent(), data = _b.data, request = _b.request;
+                        if (!(data.retorno.codigo === '0')) {
+                            throw new SimetraError(data.retorno.mensagem, data, request);
+                        }
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    };
     return Atendimento;
 }(Resource));
 

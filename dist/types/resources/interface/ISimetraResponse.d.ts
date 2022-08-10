@@ -1,4 +1,4 @@
-import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest, IConsultarCampanhaIndiqueEGanheRequest, IConsultarSaldoIndiqueEGanheRequest, ITituloPixGerarBoletoRequest, IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest, IDebitoCadastrarContaRequest, IDebitoConsultarContaRequest } from './ISimetraRequest';
+import { IHabilitacaoProvisoriaDesbloquearRequest, IHabilitacaoProvisoriaConsultaRequest, IContratoConsultaLinhaMovelRequest, ITrocaFormaPagamentoRequest, IAlterarWifiRequest, IEnviarEmailRequest, ICartaoConsultarCadastradosRequest, IEnviarSMSRequest, IInteragirAppMeuAmericanetRequest, IRegistrarLogDeAcessoRequest, IConsultarCampanhaIndiqueEGanheRequest, IConsultarSaldoIndiqueEGanheRequest, ITituloPixGerarBoletoRequest, IClientConsultaRequest, IProdutoConsultaRequest, IClientLoginRequest, IClientCadastrarVindiRequest, ITituloCadastrarRequest, ITituloQuitarRequest, ITituloDownloadRequest, IClientConsultaCadastroVindiRequest, IAlterarDiaDeVencimentoRequest, IDebitoCadastrarContaRequest, IDebitoConsultarContaRequest, IAtendimentoCadastrarAnexoRequest } from './ISimetraRequest';
 export interface IRetorno {
     codigo?: string;
     mensagem?: string;
@@ -514,5 +514,9 @@ export interface IDebitoConsultarContaResponse {
     requisicao: IDebitoConsultarContaRequest | any;
     retorno: IRetorno;
     FAT_CLIENTE_DEBITO_EM_CONTA: _IFatClienteDebitoEmConta[];
+}
+export interface IAtendimentoCadastrarAnexoResponse {
+    requisicao: IAtendimentoCadastrarAnexoRequest | any;
+    retorno: IRetorno | any;
 }
 export {};

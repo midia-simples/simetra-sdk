@@ -2729,6 +2729,9 @@ img {
 					<a href="atendimento.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="atendimento.html#cadastraranexo" class="tsd-kind-icon">Cadastrar<wbr>Anexo</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="atendimento.html#interagirappmeuamericanet" class="tsd-kind-icon">Interagir<wbr>App<wbr>Meu<wbr>Americanet</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -2778,6 +2781,7 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="atendimento.html#cadastraranexo" class="tsd-kind-icon">Cadastrar<wbr>Anexo</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="atendimento.html#interagirappmeuamericanet" class="tsd-kind-icon">Interagir<wbr>App<wbr>Meu<wbr>Americanet</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="atendimento.html#cadastrar" class="tsd-kind-icon">cadastrar</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="atendimento.html#callapi" class="tsd-kind-icon">call<wbr>Api</a></li>
@@ -2802,7 +2806,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="resource.html">Resource</a>.<a href="resource.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Atendimento.ts#L17">src/resources/Atendimento.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Atendimento.ts#L19">src/resources/Atendimento.ts:19</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2819,6 +2823,43 @@ img {
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="cadastraranexo" class="tsd-anchor"></a>
+				<h3>Cadastrar<wbr>Anexo</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">Cadastrar<wbr>Anexo<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>ANEXO_BUFFER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ANEXO_NOME<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>SEQ_CHAMADO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>SEQ_CHAMADO_ANEXO_TIPO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iatendimentocadastraranexoresponse.html" class="tsd-signature-type">IAtendimentoCadastrarAnexoResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Atendimento.ts#L117">src/resources/Atendimento.ts:117</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>ANEXO_BUFFER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ANEXO_NOME<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>SEQ_CHAMADO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>SEQ_CHAMADO_ANEXO_TIPO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>ANEXO_<wbr>BUFFER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>ANEXO_<wbr>NOME<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>SEQ_<wbr>CHAMADO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>SEQ_<wbr>CHAMADO_<wbr>ANEXO_<wbr>TIPO<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iatendimentocadastraranexoresponse.html" class="tsd-signature-type">IAtendimentoCadastrarAnexoResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 				<a name="interagirappmeuamericanet" class="tsd-anchor"></a>
 				<h3>Interagir<wbr>App<wbr>Meu<wbr>Americanet</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -2828,7 +2869,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Atendimento.ts#L93">src/resources/Atendimento.ts:93</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Atendimento.ts#L95">src/resources/Atendimento.ts:95</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2859,7 +2900,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Atendimento.ts#L39">src/resources/Atendimento.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Atendimento.ts#L41">src/resources/Atendimento.ts:41</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2906,7 +2947,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#callapi">callApi</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Resource.ts#L51">src/resources/Resource.ts:51</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Resource.ts#L51">src/resources/Resource.ts:51</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2940,7 +2981,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Atendimento.ts#L22">src/resources/Atendimento.ts:22</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Atendimento.ts#L24">src/resources/Atendimento.ts:24</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2971,7 +3012,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Atendimento.ts#L71">src/resources/Atendimento.ts:71</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Atendimento.ts#L73">src/resources/Atendimento.ts:73</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3006,7 +3047,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="resource.html">Resource</a>.<a href="resource.html#processresponse">processResponse</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/96c9030/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/midia-simples/simetra-sdk/blob/dc70a5b/src/resources/Resource.ts#L24">src/resources/Resource.ts:24</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

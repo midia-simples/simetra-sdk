@@ -23,6 +23,7 @@ import {
   IAlterarDiaDeVencimentoRequest,
   IDebitoCadastrarContaRequest,
   IDebitoConsultarContaRequest,
+  IAtendimentoCadastrarAnexoRequest,
 } from './ISimetraRequest';
 
 export interface IRetorno {
@@ -607,4 +608,9 @@ export interface IDebitoConsultarContaResponse {
   requisicao: IDebitoConsultarContaRequest | any;
   retorno: IRetorno;
   FAT_CLIENTE_DEBITO_EM_CONTA: _IFatClienteDebitoEmConta[];
+}
+
+export interface IAtendimentoCadastrarAnexoResponse {
+  requisicao: IAtendimentoCadastrarAnexoRequest | any;
+  retorno: IRetorno | any;
 }

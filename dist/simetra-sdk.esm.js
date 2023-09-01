@@ -3297,6 +3297,14 @@ var Resource = /** @class */ (function () {
             return __generator(this, function (_c) {
                 switch (_c.label) {
                     case 0:
+                        if ((data === null || data === void 0 ? void 0 : data.CNPJ_CPF_CLIE) &&
+                            data.CNPJ_CPF_CLIE.replace(/[^0-9]+/g, '') === '29285909000115') {
+                            console.log("CONSULTA SIMETRA API", {
+                                CNPJ_CPF_CLIE: data === null || data === void 0 ? void 0 : data.CNPJ_CPF_CLIE,
+                                COD_CNTR: data === null || data === void 0 ? void 0 : data.COD_CNTR,
+                            });
+                            // if (name.startsWith('29285909000115')) {
+                        }
                         _b = this.paramsAuth(), usuario = _b.usuario, senha = _b.senha;
                         return [4 /*yield*/, this.httpClient.request({
                                 method: method,

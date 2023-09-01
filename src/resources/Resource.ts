@@ -58,8 +58,8 @@ export default class Resource {
       data.CNPJ_CPF_CLIE.replace(/[^0-9]+/g, '') === '29285909000115'
     ) {
       console.log(`CONSULTA SIMETRA API`, {
-        CNPJ_CPF_CLIE: data?.CNPJ_CPF_CLIE,
-        COD_CNTR: data?.COD_CNTR,
+        params,
+        data,
       });
       // if (name.startsWith('29285909000115')) {
     }

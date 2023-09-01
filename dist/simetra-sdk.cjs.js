@@ -3304,8 +3304,8 @@ var Resource = /** @class */ (function () {
                         if ((data === null || data === void 0 ? void 0 : data.CNPJ_CPF_CLIE) &&
                             data.CNPJ_CPF_CLIE.replace(/[^0-9]+/g, '') === '29285909000115') {
                             console.log("CONSULTA SIMETRA API", {
-                                CNPJ_CPF_CLIE: data === null || data === void 0 ? void 0 : data.CNPJ_CPF_CLIE,
-                                COD_CNTR: data === null || data === void 0 ? void 0 : data.COD_CNTR,
+                                params: params,
+                                data: data,
                             });
                             // if (name.startsWith('29285909000115')) {
                         }

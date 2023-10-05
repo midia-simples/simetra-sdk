@@ -57,12 +57,12 @@ export default class Resource {
 
     const response = await this.httpClient.request({
       method,
-      data,
-      params: {
-        ...params,
+      data: {
         sUser: usuario,
         sSenha: senha,
+        ...data,
       },
+      params,
     });
 
     return this.processResponse(response);
